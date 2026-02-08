@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- maximum-scale es para que cuando aparezca en un movil, no se pueda hacer zoom y no se deforme -->
+
+    <link rel="stylesheet" href="assets/fonts/fontawesome-free-6.1.2-web/css/all.min.css" />
+    <link rel="stylesheet" href="assets/fonts/poppins/poppins.css" />
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/scroll.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+
+    <script src="assets/js/menu.js" defer></script>
+
+    <title>Portfolio - Ana Núñez</title>
+
+    <link rel="manifest" href="manifest.json">
+
+<link rel="icon" href="assets/icons/icon-192.png">
+<meta name="theme-color" content="#b07a8c">
+</head>
+
+<body>
+
+    <!-- Layout -->
+
+    <div class="layout">
+
+        <!-- Barra lateral (info del usuario)-->
+
+        <aside class="layout__aside">
+            <section class="aside__user-info">
+
+                <!-- Información general -->
+
+                <div class="user-info__general">
+                    <div class="user-info__container-imagen">
+                        <img src="assets/img/AnaNunez.jpg" class="user-info__imagen" alt="foto perfil Ana Nuñez">
+                    </div>
+
+                    <h2 class="user-info__name">Ana Nuñez</h2>
+                    <h2 class="user-info__job">Diseñadora gráfica <br> Estudiante de DAM y DAW</h2>
+                </div>
+
+                <!-- Menú de navegación -->
+
+                <nav class="layout__menu">
+                    <ul class="menu__list">
+
+                        <li class="menu__option">
+                            <a href="index.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-house"></i>
+                                <span class="menu__overlay">Home</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="sobremi.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-user"></i>
+                                <span class="menu__overlay">Sobre mi</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="curriculum.html" class="menu__link menu__link--active">
+                                <i class="menu__icon fa-solid fa-graduation-cap"></i>
+                                <span class="menu__overlay">Curriculum</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="portafolio.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-briefcase"></i>
+                                <span class="menu__overlay">Portafolio</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="cv.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-book"></i>
+                                <span class="menu__overlay">Curriculum Interactivo</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="contacto.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-envelope"></i>
+                                <span class="menu__overlay">Contacto</span>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+                <!-- Link redes sociales -->
+
+                <div class="user-info__links">
+
+                    <ul class="links__social">
+                        <li class="social__option">
+                            <a href="https://github.com/AnaNunezRejon" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-github"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://www.linkedin.com/in/ananunezrejon" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://www.behance.net/ananunezrejon" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-behance"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- Botón curriculum -->
+                <div class="user-info__buttons">
+                   <a href="assets/cv/Curriculum_AnaNunezRejon2026.pdf" download class="user-info__btn">
+                        Descargar CV
+                    </a>
+                </div>
+
+                <!-- Pié e página -->
+
+                <footer class="user-info__footer">
+                    &copy; 2026 Ana Nuñez
+                </footer>
+
+            </section>
+
+        </aside>
+
+        <!-- Menu rsponsive -->
+
+        <div class="layout__menu-toggle">
+            <i class="menu-toggle__icon fa-solid fa-bars"></i>
+            <i class="menu-toggle__icon fa-solid fa-xmark"></i>
+        </div>
+
+        <!-- Contenido principal -->
+
+        <main class="layout__content">
+
+            <section class="content__page content__resumen">
+
+                <header class="resumen__header">
+                    <h1 class="resumen__title">Curriculum</h1>
+                </header>
+
+                <div class="resumen__container">
+
+                    <section class="resumen__left">
+
+                        <header class="resumen__subheader">
+                            <h2 class="resumen__subtitle">Experiencia</h2>
+                        </header>
+
+                        <div class="resumen__timelines">
+
+                            <article class="timelines__timeline">
+                                <header class="timeline__header">
+                                    <h4 class="timeline__year">2018 - Actualidad</h4>
+                                    <span class="timeline__company">Freelance</span>
+                                </header>
+                                <div class="timeline__divider"></div>
+                                <div class="timeline__description">
+                                    <h3 class="timeline__title">Diseñadora gráfica</h3>
+                                    <p class="timeline__text">Desarrollo de proyectos de branding, identidad visual,
+                                        diseño digital y piezas de comunicación para clientes y proyectos digitales.</p>
+                                </div>
+                            </article>
+
+                            <article class="timelines__timeline">
+                                <header class="timeline__header">
+                                    <h4 class="timeline__year">2009 - 2020</h4>
+                                    <span class="timeline__company">LOMONACO</span>
+                                </header>
+                                <div class="timeline__divider"></div>
+                                <div class="timeline__description">
+                                    <h3 class="timeline__title">Diseñadora gráfica Senior</h3>
+                                    <p class="timeline__text">Diseño editorial, campañas publicitarias, identidad visual
+                                        corporativa y desarrollo de material gráfico para marketing digital.</p>
+                                </div>
+                            </article>
+
+                        </div>
+
+                        <header class="resumen__subheader">
+                            <h2 class="resumen__subtitle">Formación</h2>
+                        </header>
+
+                        <div class="resumen__timelines">
+
+                            <article class="timelines__timeline">
+                                <header class="timeline__header">
+                                    <h4 class="timeline__year">2024 - Actualidad</h4>
+                                    <span class="timeline__company">FP DAM</span>
+                                </header>
+                                <div class="timeline__divider"></div>
+                                <div class="timeline__description">
+                                    <h3 class="timeline__title">Desarrollo de Aplicaciones Multiplataforma</h3>
+                                    <p class="timeline__text">Formación en programación Java, desarrollo Android, bases
+                                        de datos y arquitectura de aplicaciones.</p>
+                                </div>
+                            </article>
+
+                            <article class="timelines__timeline">
+                                <header class="timeline__header">
+                                    <h4 class="timeline__year">2023 - 2024</h4>
+                                    <span class="timeline__company">UNIR</span>
+                                </header>
+                                <div class="timeline__divider"></div>
+                                <div class="timeline__description">
+                                    <h3 class="timeline__title">Máster Full Stack Developer</h3>
+                                    <p class="timeline__text">Desarrollo frontend y backend, tecnologías web modernas y
+                                        bases de datos.</p>
+                                </div>
+                            </article>
+
+                            <article class="timelines__timeline">
+                                <header class="timeline__header">
+                                    <h4 class="timeline__year">2017 - 2018</h4>
+                                    <span class="timeline__company">Estación Diseño</span>
+                                </header>
+                                <div class="timeline__divider"></div>
+                                <div class="timeline__description">
+                                    <h3 class="timeline__title">Máster Diseño Web</h3>
+                                    <p class="timeline__text">Diseño UX/UI, interfaces digitales y prototipado.</p>
+                                </div>
+                            </article>
+
+                            <article class="timelines__timeline">
+                                <header class="timeline__header">
+                                    <h4 class="timeline__year">2011 - 2012</h4>
+                                    <span class="timeline__company">Universidad</span>
+                                </header>
+                                <div class="timeline__divider"></div>
+                                <div class="timeline__description">
+                                    <h3 class="timeline__title">Máster Oficial Dibujo, creación y producción</h3>
+                                    <p class="timeline__text">Especialización en creación artística y producción visual.
+                                    </p>
+                                </div>
+                            </article>
+
+                            <article class="timelines__timeline">
+                                <header class="timeline__header">
+                                    <h4 class="timeline__year">2007 - 2009</h4>
+                                    <span class="timeline__company">Escuela de Arte Granada</span>
+                                </header>
+                                <div class="timeline__divider"></div>
+                                <div class="timeline__description">
+                                    <h3 class="timeline__title">Grado Superior Diseño Gráfico</h3>
+                                    <p class="timeline__text">Formación profesional en diseño gráfico y comunicación
+                                        visual.</p>
+                                </div>
+                            </article>
+
+                            <article class="timelines__timeline">
+                                <header class="timeline__header">
+                                    <h4 class="timeline__year">2004 - 2009</h4>
+                                    <span class="timeline__company">Universidad de Granada</span>
+                                </header>
+                                <div class="timeline__divider"></div>
+                                <div class="timeline__description">
+                                    <h3 class="timeline__title">Licenciatura en Bellas Artes</h3>
+                                    <p class="timeline__text">Formación artística superior orientada a creatividad,
+                                        comunicación visual y producción gráfica.</p>
+                                </div>
+                            </article>
+
+                        </div>
+
+                    </section>
+
+
+                    <section class="resumen__right">
+
+                        <header class="resumen__subheader">
+                            <h2 class="resumen__subtitle">Habilidades de <span class="subtitle__color">diseño</span>
+                            </h2>
+                        </header>
+
+                        <div class="resumen__skills">
+                            <article class="skills__title">
+                                <h4 class="skills__text">UX / UI</h4><span class="skills__number">70%</span>
+                            </article>
+                            <div class="skills__progressbar">
+                                <div class="skills__percentage skills__percentage--p7"></div>
+                            </div>
+
+                            <article class="skills__title">
+                                <h4 class="skills__text">Branding</h4><span class="skills__number">95%</span>
+                            </article>
+                            <div class="skills__progressbar">
+                                <div class="skills__percentage skills__percentage--p1"></div>
+                            </div>
+
+                            <article class="skills__title">
+                                <h4 class="skills__text">Diseño editorial</h4><span class="skills__number">95%</span>
+                            </article>
+                            <div class="skills__progressbar">
+                                <div class="skills__percentage skills__percentage--p1"></div>
+                            </div>
+                        </div>
+
+                        <header class="resumen__subheader">
+                            <h2 class="resumen__subtitle">Habilidades de <span class="subtitle__color">código</span>
+                            </h2>
+                        </header>
+
+                        <div class="resumen__skills">
+                            <article class="skills__title">
+                                <h4 class="skills__text">HTML / CSS</h4><span class="skills__number">85%</span>
+                            </article>
+                            <div class="skills__progressbar">
+                                <div class="skills__percentage skills__percentage--p6"></div>
+                            </div>
+
+                            <article class="skills__title">
+                                <h4 class="skills__text">JavaScript</h4><span class="skills__number">75%</span>
+                            </article>
+                            <div class="skills__progressbar">
+                                <div class="skills__percentage skills__percentage--p6"></div>
+                            </div>
+
+                            <article class="skills__title">
+                                <h4 class="skills__text">Java</h4><span class="skills__number">70%</span>
+                            </article>
+                            <div class="skills__progressbar">
+                                <div class="skills__percentage skills__percentage--p7"></div>
+                            </div>
+
+                            <article class="skills__title">
+                                <h4 class="skills__text">SQL</h4><span class="skills__number">65%</span>
+                            </article>
+                            <div class="skills__progressbar">
+                                <div class="skills__percentage skills__percentage--p7"></div>
+                            </div>
+                        </div>
+
+                        <header class="resumen__subheader">
+                            <h2 class="resumen__subtitle">Áreas de conocimientos</h2>
+                        </header>
+
+                        <div class="resumen__knowledges">
+                            <ul class="knowledges__list">
+                                <li class="knowledges__option">Figma</li>
+                                <li class="knowledges__option">Adobe Photoshop</li>
+                                <li class="knowledges__option">Adobe Illustrator</li>
+                                <li class="knowledges__option">Android Studio</li>
+                                <li class="knowledges__option">Visual Studio Code</li>
+                                <li class="knowledges__option">IntelliJ IDEA</li>
+                                <li class="knowledges__option">GitHub Desktop</li>
+                                <li class="knowledges__option">Postman</li>
+                                <li class="knowledges__option">Overleaf (LaTeX)</li>
+                                <li class="knowledges__option">Canva</li>
+                            </ul>
+                        </div>
+
+
+                    </section>
+
+                </div>
+
+                <div class="resumen__certificates">
+                    <header class="resumen__subheader">
+                        <h2 class="resumen__subtitle">Certificados</h2>
+                    </header>
+
+                    <section class="certificates__container">
+
+                        <article class="certificates__certificate">
+                            <div class="certificate__logo">
+                                <img src="assets/img/certificado-de-diseno-de-experiencia-del-usuario-ux-de-google.png" class="certificate__image">
+                            </div>
+                            <div class="certificate__content">
+                                <h4 class="certificate__title">Certificado UX/UI Google</h4>
+                                <span class="certificate__date">2023</span>
+                            </div>
+                        </article>
+
+                        <article class="certificates__certificate">
+                            <div class="certificate__logo">
+                                <img src="assets/img/google_marketing_platform_logo_icon_159347.png" class="certificate__image">
+                            </div>
+                            <div class="certificate__content">
+                                <h4 class="certificate__title">Marketing Digital y Ecommerce Google</h4>
+                                <span class="certificate__date">2024</span>
+                            </div>
+                        </article>
+
+                    </section>
+                </div>
+
+            </section>
+
+        </main>
+
+
+    </div>
+
+</body>
+
+</html>

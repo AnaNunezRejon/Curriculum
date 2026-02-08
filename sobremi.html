@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- maximum-scale es para que cuando aparezca en un movil, no se pueda hacer zoom y no se deforme -->
+
+    <link rel="stylesheet" href="assets/fonts/fontawesome-free-6.1.2-web/css/all.min.css" />
+    <link rel="stylesheet" href="assets/fonts/poppins/poppins.css" />
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/scroll.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+
+    <script src="assets/js/menu.js" defer></script>
+
+    <title>Portfolio - Ana Núñez</title>
+
+    <link rel="manifest" href="manifest.json">
+
+<link rel="icon" href="assets/icons/icon-192.png">
+<meta name="theme-color" content="#b07a8c">
+</head>
+
+<body>
+
+    <!-- Layout -->
+
+    <div class="layout">
+
+        <!-- Barra lateral (info del usuario)-->
+
+        <aside class="layout__aside">
+            <section class="aside__user-info">
+
+                <!-- Información general -->
+
+                <div class="user-info__general">
+                    <div class="user-info__container-imagen">
+                        <img src="assets/img/AnaNunez.jpg" class="user-info__imagen" alt="foto perfil Ana Nuñez">
+                    </div>
+
+                    <h2 class="user-info__name">Ana Nuñez</h2>
+                    <h2 class="user-info__job">Diseñadora gráfica <br> Estudiante de DAM y DAW</h2>
+                </div>
+
+                <!-- Menú de navegación -->
+
+                <nav class="layout__menu">
+                    <ul class="menu__list">
+
+                        <li class="menu__option">
+                            <a href="index.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-house"></i>
+                                <span class="menu__overlay">Home</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="sobremi.html" class="menu__link menu__link--active">
+                                <i class="menu__icon fa-solid fa-user"></i>
+                                <span class="menu__overlay">Sobre mi</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="curriculum.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-graduation-cap"></i>
+                                <span class="menu__overlay">Curriculum</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="portafolio.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-briefcase"></i>
+                                <span class="menu__overlay">Portafolio</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="cv.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-book"></i>
+                                <span class="menu__overlay">Curriculum Interactivo</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="contacto.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-envelope"></i>
+                                <span class="menu__overlay">Contacto</span>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+                <!-- Link redes sociales -->
+
+                <div class="user-info__links">
+
+                    <ul class="links__social">
+                        <li class="social__option">
+                            <a href="https://github.com/AnaNunezRejon" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-github"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://www.linkedin.com/in/ananunezrejon" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://www.behance.net/ananunezrejon" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-behance"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- Botón curriculum -->
+                <div class="user-info__buttons">
+                   <a href="assets/cv/Curriculum_AnaNunezRejon2026.pdf" download class="user-info__btn">
+                        Descargar CV
+                    </a>
+                </div>
+
+                <!-- Pié e página -->
+
+                <footer class="user-info__footer">
+                    &copy; 2026 Ana Nuñez
+                </footer>
+
+            </section>
+
+        </aside>
+
+        <!-- Menu rsponsive -->
+
+        <div class="layout__menu-toggle">
+            <i class="menu-toggle__icon fa-solid fa-bars"></i>
+            <i class="menu-toggle__icon fa-solid fa-xmark"></i>
+        </div>
+
+        <!-- Contenido principal -->
+
+        <main class="layout__content">
+
+            <section class="content__page content__about">
+
+                <header class="about__header">
+                    <h1 class="about__title">Sobre<span class="title__color">Mi</span></h1>
+                </header>
+
+                <section class="about__personal-info">
+
+                    <article class="personal-info__bio">
+                        <p class="personal-info__description">
+                            Soy diseñadora gráfica con más de 11 años de experiencia en branding, identidad visual y
+                            diseño digital, actualmente especializada en Desarrollo de Aplicaciones Multiplataforma. Mi
+                            perfil combina creatividad, diseño UX/UI y desarrollo de software, permitiéndome participar
+                            en proyectos digitales completos, desde la conceptualización visual hasta la implementación
+                            técnica. Mi objetivo profesional es integrarme en equipos de desarrollo donde aportar una
+                            visión híbrida entre diseño y programación orientada a productos digitales.
+                        </p>
+                    </article>
+
+                    <div class="personal-info__data">
+
+                        <ul class="personal-info__list">
+
+
+                            <li class="personal-info__option">
+                                <span class="personal-info__title">Pais</span>
+                                <span class="personal-info__value">España</span>
+                            </li>
+
+                            <li class="personal-info__option">
+                                <span class="personal-info__title">Dirección</span>
+                                <span class="personal-info__value">Padul - Granada</span>
+                            </li>
+
+                            <li class="personal-info__option">
+                                <span class="personal-info__title">Correo</span>
+                                <span class="personal-info__value">ananunezrejon@gmail.com</span>
+                            </li>
+
+                            <li class="personal-info__option">
+                                <span class="personal-info__title">Teléfono</span>
+                                <span class="personal-info__value">678617201</span>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </section>
+
+                <section class="about__services">
+
+                    <header class="services__header">
+                        <h2 class="services__title">Áreas <span class="title__color">profesionales</span></h2>
+                    </header>
+
+                    <div class="services__container">
+
+                        <article class="services__service">
+                            <div class="service__icon">
+                                <i class="service__real-icon fa-solid fa-palette"></i>
+                            </div>
+                            <div class="service__content">
+                                <h3 class="service__title">Diseño gráfico</h3>
+                                <p class="service__description">
+                                    Diseñadora gráfica con amplia experiencia en branding, identidad visual,
+                                    diseño editorial y diseño de interfaces UX/UI para productos digitales,
+                                    utilizando herramientas como Figma, Adobe XD y la suite Adobe
+                                    (Photoshop, Illustrator e InDesign).
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="services__service">
+                            <div class="service__icon">
+                                <i class="service__real-icon fa-solid fa-mobile-screen"></i>
+                            </div>
+                            <div class="service__content">
+                                <h3 class="service__title">Desarrollo DAM</h3>
+                                <p class="service__description">
+                                    Desarrollo de aplicaciones multiplataforma utilizando Java y Android Studio,
+                                    integración de APIs REST, gestión de bases de datos y diseño de interfaces móviles
+                                    centradas en la experiencia de usuario.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="services__service">
+                            <div class="service__icon">
+                                <i class="service__real-icon fa-solid fa-code"></i>
+                            </div>
+                            <div class="service__content">
+                                <h3 class="service__title">Desarrollo Web (DAW)</h3>
+                                <p class="service__description">
+                                    Creación de interfaces web responsive utilizando HTML, CSS y JavaScript, aplicando
+                                    principios de UX/UI y control de versiones mediante Git y GitHub.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="services__service">
+                            <div class="service__icon">
+                                <i class="service__real-icon fa-solid fa-people-group"></i>
+                            </div>
+                            <div class="service__content">
+                                <h3 class="service__title">Soft Skills</h3>
+                                <p class="service__description">
+                                    Perfil creativo, organizado y orientado a resultados, con experiencia en trabajo en
+                                    equipo multidisciplinar, gestión de proyectos digitales y comunicación efectiva
+                                    entre áreas de diseño y desarrollo.
+                                </p>
+                            </div>
+                        </article>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

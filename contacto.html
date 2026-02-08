@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- maximum-scale es para que cuando aparezca en un movil, no se pueda hacer zoom y no se deforme -->
+
+    <link rel="stylesheet" href="assets/fonts/fontawesome-free-6.1.2-web/css/all.min.css" />
+    <link rel="stylesheet" href="assets/fonts/poppins/poppins.css" />
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/scroll.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/loader.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+
+    <script src="assets/js/map.js" defer></script>
+
+    <script src="assets/js/menu.js" defer></script>
+
+    <title>Portfolio - Ana Núñez</title>
+
+    <link rel="manifest" href="manifest.json">
+
+<link rel="icon" href="assets/icons/icon-192.png">
+<meta name="theme-color" content="#b07a8c">
+</head>
+
+<body>
+
+    <!-- Layout -->
+
+    <div class="layout">
+
+        <!-- Barra lateral (info del usuario)-->
+
+        <aside class="layout__aside">
+            <section class="aside__user-info">
+
+                <!-- Información general -->
+
+                <div class="user-info__general">
+                    <div class="user-info__container-imagen">
+                        <img src="assets/img/AnaNunez.jpg" class="user-info__imagen" alt="foto perfil Ana Nuñez">
+                    </div>
+
+                    <h2 class="user-info__name">Ana Nuñez</h2>
+                    <h2 class="user-info__job">Diseñadora gráfica <br> Estudiante de DAM y DAW</h2>
+                </div>
+
+                <!-- Menú de navegación -->
+
+                <nav class="layout__menu">
+                    <ul class="menu__list">
+
+                        <li class="menu__option">
+                            <a href="index.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-house"></i>
+                                <span class="menu__overlay">Home</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="sobremi.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-user"></i>
+                                <span class="menu__overlay">Sobre mi</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="curriculum.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-graduation-cap"></i>
+                                <span class="menu__overlay">Curriculum</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="portafolio.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-briefcase"></i>
+                                <span class="menu__overlay">Portafolio</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="cv.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-book"></i>
+                                <span class="menu__overlay">Curriculum Interactivo</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="contacto.html" class="menu__link menu__link--active">
+                                <i class="menu__icon fa-solid fa-envelope"></i>
+                                <span class="menu__overlay">Contacto</span>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+                <!-- Link redes sociales -->
+
+                <div class="user-info__links">
+
+                    <ul class="links__social">
+                        <li class="social__option">
+                            <a href="#" class="social__link">
+                                <i class="social__icon fa-brands fa-youtube"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="#" class="social__link">
+                                <i class="social__icon fa-brands fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="#" class="social__link">
+                                <i class="social__icon fa-brands fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <!-- Botón CV -->
+                <div class="user-info__buttons">
+                    <a href="assets/cv/Curriculum_AnaNunezRejon2026.pdf" download class="user-info__btn">
+                        Descargar CV
+                    </a>
+                </div>
+
+                <!-- Pie de página -->
+                <footer class="user-info__footer">
+                    &copy; 2026 Ana Nuñez
+                </footer>
+
+            </section>
+
+        </aside>
+
+        <!-- Menu rsponsive -->
+
+        <div class="layout__menu-toggle">
+            <i class="menu-toggle__icon fa-solid fa-bars"></i>
+            <i class="menu-toggle__icon fa-solid fa-xmark"></i>
+        </div>
+
+        <!-- Contenido principal -->
+
+        <main class="layout__content">
+
+            <section class="content__page content__contacto">
+
+                <header class="contacto__header">
+                    <h1 class="contacto__title">Contacto</h1>
+                </header>
+
+                <div class="contacto__container">
+
+                    <section class="contacto__info">
+
+                        <div class="contacto__data">
+                            <i class="contacto__icon fa-solid fa-location-dot"></i>
+                            <h2 class="contacto__subtitle">Granada</h2>
+                        </div>
+
+                        <div class="contacto__data">
+                            <i class="contacto__icon fa-solid fa-phone"></i>
+                            <h2 class="contacto__subtitle">678 61 72 01</h2>
+                        </div>
+                        <div class="contacto__data">
+                            <i class="contacto__icon fa-solid fa-envelope"></i>
+                            <h2 class="contacto__subtitle">ananunezrejon@gmail.com</h2>
+                        </div>
+                        <div class="contacto__data">
+                            <i class="contacto__icon fa-solid fa-circle-check"></i>
+                            <h2 class="contacto__subtitle">Desarrollador web</h2>
+                        </div>
+
+                    </section>
+
+                    <section class="contacto__form-box">
+
+                        <div class="contacto__map" id="load-iframe-map">
+
+                            <span class="loader"></span>
+                            <!-- <iframe class="contacto__iframe" frameborder="0" scrolling="no" marginheihgt="0" marginwidth="0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3185.5275697864877!2d-3.6277887881727002!3d37.02106545510163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd71f106e9ef7529%3A0x61ad60dd9df8aebd!2sC.%20Isaac%20Alb%C3%A9niz%2C%206%2C%2018640%20Padul%2C%20Granada!5e0!3m2!1ses!2ses!4v1691583215398!5m2!1ses!2ses"  ></iframe>-->
+
+                        </div>
+
+                        <header class="contacto__form-header">
+                            <h3 class="form-header__title">¿Cómo puedo <span class="title__color">ayudarte?</span></h3>
+                        </header>
+
+                        <div class="contact-quick">
+
+                            <a href="mailto:ananunezrejon@gmail.com" class="contact-btn">
+                                <i class="fa-solid fa-envelope"></i>
+                                Enviar email
+                            </a>
+
+                            <a href="https://wa.me/34678617201" target="_blank" class="contact-btn">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                WhatsApp
+                            </a>
+
+                            <a href="https://www.linkedin.com/in/ananunezrejon" target="_blank" class="contact-btn">
+                                <i class="fa-brands fa-linkedin"></i>
+                                LinkedIn
+                            </a>
+
+                        </div>
+
+
+                    </section>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+<script src="assets/js/map.js"></script>
+
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="stylesheet" href="../assets/fonts/fontawesome-free-6.1.2-web/css/all.min.css" />
+  <link rel="stylesheet" href="../assets/fonts/poppins/poppins.css" />
+  <link rel="stylesheet" href="../assets/css/reset.css" />
+  <link rel="stylesheet" href="../assets/css/scroll.css" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="stylesheet" href="../assets/css/responsive.css" />
+
+  <script src="../assets/js/menu.js" defer></script>
+
+  <title>iMirly Android | Portfolio Ana Núñez</title>
+
+  <link rel="manifest" href="manifest.json">
+
+<link rel="icon" href="assets/icons/icon-192.png">
+<meta name="theme-color" content="#b07a8c">
+</head>
+
+<body>
+
+  <!-- Layout -->
+  <div class="layout">
+
+    <!-- Barra lateral (info del usuario) -->
+    <aside class="layout__aside">
+      <section class="aside__user-info">
+
+        <!-- Información general -->
+        <div class="user-info__general">
+          <div class="user-info__container-imagen">
+            <img src="../assets/img/AnaNunez.jpg" class="user-info__imagen" alt="foto perfil Ana Nuñez">
+          </div>
+
+                    <h2 class="user-info__name">Ana Nuñez</h2>
+                    <h2 class="user-info__job">Diseñadora gráfica <br> Estudiante de DAM y DAW</h2>
+        </div>
+
+        <!-- Menú de navegación -->
+        <nav class="layout__menu">
+          <ul class="menu__list">
+
+            <li class="menu__option">
+              <a href="../index.html" class="menu__link">
+                <i class="menu__icon fa-solid fa-house"></i>
+                <span class="menu__overlay">Home</span>
+              </a>
+            </li>
+
+            <li class="menu__option">
+              <a href="../sobremi.html" class="menu__link">
+                <i class="menu__icon fa-solid fa-user"></i>
+                <span class="menu__overlay">Sobre mi</span>
+              </a>
+            </li>
+
+            <li class="menu__option">
+              <a href="../curriculum.html" class="menu__link">
+                <i class="menu__icon fa-solid fa-graduation-cap"></i>
+                <span class="menu__overlay">Curriculum</span>
+              </a>
+            </li>
+
+            <li class="menu__option">
+              <a href="../portafolio.html" class="menu__link menu__link--active">
+                <i class="menu__icon fa-solid fa-briefcase"></i>
+                <span class="menu__overlay">Portafolio</span>
+              </a>
+            </li>
+
+            <li class="menu__option">
+              <a href="../blog.html" class="menu__link">
+                <i class="menu__icon fa-solid fa-book"></i>
+                <span class="menu__overlay">Blog</span>
+              </a>
+            </li>
+
+            <li class="menu__option">
+              <a href="../contacto.html" class="menu__link">
+                <i class="menu__icon fa-solid fa-envelope"></i>
+                <span class="menu__overlay">Contacto</span>
+              </a>
+            </li>
+
+          </ul>
+        </nav>
+
+        <!-- Redes -->
+        <div class="user-info__links">
+          <ul class="links__social">
+            <li class="social__option">
+              <a href="https://github.com/AnaNunezRejon" target="_blank" class="social__link">
+                <i class="social__icon fa-brands fa-github"></i>
+              </a>
+            </li>
+            <li class="social__option">
+              <a href="https://www.linkedin.com/in/ananunezrejon" target="_blank" class="social__link">
+                <i class="social__icon fa-brands fa-linkedin"></i>
+              </a>
+            </li>
+            <li class="social__option">
+              <a href="https://www.behance.net/ananunezrejon" target="_blank" class="social__link">
+                <i class="social__icon fa-brands fa-behance"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Botón CV -->
+        <div class="user-info__buttons">
+          <a href="../assets/cv/Curriculum_Ana_Nunez_2026.pdf" download class="user-info__btn">
+            Descargar CV
+          </a>
+        </div>
+
+        <!-- Pie de página -->
+        <footer class="user-info__footer">
+          &copy; 2026 Ana Nuñez web
+        </footer>
+
+      </section>
+    </aside>
+
+    <!-- Menú responsive -->
+    <div class="layout__menu-toggle">
+      <i class="menu-toggle__icon fa-solid fa-bars"></i>
+      <i class="menu-toggle__icon fa-solid fa-xmark"></i>
+    </div>
+
+    <!-- Contenido principal -->
+    <main class="layout__content">
+
+<section class="content__page content__portafolio">
+
+    <header class="portafolio__header">
+        <h1 class="portafolio__title">iMirly · Android App</h1>
+        <p>
+            Aplicación Android desarrollada en Android Studio que conecta usuarios con profesionales locales.
+            Incluye autenticación, navegación por categorías, publicación de servicios y arquitectura MVVM.
+        </p>
+    </header>
+
+    <!-- IMAGEN PRINCIPAL -->
+    <section style="margin-bottom:40px;">
+        <img src="../assets/img/imirly-android.jpg" alt="iMirly Android"
+             style="width:100%; border-radius:20px; box-shadow:0 20px 40px rgba(0,0,0,.15);">
+    </section>
+
+    <!-- PRESENTACIÓN -->
+    <section style="margin-bottom:40px;">
+        <h2>Presentación del proyecto</h2>
+
+        <iframe
+            src="../assets/pdf/imirly-android.pdf"
+            width="100%"
+            height="600"
+            style="border-radius:16px; border:1px solid #eee;">
+        </iframe>
+    </section>
+
+    <!-- FIGMA -->
+    <section style="margin-bottom:40px;">
+        <h2>Prototipo interactivo</h2>
+
+        <iframe
+            style="border:1px solid #eee; border-radius:16px;"
+            width="100%"
+            height="600"
+            src="https://www.figma.com/embed?embed_host=share&url=PEGAR_URL_FIGMA"
+            allowfullscreen>
+        </iframe>
+    </section>
+
+    <!-- GITHUB -->
+    <section style="margin-bottom:40px;">
+        <h2>Repositorio del proyecto</h2>
+
+        <div style="padding:20px;border-radius:16px;border:1px solid #eee;display:flex;justify-content:space-between;align-items:center;">
+            <div>
+                <strong>imirly-android</strong><br>
+                Código fuente completo de la aplicación Android en Kotlin
+            </div>
+
+            <a href="PEGAR_URL_GITHUB"
+               target="_blank"
+               style="padding:12px 24px;border-radius:12px;background:#04e0ce;color:white;">
+               Ver en GitHub
+            </a>
+        </div>
+    </section>
+
+</section>
+
+
+    </main>
+
+  </div>
+
+  <!-- Scripts (IMPORTANTE: al estar en /proyectos, llevan ../) -->
+  <script src="../assets/js/gallery.js"></script>
+  <script src="../assets/js/portfolio-filter.js"></script>
+
+</body>
+
+</html>

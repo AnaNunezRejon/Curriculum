@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- maximum-scale es para que cuando aparezca en un movil, no se pueda hacer zoom y no se deforme -->
+
+    <link rel="stylesheet" href="assets/fonts/fontawesome-free-6.1.2-web/css/all.min.css" />
+    <link rel="stylesheet" href="assets/fonts/poppins/poppins.css" />
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/scroll.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+
+    <script src="assets/js/menu.js" defer></script>
+
+    <title>Portfolio - Ana Núñez</title>
+
+    <link rel="manifest" href="manifest.json">
+
+<link rel="icon" href="assets/icons/icon-192.png">
+<meta name="theme-color" content="#b07a8c">
+
+    <style>
+        .menu__overlay {
+            position: absolute;
+            z-index: 99999 !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Layout -->
+
+    <div class="layout">
+
+        <!-- Barra lateral (info del usuario)-->
+
+        <aside class="layout__aside">
+            <section class="aside__user-info">
+
+                <!-- Información general -->
+
+                <div class="user-info__general">
+                    <div class="user-info__container-imagen">
+                        <img src="assets/img/AnaNunez.jpg" class="user-info__imagen" alt="foto perfil Ana Nuñez">
+                    </div>
+
+                    <h2 class="user-info__name">Ana Nuñez</h2>
+                    <h2 class="user-info__job">Diseñadora gráfica <br> Estudiante de DAM y DAW</h2>
+                </div>
+
+                <!-- Menú de navegación -->
+
+                <nav class="layout__menu">
+                    <ul class="menu__list">
+
+                        <li class="menu__option">
+                            <a href="index.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-house"></i>
+                                <span class="menu__overlay">Home</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="sobremi.html" class="menu__link ">
+                                <i class="menu__icon fa-solid fa-user"></i>
+                                <span class="menu__overlay">Sobre mi</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="curriculum.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-graduation-cap"></i>
+                                <span class="menu__overlay">Curriculum</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="portafolio.html" class="menu__link menu__link--active">
+                                <i class="menu__icon fa-solid fa-briefcase"></i>
+                                <span class="menu__overlay">Portafolio</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="cv.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-book"></i>
+                                <span class="menu__overlay">Curriculum Interactivo</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="contacto.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-envelope"></i>
+                                <span class="menu__overlay">Contacto</span>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+                <!-- Link redes sociales -->
+
+                <div class="user-info__links">
+
+                    <ul class="links__social">
+                        <li class="social__option">
+                            <a href="https://github.com/AnaNunezRejon" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-github"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://www.linkedin.com/in/ananunezrejon" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://www.behance.net/ananunezrejon" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-behance"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- Botón curriculum -->
+                <div class="user-info__buttons">
+                    <a href="assets/cv/Curriculum_AnaNunezRejon2026.pdf" download class="user-info__btn">
+                        Descargar CV
+                    </a>
+                </div>
+
+                <!-- Pié e página -->
+
+                <footer class="user-info__footer">
+                    &copy; 2026 Ana Nuñez
+                </footer>
+            </section>
+
+        </aside>
+
+        <!-- Menu rsponsive -->
+
+        <div class="layout__menu-toggle">
+            <i class="menu-toggle__icon fa-solid fa-bars"></i>
+            <i class="menu-toggle__icon fa-solid fa-xmark"></i>
+        </div>
+
+        <!-- Contenido principal -->
+
+        <!-- Contenido principal -->
+        <main class="layout__content">
+
+            <section class="content__page content__portafolio">
+
+                <header class="portafolio__header">
+                    <h1 class="portafolio__title">Portafolio</h1>
+                </header>
+                <nav class="portafolio__navbar">
+                    <ul class="portafolio__menu">
+
+                        <li class="portafolio__option portafolio__option--active">
+                            <a href="#" class="portafolio__link" data-filter="all">Todos</a>
+                        </li>
+
+                        <li class="portafolio__option">
+                            <a href="#" class="portafolio__link" data-filter="brandbook">Brandbook</a>
+                        </li>
+
+                        <li class="portafolio__option">
+                            <a href="#" class="portafolio__link" data-filter="web">Web</a>
+                        </li>
+
+                        <li class="portafolio__option">
+                            <a href="#" class="portafolio__link" data-filter="android">Android Studio</a>
+                        </li>
+
+                        <li class="portafolio__option">
+                            <a href="#" class="portafolio__link" data-filter="design">Diseño</a>
+                        </li>
+
+                    </ul>
+                </nav>
+
+                <section class="portafolio__gallery">
+
+                    <!-- iMirly ANDROID -->
+                    <figure class="gallery__item" data-category="android">
+                        <div class="gallery__container-image">
+                            <a href="proyectos/imirly-android.html" class="gallery__link">
+                                <img src="assets/img/imirly-android.jpg" class="gallery__image">
+                            </a>
+                        </div>
+                        <figcaption class="gallery__title">iMirly · Android</figcaption>
+                        <i class="gallery__icon fa-solid fa-mobile-screen"></i>
+                        <span class="gallery__category">Android Studio</span>
+                    </figure>
+
+                    <!-- iMirly WEB -->
+                    <figure class="gallery__item" data-category="web">
+                        <div class="gallery__container-image">
+                            <a href="proyectos/imirly-web.html" class="gallery__link">
+                                <img src="assets/img/imirly-web.jpg" class="gallery__image">
+                            </a>
+                        </div>
+                        <figcaption class="gallery__title">iMirly · Web </figcaption>
+                        <!-- https://appimirly.github.io/iMirlyWeb/-->
+                        <i class="gallery__icon fa-solid fa-globe"></i>
+                        <span class="gallery__category">Web</span>
+                    </figure>
+
+                    <!-- NoLoTiro -->
+                    <figure class="gallery__item" data-category="android">
+                        <div class="gallery__container-image">
+                            <a href="proyectos/nolotiro.html" class="gallery__link">
+                                <img src="assets/img/NoLoTiroApp.jpg" class="gallery__image">
+                            </a>
+                        </div>
+                        <figcaption class="gallery__title">NoLoTiro</figcaption>
+                        <i class="gallery__icon fa-solid fa-hand-holding-heart"></i>
+                        <span class="gallery__category">Android Studio</span>
+                    </figure>
+
+                    <!-- Personal Care -->
+                    <figure class="gallery__item" data-category="android">
+                        <div class="gallery__container-image">
+                            <a href="proyectos/personalcare.html" class="gallery__link">
+                                <img src="assets/img/personalcare.jpg" class="gallery__image">
+                            </a>
+                        </div>
+                        <figcaption class="gallery__title">Personal Care</figcaption>
+                        <i class="gallery__icon fa-solid fa-heart"></i>
+                        <span class="gallery__category">Android Studio</span>
+                    </figure>
+
+                    <!-- Mininvent -->
+                    <figure class="gallery__item" data-category="android">
+                        <div class="gallery__container-image">
+                            <a href="proyectos/mininvent.html" class="gallery__link">
+                                <img src="assets/img/mininvent.jpg" class="gallery__image">
+                            </a>
+                        </div>
+                        <figcaption class="gallery__title">Mininvent</figcaption>
+                        <i class="gallery__icon fa-solid fa-box"></i>
+                        <span class="gallery__category">Android Studio</span>
+                    </figure>
+
+                    <!-- Buscador Restaurantes -->
+                    <figure class="gallery__item" data-category="android">
+                        <div class="gallery__container-image">
+                            <a href="proyectos/restaurantes.html" class="gallery__link">
+                                <img src="assets/img/restaurantes.jpg" class="gallery__image">
+                            </a>
+                        </div>
+                        <figcaption class="gallery__title">Buscador de Restaurantes</figcaption>
+                        <i class="gallery__icon fa-solid fa-utensils"></i>
+                        <span class="gallery__category">Web</span>
+                    </figure>
+
+                    <!-- Rebranding SamaVintage -->
+                    <figure class="gallery__item" data-category="brandbook">
+                        <div class="gallery__container-image">
+                            <a href="proyectos/samavintage.html" class="gallery__link">
+                                <img src="assets/img/RebrandingJoyas.jpg" class="gallery__image">
+                            </a>
+                        </div>
+                        <figcaption class="gallery__title">SamaVintage Rebranding</figcaption>
+                        <i class="gallery__icon fa-solid fa-palette"></i>
+                        <span class="gallery__category">Brandbook</span>
+                    </figure>
+
+                    <!-- CV interactivo -->
+                    <figure class="gallery__item" data-category="web">
+                        <div class="gallery__container-image">
+                            <a href="proyectos/cv.html" class="gallery__link">
+                                <img src="assets/img/currriculum.jpg" class="gallery__image">
+                            </a>
+                        </div>
+                        <figcaption class="gallery__title">Currículum Interactivo</figcaption>
+                        <i class="gallery__icon fa-solid fa-id-card"></i>
+                        <span class="gallery__category">Web</span>
+                    </figure>
+
+                </section>
+
+
+            </section>
+
+        </main>
+
+
+    </div>
+
+</body>
+
+<script src="assets/js/portfolio-filter.js"></script>
+
+</html>
