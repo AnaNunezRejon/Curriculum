@@ -240,6 +240,14 @@
         margin-right: 0;
         margin-bottom: 3rem;
     }
+
+    .content__about,
+    .content__resumen,
+    .content__portafolio,
+    .content__blog,
+    .content__contacto{
+        padding: 4rem;
+    }
 }
 
 @media (max-width: 480px){
@@ -256,9 +264,6 @@
     }
     .timeline__header{
         text-align: left;
-    }
-    .timeline__year{
-        inline-size: max-content;
     }
     .timeline__company{
         width: 8rem;
