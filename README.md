@@ -1,3 +1,6 @@
+
+<img width="1866" height="892" alt="image" src="https://github.com/user-attachments/assets/dc1c6044-6b40-479c-8184-814dfca1f45a" />
+
 #  Portfolio Web — Ana Núñez
 
 Portfolio profesional desarrollado en **HTML, CSS y JavaScript**, donde se presentan proyectos de desarrollo y diseño gráfico, incluyendo aplicaciones Android, proyectos web y trabajos de branding.
