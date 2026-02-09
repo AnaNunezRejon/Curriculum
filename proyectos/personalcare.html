@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="../assets/fonts/fontawesome-free-6.1.2-web/css/all.min.css" />
+    <link rel="stylesheet" href="../assets/fonts/poppins/poppins.css" />
+    <link rel="stylesheet" href="../assets/css/reset.css" />
+    <link rel="stylesheet" href="../assets/css/scroll.css" />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="stylesheet" href="../assets/css/responsive.css" />
+
+    <script src="../assets/js/menu.js" defer></script>
+
+    <title>Balance App – UX/UI Case Study</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="icon" href="assets/icons/icon-192.png">
+    <meta name="theme-color" content="#8d1bda">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #8d1bda, #a3019b);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .mockup-shadow {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15),
+                0 0 0 1px rgba(0, 0, 0, 0.05);
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .carousel-container {
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+        }
+
+        .carousel-item {
+            scroll-snap-align: center;
+        }
+
+        .flow-line {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: draw 3s ease-out forwards;
+        }
+
+        @keyframes draw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+        }
+
+        .primary-color {
+            color: #8b34bd;
+        }
+
+        .secondary-color {
+            color: #e42ecc;
+        }
+
+        .dark-color {
+            color: #0F172A;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Layout -->
+    <div class="layout">
+
+        <!-- Barra lateral (info del usuario) -->
+        <aside class="layout__aside">
+            <section class="aside__user-info">
+
+                <!-- Información general -->
+                <div class="user-info__general">
+                    <div class="user-info__container-imagen">
+                        <img src="../assets/img/AnaNunez.jpg" class="user-info__imagen" alt="foto perfil Ana Nuñez">
+                    </div>
+
+                    <h2 class="user-info__name">Ana Nuñez</h2>
+                    <h2 class="user-info__job">Diseñadora gráfica <br> Estudiante de DAM y DAW</h2>
+                </div>
+
+                <!-- Menú de navegación -->
+                <nav class="layout__menu">
+                    <ul class="menu__list">
+
+                        <li class="menu__option">
+                            <a href="../index.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-house"></i>
+                                <span class="menu__overlay">Home</span>
+                            </a>
+                        </li>
+
+                        <li class="menu__option">
+                            <a href="../sobremi.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-user"></i>
+                                <span class="menu__overlay">Sobre mi</span>
+                            </a>
+                        </li>
+
+                        <li class="menu__option">
+                            <a href="../curriculum.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-graduation-cap"></i>
+                                <span class="menu__overlay">Curriculum</span>
+                            </a>
+                        </li>
+
+                        <li class="menu__option">
+                            <a href="../portafolio.html" class="menu__link menu__link--active">
+                                <i class="menu__icon fa-solid fa-briefcase"></i>
+                                <span class="menu__overlay">Portafolio</span>
+                            </a>
+                        </li>
+
+                        <li class="menu__option">
+                            <a href="../cv.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-book"></i>
+                                <span class="menu__overlay">Curriculum Interactivo</span>
+                            </a>
+                        </li>
+
+                        <li class="menu__option">
+                            <a href="../contacto.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-envelope"></i>
+                                <span class="menu__overlay">Contacto</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+
+                <!-- Redes -->
+                <div class="user-info__links">
+                    <ul class="links__social">
+                        <li class="social__option">
+                            <a href="https://github.com/AnaNunezRejon" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-github"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://www.linkedin.com/in/ananunezrejon" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://www.behance.net/ananunezrejon" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-behance"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Botón CV -->
+                <div class="user-info__buttons">
+                    <a href="../assets/cv/Curriculum_Ana_Nunez_2026.pdf" download class="user-info__btn">
+                        Descargar CV
+                    </a>
+                </div>
+
+                <!-- Pie de página -->
+                <footer class="user-info__footer">
+                    &copy; 2026 Ana Nuñez web
+                </footer>
+
+            </section>
+        </aside>
+
+        <!-- Menú responsive -->
+        <div class="layout__menu-toggle">
+            <i class="menu-toggle__icon fa-solid fa-bars"></i>
+            <i class="menu-toggle__icon fa-solid fa-xmark"></i>
+        </div>
+
+        <!-- Contenido principal -->
+        <main class="layout__content">
+
+            <section class="content__page content__portafolio">
+
+                <header class="portafolio__header">
+                    <h1 class="portafolio__title">Balance · App de Cuidado Personal</h1>
+                    <p>
+                        Balance es una aplicación integral de seguimiento personal que ayuda a los usuarios a registrar y visualizar su progreso a nivel físico y organizativo, promoviendo hábitos saludables sin presión ni obsesión.
+                    </p>
+                </header>
+
+                <!-- IMAGEN PRINCIPAL -->
+                <section style="margin-bottom:40px;">
+                    <img src="../assets/img/personalcare.jpg" alt="Balance App Mockup"
+                        style="width:100%; border-radius:20px; box-shadow:0 20px 40px rgba(0,0,0,.15);">
+                </section>
+
+                <!-- PRESENTACIÓN -->
+                <section style="margin-bottom:40px;">
+                    <section class="bg-gradient-to-b from-purple-50 to-white text-slate-900 antialiased">
+
+                        <!-- Navigation -->
+                        <nav class="sticky top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-slate-200/50">
+                            <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+                                <div class="font-bold text-xl tracking-tight primary-color">Balance<span
+                                        class="secondary-color">App</span></div>
+                                <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                                    <a href="#overview" class="hover:text-purple-600 transition">Overview</a>
+                                    <a href="#research" class="hover:text-purple-600 transition">Research</a>
+                                    <a href="#design" class="hover:text-purple-600 transition">Design</a>
+                                    <a href="#features" class="hover:text-purple-600 transition">Features</a>
+                                    <a href="#prototype" class="hover:text-purple-600 transition">Prototype</a>
+                                </div>
+                                <button class="md:hidden"
+                                    onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                                    <i data-lucide="menu" class="w-6 h-6"></i>
+                                </button>
+                            </div>
+                            <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 p-4">
+                                <a href="#overview" class="block py-2 text-slate-600">Overview</a>
+                                <a href="#research" class="block py-2 text-slate-600">Research</a>
+                                <a href="#design" class="block py-2 text-slate-600">Design</a>
+                                <a href="#features" class="block py-2 text-slate-600">Features</a>
+                                <a href="#prototype" class="block py-2 text-slate-600">Prototype</a>
+                            </div>
+                        </nav>
+
+                        <!-- Hero Section -->
+                        <section
+                            class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-gradient-to-br from-purple-50 via-pink-50/30 to-white">
+                            <div class="absolute inset-0 opacity-30">
+                                <div
+                                    class="absolute top-20 left-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl animate-pulse">
+                                </div>
+                                <div
+                                    class="absolute bottom-20 right-10 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-1000">
+                                </div>
+                            </div>
+
+                            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
+                                <div class="space-y-8 scroll-reveal">
+                                    <div
+                                        class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-slate-200 text-sm font-medium text-slate-600 shadow-sm">
+                                        <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                                        UX/UI Case Study 2026 • App de Bienestar
+                                    </div>
+                                    <h1 class="text-5xl md:text-7xl font-bold leading-tight tracking-tight">
+                                        Tu compañero de <span class="gradient-text italic font-serif">bienestar</span>
+                                    </h1>
+                                    <p class="text-xl text-slate-600 leading-relaxed max-w-lg">
+                                        Una aplicación integral que te ayuda a mantener el equilibrio entre ejercicio, nutrición y hábitos. Registra tu progreso, visualiza tu evolución y construye una rutina saludable de forma sostenible.
+                                    </p>
+                                    <div class="flex flex-wrap gap-4">
+                                        <button onclick="openPrototype()"
+                                            class="px-8 py-4 bg-slate-900 text-white rounded-full font-semibold hover:bg-slate-800 transition flex items-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                                            View Prototype
+                                        </button>
+                                        <button
+                                            onclick="document.getElementById('overview').scrollIntoView({behavior: 'smooth'})"
+                                            class="px-8 py-4 bg-white text-slate-900 border border-slate-300 rounded-full font-semibold hover:border-purple-400 transition">
+                                            Ver Case Study
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="relative scroll-reveal">
+                                    <div
+                                        class="relative z-10 transform rotate-[-5deg] hover:rotate-0 transition duration-500">
+                                        <div class="bg-slate-900 rounded-[3rem] p-3 mockup-shadow max-w-sm mx-auto">
+                                            <div
+                                                class="bg-white rounded-[2.5rem] overflow-hidden aspect-[9/19] relative">
+                                                <!-- Mockup de la app Balance -->
+                                                <div class="absolute inset-0 bg-gradient-to-b from-purple-50 to-white">
+                                                    <div class="p-6 pt-12">
+                                                        <!-- Header -->
+                                                        <div class="flex justify-between items-center mb-6">
+                                                            <div class="flex items-center gap-2">
+                                                                <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                                                                    <i data-lucide="heart" class="w-4 h-4 text-white"></i>
+                                                                </div>
+                                                                <span class="font-bold text-purple-700">Balance</span>
+                                                            </div>
+                                                            <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center">
+                                                                <i data-lucide="user" class="w-4 h-4 text-purple-600"></i>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <!-- Fecha -->
+                                                        <p class="text-sm text-slate-500 mb-2">lunes, 9 de febrero</p>
+                                                        <h2 class="text-2xl font-bold mb-6">Buenos días, Ana</h2>
+                                                        
+                                                        <!-- Stats -->
+                                                        <div class="grid grid-cols-3 gap-3 mb-6">
+                                                            <div class="bg-white rounded-2xl p-3 text-center shadow-sm">
+                                                                <div class="text-2xl font-bold text-purple-600">0</div>
+                                                                <div class="text-xs text-slate-500">Entrenamientos</div>
+                                                            </div>
+                                                            <div class="bg-white rounded-2xl p-3 text-center shadow-sm">
+                                                                <div class="text-2xl font-bold text-pink-600">0</div>
+                                                                <div class="text-xs text-slate-500">Calorías</div>
+                                                            </div>
+                                                            <div class="bg-white rounded-2xl p-3 text-center shadow-sm">
+                                                                <div class="text-2xl font-bold text-green-600">0</div>
+                                                                <div class="text-xs text-slate-500">Completadas</div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <!-- CTA -->
+                                                        <div class="bg-gradient-to-r from-purple-100 to-pink-100 rounded-2xl p-4 mb-4">
+                                                            <p class="text-sm font-medium text-purple-800 mb-2">Comienza tu día</p>
+                                                            <p class="text-xs text-purple-600">Registra tu primera actividad y empieza a construir tu rutina</p>
+                                                        </div>
+                                                        
+                                                        <!-- Botones -->
+                                                        <div class="space-y-2">
+                                                            <button class="w-full py-3 bg-purple-600 text-white rounded-xl text-sm font-medium">
+                                                                Añadir entrenamiento
+                                                            </button>
+                                                            <button class="w-full py-3 bg-white border border-purple-200 text-purple-700 rounded-xl text-sm font-medium">
+                                                                Registrar comida
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="absolute -bottom-10 -right-10 w-40 h-40 bg-purple-200 rounded-full filter blur-3xl opacity-60">
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Project Overview -->
+                        <section id="overview" class="py-24 bg-white">
+                            <div class="max-w-7xl mx-auto px-6">
+                                <div class="grid md:grid-cols-3 gap-8 mb-16">
+                                    <div class="md:col-span-1 scroll-reveal">
+                                        <h2 class="text-sm font-bold text-purple-600 uppercase tracking-wider mb-2">01.
+                                            Project Overview</h2>
+                                        <h3 class="text-4xl font-bold leading-tight">Redefiniendo el autocuidado</h3>
+                                    </div>
+                                    <div class="md:col-span-2 scroll-reveal">
+                                        <p class="text-lg text-slate-600 leading-relaxed">
+                                            En un mundo donde el bienestar personal se ha convertido en una prioridad, identificamos una brecha entre la intención de llevar un estilo de vida saludable y la consistencia en su seguimiento. Las aplicaciones existentes suelen ser demasiado complejas o enfocadas únicamente en métricas, generando presión en lugar de motivación.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="grid md:grid-cols-3 gap-8">
+                                    <div
+                                        class="bg-purple-50 rounded-3xl p-8 border border-purple-100 hover-lift scroll-reveal">
+                                        <div
+                                            class="w-12 h-12 bg-red-100 rounded-2xl flex items-center justify-center mb-6">
+                                            <i data-lucide="alert-circle" class="w-6 h-6 text-red-600"></i>
+                                        </div>
+                                        <h4 class="text-xl font-bold mb-3">El Problema</h4>
+                                        <p class="text-slate-600 leading-relaxed">
+                                            Los usuarios abandonan sus rutinas de bienestar por falta de seguimiento visual, motivación constante y herramientas que integren todos los aspectos del autocuidado en un solo lugar.
+                                        </p>
+                                    </div>
+
+                                    <div class="bg-purple-50 rounded-3xl p-8 border border-purple-100 hover-lift scroll-reveal"
+                                        style="transition-delay: 100ms;">
+                                        <div
+                                            class="w-12 h-12 bg-green-100 rounded-2xl flex items-center justify-center mb-6">
+                                            <i data-lucide="target" class="w-6 h-6 text-green-600"></i>
+                                        </div>
+                                        <h4 class="text-xl font-bold mb-3">Objetivos</h4>
+                                        <ul class="space-y-2 text-slate-600">
+                                            <li class="flex items-start gap-2">
+                                                <i data-lucide="check"
+                                                    class="w-5 h-5 text-purple-600 mt-0.5 shrink-0"></i>
+                                                <span>Crear una experiencia de usuario calmada y no culpabilizante</span>
+                                            </li>
+                                            <li class="flex items-start gap-2">
+                                                <i data-lucide="check"
+                                                    class="w-5 h-5 text-purple-600 mt-0.5 shrink-0"></i>
+                                                <span>Integrar seguimiento físico, nutricional y de hábitos</span>
+                                            </li>
+                                            <li class="flex items-start gap-2">
+                                                <i data-lucide="check"
+                                                    class="w-5 h-5 text-purple-600 mt-0.5 shrink-0"></i>
+                                                <span>Aumentar la consistencia en rutinas de autocuidado</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="bg-purple-50 rounded-3xl p-8 border border-purple-100 hover-lift scroll-reveal"
+                                        style="transition-delay: 200ms;">
+                                        <div
+                                            class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+                                            <i data-lucide="users" class="w-6 h-6 text-blue-600"></i>
+                                        </div>
+                                        <h4 class="text-xl font-bold mb-3">Público Objetivo</h4>
+                                        <div class="space-y-3">
+                                            <div class="flex items-center gap-3">
+                                                <div class="w-10 h-10 rounded-full bg-gradient-to-r from-purple-200 to-pink-200"></div>
+                                                <div>
+                                                    <div class="font-semibold text-sm">Personas conscientes</div>
+                                                    <div class="text-xs text-slate-500">25-45 años, busca equilibrio</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center gap-3">
+                                                <div class="w-10 h-10 rounded-full bg-gradient-to-r from-blue-200 to-purple-200"></div>
+                                                <div>
+                                                    <div class="font-semibold text-sm">Principiantes en bienestar</div>
+                                                    <div class="text-xs text-slate-500">Sin experiencia previa</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- User Research -->
+                        <section id="research" class="py-24 bg-purple-50">
+                            <div class="max-w-7xl mx-auto px-6">
+                                <div class="text-center max-w-3xl mx-auto mb-16 scroll-reveal">
+                                    <h2 class="text-sm font-bold text-purple-600 uppercase tracking-wider mb-2">02. User
+                                        Research</h2>
+                                    <h3 class="text-4xl font-bold mb-6">Entendiendo las necesidades reales</h3>
+                                    <p class="text-lg text-slate-600">Realizamos entrevistas y encuestas a personas que buscan mejorar sus hábitos de autocuidado pero encuentran obstáculos en el camino.</p>
+                                </div>
+
+                                <div class="grid md:grid-cols-2 gap-12 mb-16">
+                                    <div class="scroll-reveal">
+                                        <h4 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                                            <span
+                                                class="w-10 h-10 bg-purple-600 text-white rounded-full flex items-center justify-center text-sm">1</span>
+                                            Pain Points Principales
+                                        </h4>
+                                        <div class="space-y-4">
+                                            <div class="bg-white p-6 rounded-2xl border-l-4 border-purple-400 shadow-sm">
+                                                <h5 class="font-bold mb-1">Aplicaciones fragmentadas</h5>
+                                                <p class="text-slate-600 text-sm">Usan 3-4 apps diferentes para ejercicio, comida y hábitos</p>
+                                            </div>
+                                            <div
+                                                class="bg-white p-6 rounded-2xl border-l-4 border-pink-400 shadow-sm">
+                                                <h5 class="font-bold mb-1">Sensación de fracaso</h5>
+                                                <p class="text-slate-600 text-sm">Alertas y recordatorios que generan ansiedad en lugar de motivación</p>
+                                            </div>
+                                            <div
+                                                class="bg-white p-6 rounded-2xl border-l-4 border-blue-400 shadow-sm">
+                                                <h5 class="font-bold mb-1">Falta de progreso visual</h5>
+                                                <p class="text-slate-600 text-sm">No ven su evolución a largo plazo, solo datos aislados</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="scroll-reveal">
+                                        <h4 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                                            <span
+                                                class="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center text-sm">2</span>
+                                            Insights Clave
+                                        </h4>
+                                        <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-100">
+                                            <div class="grid grid-cols-2 gap-6 mb-6">
+                                                <div class="text-center">
+                                                    <div class="text-4xl font-bold text-purple-600 mb-1">78%</div>
+                                                    <div class="text-sm text-slate-600">Abandonan en 3 meses</div>
+                                                </div>
+                                                <div class="text-center">
+                                                    <div class="text-4xl font-bold text-purple-600 mb-1">92%</div>
+                                                    <div class="text-sm text-slate-600">Prefieren progreso visual</div>
+                                                </div>
+                                            </div>
+                                            <blockquote
+                                                class="border-l-4 border-purple-300 pl-4 italic text-slate-700 mb-4">
+                                                "No quiero sentir que estoy fallando si me salto un día. Quiero una app que me anime, no que me regañe."
+                                            </blockquote>
+                                            <div class="text-sm text-slate-500">— Usuario entrevistado, 32 años</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- User Personas -->
+                                <div class="grid md:grid-cols-2 gap-8">
+                                    <div
+                                        class="bg-white rounded-3xl p-8 shadow-sm border border-slate-100 scroll-reveal hover-lift">
+                                        <div class="flex items-start gap-4 mb-6">
+                                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop"
+                                                alt="Laura" class="w-20 h-20 rounded-2xl object-cover">
+                                            <div>
+                                                <h4 class="text-xl font-bold">Laura Martínez</h4>
+                                                <p class="text-purple-600 font-medium">Profesional equilibrada</p>
+                                                <p class="text-sm text-slate-500">28 años • Diseñadora UX • Madrid</p>
+                                            </div>
+                                        </div>
+                                        <div class="space-y-3 text-sm">
+                                            <div>
+                                                <span class="font-semibold text-slate-900">Motivaciones:</span>
+                                                <span class="text-slate-600">Encontrar equilibrio vida-trabajo, reducir estrés, mantener energía constante</span>
+                                            </div>
+                                            <div>
+                                                <span class="font-semibold text-slate-900">Frustraciones:</span>
+                                                <span class="text-slate-600">Apps demasiado exigentes, interfaz caótica, falta de integración</span>
+                                            </div>
+                                            <div class="flex gap-2 mt-4">
+                                                <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs">Visual</span>
+                                                <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs">Organizada</span>
+                                                <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs">Consistente</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-100 scroll-reveal hover-lift"
+                                        style="transition-delay: 100ms;">
+                                        <div class="flex items-start gap-4 mb-6">
+                                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop"
+                                                alt="Carlos" class="w-20 h-20 rounded-2xl object-cover">
+                                            <div>
+                                                <h4 class="text-xl font-bold">Carlos Rodríguez</h4>
+                                                <p class="text-blue-600 font-medium">Principiante motivado</p>
+                                                <p class="text-sm text-slate-500">35 años • Desarrollador • Barcelona</p>
+                                            </div>
+                                        </div>
+                                        <div class="space-y-3 text-sm">
+                                            <div>
+                                                <span class="font-semibold text-slate-900">Motivaciones:</span>
+                                                <span class="text-slate-600">Empezar hábitos saludables, entender nutrición, progreso medible</span>
+                                            </div>
+                                            <div>
+                                                <span class="font-semibold text-slate-900">Frustraciones:</span>
+                                                <span class="text-slate-600">Información abrumadora, jerga técnica, falta de guía inicial</span>
+                                            </div>
+                                            <div class="flex gap-2 mt-4">
+                                                <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs">Aprendiz</span>
+                                                <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs">Metódico</span>
+                                                <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs">Persistente</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- App Features -->
+                        <section id="features" class="py-24 bg-white overflow-hidden">
+                            <div class="max-w-7xl mx-auto px-6">
+                                <div class="text-center max-w-3xl mx-auto mb-16 scroll-reveal">
+                                    <h2 class="text-sm font-bold text-purple-600 uppercase tracking-wider mb-2">03. Features
+                                        Principales</h2>
+                                    <h3 class="text-4xl font-bold mb-6">Funcionalidades clave</h3>
+                                    <p class="text-lg text-slate-600">Una experiencia completa que cubre todos los aspectos del autocuidado personal.</p>
+                                </div>
+
+                                <div class="relative">
+                                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                                        <div class="relative scroll-reveal">
+                                            <div
+                                                class="bg-white rounded-2xl p-6 shadow-lg border border-slate-100 relative z-10 hover-lift">
+                                                <div
+                                                    class="w-12 h-12 bg-gradient-to-r from-purple-100 to-pink-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                                                    <i data-lucide="activity" class="w-6 h-6 text-purple-600"></i>
+                                                </div>
+                                                <h4 class="font-bold text-center mb-2">Rutina Deportiva</h4>
+                                                <p class="text-sm text-slate-600 text-center">Entrenamientos personalizados, seguimiento de progreso, variedad de intensidades</p>
+                                                <div class="mt-4 flex justify-center">
+                                                    <span class="px-3 py-1 bg-purple-50 text-purple-700 text-xs rounded-full">Fuerza • Cardio • Flexibilidad</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="relative scroll-reveal" style="transition-delay: 100ms;">
+                                            <div
+                                                class="bg-white rounded-2xl p-6 shadow-lg border border-slate-100 relative z-10 hover-lift">
+                                                <div
+                                                    class="w-12 h-12 bg-gradient-to-r from-green-100 to-emerald-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                                                    <i data-lucide="apple" class="w-6 h-6 text-green-600"></i>
+                                                </div>
+                                                <h4 class="font-bold text-center mb-2">Alimentación</h4>
+                                                <p class="text-sm text-slate-600 text-center">Registro de comidas, tracking de macronutrientes, resumen diario de calorías</p>
+                                                <div class="mt-4 flex justify-center">
+                                                    <span class="px-3 py-1 bg-green-50 text-green-700 text-xs rounded-full">Proteínas • Carbs • Grasas</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="relative scroll-reveal" style="transition-delay: 200ms;">
+                                            <div
+                                                class="bg-white rounded-2xl p-6 shadow-lg border border-slate-100 relative z-10 hover-lift">
+                                                <div
+                                                    class="w-12 h-12 bg-gradient-to-r from-blue-100 to-cyan-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                                                    <i data-lucide="check-square" class="w-6 h-6 text-blue-600"></i>
+                                                </div>
+                                                <h4 class="font-bold text-center mb-2">Hábitos & Tareas</h4>
+                                                <p class="text-sm text-slate-600 text-center">Lista de tareas recurrentes, seguimiento de hábitos, recordatorios suaves</p>
+                                                <div class="mt-4 flex justify-center">
+                                                    <span class="px-3 py-1 bg-blue-50 text-blue-700 text-xs rounded-full">Recurrentes • Diarias • Semanales</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="relative scroll-reveal" style="transition-delay: 300ms;">
+                                            <div
+                                                class="bg-white rounded-2xl p-6 shadow-lg border border-slate-100 relative z-10 hover-lift">
+                                                <div
+                                                    class="w-12 h-12 bg-gradient-to-r from-orange-100 to-yellow-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                                                    <i data-lucide="bar-chart-3" class="w-6 h-6 text-orange-600"></i>
+                                                </div>
+                                                <h4 class="font-bold text-center mb-2">Estadísticas</h4>
+                                                <p class="text-sm text-slate-600 text-center">Visualización de progreso, gráficos semanales/mensuales, insights personalizados</p>
+                                                <div class="mt-4 flex justify-center">
+                                                    <span class="px-3 py-1 bg-orange-50 text-orange-700 text-xs rounded-full">Seguimiento • Progreso • Logros</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Wireframes -->
+                        <section class="py-24 bg-slate-900 text-white">
+                            <div class="max-w-7xl mx-auto px-6">
+                                <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                                    <div class="scroll-reveal">
+                                        <h2 class="text-sm font-bold text-purple-400 uppercase tracking-wider mb-2">04.
+                                            Arquitectura de Información</h2>
+                                        <h3 class="text-4xl font-bold mb-6">Estructura intuitiva</h3>
+                                        <p class="text-lg text-slate-300 mb-6">Diseñamos una navegación clara y accesible que permite al usuario moverse entre las diferentes secciones de forma natural, sin perderse en funciones complejas.</p>
+                                        <ul class="space-y-3 text-slate-300">
+                                            <li class="flex items-center gap-3">
+                                                <i data-lucide="check-circle" class="w-5 h-5 text-purple-400"></i>
+                                                <span>Navegación inferior con 6 secciones principales</span>
+                                            </li>
+                                            <li class="flex items-center gap-3">
+                                                <i data-lucide="check-circle" class="w-5 h-5 text-purple-400"></i>
+                                                <span>Dashboard resumen como punto central</span>
+                                            </li>
+                                            <li class="flex items-center gap-3">
+                                                <i data-lucide="check-circle" class="w-5 h-5 text-purple-400"></i>
+                                                <span>Flujos de registro optimizados en 2-3 pasos</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="grid grid-cols-2 gap-6 scroll-reveal">
+                                        <div
+                                            class="rounded-2xl overflow-hidden border border-slate-700 aspect-[9/16] shadow-xl bg-gradient-to-b from-purple-900 to-slate-900 p-4">
+                                            <!-- Wireframe 1: Home -->
+                                            <div class="h-full bg-slate-800 rounded-xl p-3 flex flex-col">
+                                                <div class="flex justify-between mb-4">
+                                                    <div class="w-8 h-8 rounded-full bg-purple-600"></div>
+                                                    <div class="w-8 h-8 rounded-full bg-slate-700"></div>
+                                                </div>
+                                                <div class="mb-6">
+                                                    <div class="h-4 bg-slate-700 rounded w-1/3 mb-2"></div>
+                                                    <div class="h-8 bg-slate-700 rounded w-2/3"></div>
+                                                </div>
+                                                <div class="grid grid-cols-3 gap-2 mb-4">
+                                                    <div class="h-16 bg-slate-700 rounded-lg"></div>
+                                                    <div class="h-16 bg-slate-700 rounded-lg"></div>
+                                                    <div class="h-16 bg-slate-700 rounded-lg"></div>
+                                                </div>
+                                                <div class="h-24 bg-purple-900/50 rounded-xl mb-4"></div>
+                                                <div class="space-y-2 flex-1">
+                                                    <div class="h-10 bg-slate-700 rounded-lg"></div>
+                                                    <div class="h-10 bg-slate-700 rounded-lg"></div>
+                                                </div>
+                                                <div class="mt-4 h-12 bg-slate-700 rounded-xl"></div>
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="rounded-2xl overflow-hidden border border-slate-700 aspect-[9/16] shadow-xl bg-gradient-to-b from-purple-900 to-slate-900 p-4 mt-8">
+                                            <!-- Wireframe 2: Nutrition -->
+                                            <div class="h-full bg-slate-800 rounded-xl p-3 flex flex-col">
+                                                <div class="flex items-center gap-3 mb-4">
+                                                    <div class="w-8 h-8 rounded-full bg-slate-700"></div>
+                                                    <div class="h-4 bg-slate-700 rounded w-1/2"></div>
+                                                </div>
+                                                <div class="h-32 bg-gradient-to-r from-green-900/30 to-emerald-900/30 rounded-xl mb-4"></div>
+                                                <div class="mb-4">
+                                                    <div class="h-4 bg-slate-700 rounded w-1/4 mb-2"></div>
+                                                    <div class="grid grid-cols-3 gap-2">
+                                                        <div class="h-8 bg-green-900/50 rounded"></div>
+                                                        <div class="h-8 bg-yellow-900/50 rounded"></div>
+                                                        <div class="h-8 bg-red-900/50 rounded"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="space-y-2 flex-1">
+                                                    <div class="h-12 bg-slate-700 rounded-lg"></div>
+                                                    <div class="h-12 bg-slate-700 rounded-lg"></div>
+                                                    <div class="h-12 bg-slate-700 rounded-lg"></div>
+                                                </div>
+                                                <div class="mt-4 h-10 bg-green-600 rounded-lg"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- UI Design System -->
+                        <section id="design" class="py-24 bg-white">
+                            <div class="max-w-7xl mx-auto px-6">
+                                <div class="text-center max-w-3xl mx-auto mb-16 scroll-reveal">
+                                    <h2 class="text-sm font-bold text-purple-600 uppercase tracking-wider mb-2">05. UI
+                                        Design</h2>
+                                    <h3 class="text-4xl font-bold mb-6">Sistema de diseño</h3>
+                                    <p class="text-lg text-slate-600">Un lenguaje visual calmado que transmite equilibrio, bienestar y claridad, evitando la presión y el exceso de estímulos.</p>
+                                </div>
+
+                                <div class="grid md:grid-cols-3 gap-8 mb-16">
+                                    <!-- Color Palette -->
+                                    <div class="bg-purple-50 rounded-3xl p-8 scroll-reveal">
+                                        <h4 class="font-bold mb-6 flex items-center gap-2">
+                                            <i data-lucide="palette" class="w-5 h-5 text-purple-600"></i>
+                                            Paleta de Colores
+                                        </h4>
+                                        <div class="space-y-4">
+                                            <div class="flex items-center gap-3">
+                                                <div class="w-16 h-16 rounded-2xl" style="background-color: #b00bf1;"></div>
+                                                <div>
+                                                    <div class="font-semibold text-sm">Primary Purple</div>
+                                                    <div class="text-xs text-slate-500 font-mono">#b00bf1</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center gap-3">
+                                                <div class="w-16 h-16 rounded-2xl" style="background-color: #880a62;"></div>
+                                                <div>
+                                                    <div class="font-semibold text-sm">Secondary Coral</div>
+                                                    <div class="text-xs text-slate-500 font-mono">#880a62</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center gap-3">
+                                                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-50 to-white border border-slate-200"></div>
+                                                <div>
+                                                    <div class="font-semibold text-sm">Background</div>
+                                                    <div class="text-xs text-slate-500 font-mono">Gradiente suave</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Typography -->
+                                    <div class="bg-purple-50 rounded-3xl p-8 scroll-reveal"
+                                        style="transition-delay: 100ms;">
+                                        <h4 class="font-bold mb-6 flex items-center gap-2">
+                                            <i data-lucide="type" class="w-5 h-5 text-purple-600"></i>
+                                            Tipografía
+                                        </h4>
+                                        <div class="space-y-4">
+                                            <div>
+                                                <div class="text-3xl font-bold mb-1">Plus Jakarta Sans</div>
+                                                <div class="text-sm text-slate-500">Primary Font • Legible • Moderna</div>
+                                            </div>
+                                            <div class="border-t border-slate-200 pt-4">
+                                                <div class="text-2xl font-serif italic mb-1">Playfair Display</div>
+                                                <div class="text-sm text-slate-500">Accent Font • Elegante • Suave</div>
+                                            </div>
+                                            <div class="text-sm text-slate-600 mt-4 leading-relaxed">
+                                                Combinación que equilibra claridad técnica con calidez humana, perfecta para una app de bienestar.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Components -->
+                                    <div class="bg-purple-50 rounded-3xl p-8 scroll-reveal"
+                                        style="transition-delay: 200ms;">
+                                        <h4 class="font-bold mb-6 flex items-center gap-2">
+                                            <i data-lucide="layout-grid" class="w-5 h-5 text-purple-600"></i>
+                                            Componentes
+                                        </h4>
+                                        <div class="space-y-3">
+                                            <button
+                                                class="w-full py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl font-semibold shadow-lg shadow-purple-500/30">
+                                                Primary Button
+                                            </button>
+                                            <button
+                                                class="w-full py-3 bg-white text-slate-900 border border-purple-200 rounded-xl font-semibold">
+                                                Secondary
+                                            </button>
+                                            <div class="flex gap-2">
+                                                <div
+                                                    class="flex-1 h-12 bg-white rounded-xl border border-slate-200 flex items-center px-4 text-sm text-slate-400">
+                                                    Buscar entrenamiento...
+                                                </div>
+                                            </div>
+                                            <div class="flex gap-2 mt-2">
+                                                <div
+                                                    class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center">
+                                                    <i data-lucide="heart" class="w-4 h-4 text-purple-600"></i>
+                                                </div>
+                                                <div
+                                                    class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center">
+                                                    <i data-lucide="activity" class="w-4 h-4 text-pink-600"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Mockups Gallery -->
+                        <section class="py-24 bg-purple-50">
+                            <div class="max-w-7xl mx-auto px-6">
+                                <div class="text-center max-w-3xl mx-auto mb-16 scroll-reveal">
+                                    <h2 class="text-sm font-bold text-purple-600 uppercase tracking-wider mb-2">06.
+                                        Mockups</h2>
+                                    <h3 class="text-4xl font-bold mb-6">Interfaces finales</h3>
+                                    <p class="text-lg text-slate-600">Pantallas diseñadas con atención al detalle, enfoque en la usabilidad y estética calmada.</p>
+                                </div>
+
+                                <div
+                                    class="carousel-container flex gap-6 overflow-x-auto pb-8 px-4 snap-x snap-mandatory scroll-reveal">
+                                    <!-- Screen 1: Dashboard -->
+                                    <div
+                                        class="carousel-item shrink-0 w-72 bg-white rounded-[2.5rem] p-3 shadow-xl border border-slate-200">
+                                        <div class="bg-gradient-to-b from-purple-50 to-white rounded-[2rem] overflow-hidden aspect-[9/19] relative">
+                                            <div class="absolute inset-0 p-5 pt-10">
+                                                <!-- Header -->
+                                                <div class="flex justify-between items-center mb-6">
+                                                    <div class="flex items-center gap-2">
+                                                        <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                                                            <i data-lucide="heart" class="w-4 h-4 text-white"></i>
+                                                        </div>
+                                                        <span class="font-bold text-purple-700">Balance</span>
+                                                    </div>
+                                                    <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center">
+                                                        <i data-lucide="user" class="w-4 h-4 text-purple-600"></i>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!-- Date & Greeting -->
+                                                <p class="text-sm text-slate-500 mb-1">lunes, 9 de febrero</p>
+                                                <h2 class="text-2xl font-bold mb-6">Buenos días, Ana</h2>
+                                                
+                                                <!-- Stats Cards -->
+                                                <div class="grid grid-cols-3 gap-3 mb-6">
+                                                    <div class="bg-white rounded-2xl p-3 text-center shadow-sm">
+                                                        <div class="text-2xl font-bold text-purple-600">2</div>
+                                                        <div class="text-xs text-slate-500">Entrenamientos</div>
+                                                    </div>
+                                                    <div class="bg-white rounded-2xl p-3 text-center shadow-sm">
+                                                        <div class="text-2xl font-bold text-pink-600">1,240</div>
+                                                        <div class="text-xs text-slate-500">Calorías</div>
+                                                    </div>
+                                                    <div class="bg-white rounded-2xl p-3 text-center shadow-sm">
+                                                        <div class="text-2xl font-bold text-green-600">3</div>
+                                                        <div class="text-xs text-slate-500">Completadas</div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!-- Progress Section -->
+                                                <div class="bg-gradient-to-r from-purple-100 to-pink-100 rounded-2xl p-4 mb-4">
+                                                    <div class="flex items-center justify-between mb-2">
+                                                        <p class="text-sm font-medium text-purple-800">Tu progreso</p>
+                                                        <i data-lucide="trending-up" class="w-4 h-4 text-purple-600"></i>
+                                                    </div>
+                                                    <p class="text-xs text-purple-600">Mantén la constancia y verás resultados increíbles</p>
+                                                </div>
+                                                
+                                                <!-- Quick Actions -->
+                                                <div class="space-y-2">
+                                                    <button class="w-full py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl text-sm font-medium flex items-center justify-center gap-2">
+                                                        <i data-lucide="plus" class="w-4 h-4"></i>
+                                                        Añadir entrenamiento
+                                                    </button>
+                                                    <button class="w-full py-3 bg-white border border-purple-200 text-purple-700 rounded-xl text-sm font-medium flex items-center justify-center gap-2">
+                                                        <i data-lucide="utensils" class="w-4 h-4"></i>
+                                                        Registrar comida
+                                                    </button>
+                                                </div>
+                                                
+                                                <!-- Bottom Nav -->
+                                                <div class="absolute bottom-0 left-0 right-0 p-4 bg-white border-t border-slate-100">
+                                                    <div class="grid grid-cols-5 gap-1">
+                                                        <div class="text-center">
+                                                            <i data-lucide="home" class="w-5 h-5 text-purple-600 mx-auto"></i>
+                                                        </div>
+                                                        <div class="text-center">
+                                                            <i data-lucide="activity" class="w-5 h-5 text-slate-400 mx-auto"></i>
+                                                        </div>
+                                                        <div class="text-center">
+                                                            <i data-lucide="apple" class="w-5 h-5 text-slate-400 mx-auto"></i>
+                                                        </div>
+                                                        <div class="text-center">
+                                                            <i data-lucide="check-square" class="w-5 h-5 text-slate-400 mx-auto"></i>
+                                                        </div>
+                                                        <div class="text-center">
+                                                            <i data-lucide="bar-chart-3" class="w-5 h-5 text-slate-400 mx-auto"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="text-center mt-4 font-medium text-slate-700">Dashboard</div>
+                                    </div>
+
+                                    <!-- Screen 2: Workout -->
+                                    <div
+                                        class="carousel-item shrink-0 w-72 bg-white rounded-[2.5rem] p-3 shadow-xl border border-slate-200">
+                                        <div class="bg-gradient-to-b from-purple-50 to-white rounded-[2rem] overflow-hidden aspect-[9/19] relative">
+                                            <div class="absolute inset-0 p-5 pt-10">
+                                                <!-- Header -->
+                                                <div class="flex items-center gap-3 mb-6">
+                                                    <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center">
+                                                        <i data-lucide="arrow-left" class="w-4 h-4 text-purple-600"></i>
+                                                    </div>
+                                                    <h2 class="text-lg font-bold">Rutina Deportiva</h2>
+                                                </div>
+                                                
+                                                <!-- Workout Stats -->
+                                                <div class="bg-white rounded-2xl p-4 shadow-sm mb-4">
+                                                    <div class="flex items-center justify-between mb-3">
+                                                        <div>
+                                                            <div class="font-bold text-sm">Esta semana</div>
+                                                            <div class="text-xs text-slate-500">3 de 5 entrenamientos</div>
+                                                        </div>
+                                                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                                                            <i data-lucide="trophy" class="w-6 h-6 text-white"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="h-2 bg-slate-100 rounded-full overflow-hidden">
+                                                        <div class="h-full bg-gradient-to-r from-purple-500 to-pink-500" style="width: 60%"></div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!-- Today's Workout -->
+                                                <h3 class="font-bold mb-3 text-sm">Entrenamiento de hoy</h3>
+                                                <div class="bg-white rounded-2xl p-4 shadow-sm mb-4">
+                                                    <div class="flex items-start gap-3 mb-3">
+                                                        <div class="w-12 h-12 bg-gradient-to-r from-purple-100 to-pink-100 rounded-xl flex items-center justify-center">
+                                                            <i data-lucide="dumbbell" class="w-6 h-6 text-purple-600"></i>
+                                                        </div>
+                                                        <div class="flex-1">
+                                                            <div class="flex justify-between items-start">
+                                                                <h4 class="font-bold text-sm">Fuerza superior</h4>
+                                                                <span class="text-xs px-2 py-1 bg-purple-100 text-purple-700 rounded-full">45 min</span>
+                                                            </div>
+                                                            <p class="text-xs text-slate-500 mb-2">Pecho, espalda y hombros</p>
+                                                            <div class="flex gap-1">
+                                                                <span class="px-2 py-1 bg-green-100 text-green-700 text-[10px] rounded">Completado</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!-- Workout List -->
+                                                <h3 class="font-bold mb-3 text-sm">Próximos entrenamientos</h3>
+                                                <div class="space-y-2">
+                                                    <div class="bg-white rounded-xl p-3 shadow-sm flex items-center gap-3">
+                                                        <div class="w-10 h-10 bg-gradient-to-r from-blue-100 to-cyan-100 rounded-lg flex items-center justify-center">
+                                                            <i data-lucide="wind" class="w-4 h-4 text-blue-600"></i>
+                                                        </div>
+                                                        <div class="flex-1">
+                                                            <div class="flex justify-between">
+                                                                <h4 class="font-bold text-sm">Cardio moderado</h4>
+                                                                <span class="text-xs text-slate-500">30 min</span>
+                                                            </div>
+                                                            <p class="text-xs text-slate-500">Mañana • 8:00 AM</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="bg-white rounded-xl p-3 shadow-sm flex items-center gap-3">
+                                                        <div class="w-10 h-10 bg-gradient-to-r from-green-100 to-emerald-100 rounded-lg flex items-center justify-center">
+                                                            <i data-lucide="activity" class="w-4 h-4 text-green-600"></i>
+                                                        </div>
+                                                        <div class="flex-1">
+                                                            <div class="flex justify-between">
+                                                                <h4 class="font-bold text-sm">Yoga & Flexibilidad</h4>
+                                                                <span class="text-xs text-slate-500">40 min</span>
+                                                            </div>
+                                                            <p class="text-xs text-slate-500">Miércoles • 7:30 AM</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!-- Add Button -->
+                                                <button class="absolute bottom-4 right-4 w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full shadow-lg flex items-center justify-center">
+                                                    <i data-lucide="plus" class="w-5 h-5"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="text-center mt-4 font-medium text-slate-700">Entrenamientos</div>
+                                    </div>
+
+                                    <!-- Screen 3: Nutrition -->
+                                    <div
+                                        class="carousel-item shrink-0 w-72 bg-white rounded-[2.5rem] p-3 shadow-xl border border-slate-200">
+                                        <div class="bg-gradient-to-b from-purple-50 to-white rounded-[2rem] overflow-hidden aspect-[9/19] relative">
+                                            <div class="absolute inset-0 p-5 pt-10">
+                                                <!-- Header -->
+                                                <div class="flex items-center gap-3 mb-6">
+                                                    <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center">
+                                                        <i data-lucide="arrow-left" class="w-4 h-4 text-purple-600"></i>
+                                                    </div>
+                                                    <h2 class="text-lg font-bold">Alimentación</h2>
+                                                </div>
+                                                
+                                                <!-- Daily Calories -->
+                                                <div class="bg-white rounded-2xl p-4 shadow-sm mb-6">
+                                                    <div class="text-center mb-3">
+                                                        <div class="text-3xl font-bold text-purple-600">1,240</div>
+                                                        <div class="text-sm text-slate-500">Calorías hoy</div>
+                                                    </div>
+                                                    <div class="h-2 bg-slate-100 rounded-full overflow-hidden">
+                                                        <div class="h-full bg-gradient-to-r from-green-500 to-emerald-500" style="width: 62%"></div>
+                                                    </div>
+                                                    <div class="text-xs text-slate-500 text-center mt-2">62% de 2,000 objetivo</div>
+                                                </div>
+                                                
+                                                <!-- Macronutrients -->
+                                                <h3 class="font-bold mb-3 text-sm">Macronutrientes</h3>
+                                                <div class="grid grid-cols-3 gap-3 mb-6">
+                                                    <div class="bg-white rounded-xl p-3 text-center shadow-sm">
+                                                        <div class="text-lg font-bold text-green-600">45g</div>
+                                                        <div class="text-xs text-slate-500">Proteínas</div>
+                                                        <div class="h-1 bg-green-100 rounded-full mt-1 overflow-hidden">
+                                                            <div class="h-full bg-green-500" style="width: 75%"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="bg-white rounded-xl p-3 text-center shadow-sm">
+                                                        <div class="text-lg font-bold text-yellow-600">120g</div>
+                                                        <div class="text-xs text-slate-500">Carbs</div>
+                                                        <div class="h-1 bg-yellow-100 rounded-full mt-1 overflow-hidden">
+                                                            <div class="h-full bg-yellow-500" style="width: 60%"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="bg-white rounded-xl p-3 text-center shadow-sm">
+                                                        <div class="text-lg font-bold text-red-600">35g</div>
+                                                        <div class="text-xs text-slate-500">Grasas</div>
+                                                        <div class="h-1 bg-red-100 rounded-full mt-1 overflow-hidden">
+                                                            <div class="h-full bg-red-500" style="width: 58%"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!-- Meal List -->
+                                                <h3 class="font-bold mb-3 text-sm">Comidas de hoy</h3>
+                                                <div class="space-y-2">
+                                                    <div class="bg-white rounded-xl p-3 shadow-sm">
+                                                        <div class="flex justify-between items-center mb-1">
+                                                            <h4 class="font-bold text-sm">Desayuno</h4>
+                                                            <span class="text-xs text-green-600">✓ Completado</span>
+                                                        </div>
+                                                        <p class="text-xs text-slate-500">Avena con frutas • 320 cal</p>
+                                                    </div>
+                                                    <div class="bg-white rounded-xl p-3 shadow-sm">
+                                                        <div class="flex justify-between items-center mb-1">
+                                                            <h4 class="font-bold text-sm">Almuerzo</h4>
+                                                            <span class="text-xs text-green-600">✓ Completado</span>
+                                                        </div>
+                                                        <p class="text-xs text-slate-500">Ensalada con pollo • 520 cal</p>
+                                                    </div>
+                                                    <div class="bg-white rounded-xl p-3 shadow-sm">
+                                                        <div class="flex justify-between items-center mb-1">
+                                                            <h4 class="font-bold text-sm">Cena</h4>
+                                                            <span class="text-xs text-slate-500">Pendiente</span>
+                                                        </div>
+                                                        <p class="text-xs text-slate-500">Pescado al horno • ~400 cal</p>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!-- Add Meal Button -->
+                                                <button class="w-full py-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-xl text-sm font-medium mt-4 flex items-center justify-center gap-2">
+                                                    <i data-lucide="plus" class="w-4 h-4"></i>
+                                                    Añadir comida
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="text-center mt-4 font-medium text-slate-700">Nutrición</div>
+                                    </div>
+
+                                    <!-- Screen 4: Statistics -->
+                                    <div
+                                        class="carousel-item shrink-0 w-72 bg-white rounded-[2.5rem] p-3 shadow-xl border border-slate-200">
+                                        <div class="bg-gradient-to-b from-purple-50 to-white rounded-[2rem] overflow-hidden aspect-[9/19] relative">
+                                            <div class="absolute inset-0 p-5 pt-10">
+                                                <!-- Header -->
+                                                <div class="flex items-center gap-3 mb-6">
+                                                    <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center">
+                                                        <i data-lucide="arrow-left" class="w-4 h-4 text-purple-600"></i>
+                                                    </div>
+                                                    <h2 class="text-lg font-bold">Estadísticas</h2>
+                                                </div>
+                                                
+                                                <!-- Time Filters -->
+                                                <div class="flex gap-2 mb-6">
+                                                    <button class="px-4 py-2 bg-purple-600 text-white rounded-full text-xs font-medium">Semana</button>
+                                                    <button class="px-4 py-2 bg-white text-slate-600 border border-slate-200 rounded-full text-xs font-medium">Mes</button>
+                                                    <button class="px-4 py-2 bg-white text-slate-600 border border-slate-200 rounded-full text-xs font-medium">Año</button>
+                                                </div>
+                                                
+                                                <!-- Streak -->
+                                                <div class="bg-white rounded-2xl p-4 shadow-sm mb-6">
+                                                    <div class="flex items-center justify-between mb-3">
+                                                        <div>
+                                                            <div class="font-bold text-sm">Racha actual</div>
+                                                            <div class="text-xs text-slate-500">Días consecutivos</div>
+                                                        </div>
+                                                        <div class="text-3xl font-bold text-purple-600">12</div>
+                                                    </div>
+                                                    <div class="flex gap-1">
+                                                        <div class="w-full h-2 bg-purple-500 rounded-full"></div>
+                                                        <div class="w-full h-2 bg-purple-500 rounded-full"></div>
+                                                        <div class="w-full h-2 bg-purple-500 rounded-full"></div>
+                                                        <div class="w-full h-2 bg-purple-500 rounded-full"></div>
+                                                        <div class="w-full h-2 bg-purple-500 rounded-full"></div>
+                                                        <div class="w-full h-2 bg-purple-500 rounded-full"></div>
+                                                        <div class="w-full h-2 bg-purple-500 rounded-full"></div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!-- Charts Section -->
+                                                <h3 class="font-bold mb-3 text-sm">Progreso semanal</h3>
+                                                <div class="space-y-4">
+                                                    <!-- Workouts Chart -->
+                                                    <div class="bg-white rounded-xl p-3 shadow-sm">
+                                                        <div class="flex justify-between items-center mb-2">
+                                                            <div class="text-xs font-medium">Entrenamientos</div>
+                                                            <div class="text-xs text-green-600">+25%</div>
+                                                        </div>
+                                                        <div class="flex items-end h-8 gap-1">
+                                                            <div class="flex-1 bg-gradient-to-t from-purple-300 to-purple-500 rounded-t-sm" style="height: 60%"></div>
+                                                            <div class="flex-1 bg-gradient-to-t from-purple-300 to-purple-500 rounded-t-sm" style="height: 80%"></div>
+                                                            <div class="flex-1 bg-gradient-to-t from-purple-300 to-purple-500 rounded-t-sm" style="height: 40%"></div>
+                                                            <div class="flex-1 bg-gradient-to-t from-purple-300 to-purple-500 rounded-t-sm" style="height: 100%"></div>
+                                                            <div class="flex-1 bg-gradient-to-t from-purple-300 to-purple-500 rounded-t-sm" style="height: 70%"></div>
+                                                            <div class="flex-1 bg-gradient-to-t from-purple-300 to-purple-500 rounded-t-sm" style="height: 90%"></div>
+                                                            <div class="flex-1 bg-gradient-to-t from-purple-300 to-purple-500 rounded-t-sm" style="height: 50%"></div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <!-- Calories Chart -->
+                                                    <div class="bg-white rounded-xl p-3 shadow-sm">
+                                                        <div class="flex justify-between items-center mb-2">
+                                                            <div class="text-xs font-medium">Consistencia alimentaria</div>
+                                                            <div class="text-xs text-green-600">+18%</div>
+                                                        </div>
+                                                        <div class="h-1 bg-slate-100 rounded-full overflow-hidden">
+                                                            <div class="h-full bg-gradient-to-r from-green-400 to-emerald-600" style="width: 82%"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!-- Achievements -->
+                                                <h3 class="font-bold mb-3 text-sm mt-6">Logros</h3>
+                                                <div class="grid grid-cols-3 gap-2">
+                                                    <div class="bg-gradient-to-br from-purple-100 to-pink-100 rounded-xl p-3 text-center">
+                                                        <i data-lucide="trophy" class="w-6 h-6 text-yellow-600 mx-auto mb-1"></i>
+                                                        <div class="text-xs font-medium">Primera semana</div>
+                                                    </div>
+                                                    <div class="bg-gradient-to-br from-blue-100 to-cyan-100 rounded-xl p-3 text-center">
+                                                        <i data-lucide="flame" class="w-6 h-6 text-orange-600 mx-auto mb-1"></i>
+                                                        <div class="text-xs font-medium">Racha 10 días</div>
+                                                    </div>
+                                                    <div class="bg-gradient-to-br from-green-100 to-emerald-100 rounded-xl p-3 text-center">
+                                                        <i data-lucide="target" class="w-6 h-6 text-green-600 mx-auto mb-1"></i>
+                                                        <div class="text-xs font-medium">Meta semanal</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="text-center mt-4 font-medium text-slate-700">Estadísticas</div>
+                                    </div>
+                                </div>
+
+                                <div class="flex justify-center gap-2 mt-4">
+                                    <div class="w-2 h-2 rounded-full bg-purple-600"></div>
+                                    <div class="w-2 h-2 rounded-full bg-slate-300"></div>
+                                    <div class="w-2 h-2 rounded-full bg-slate-300"></div>
+                                    <div class="w-2 h-2 rounded-full bg-slate-300"></div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Conclusion -->
+                        <section class="py-24 bg-white">
+                            <div class="max-w-7xl mx-auto px-6">
+                                <div class="grid md:grid-cols-2 gap-16 items-center">
+                                    <div class="scroll-reveal">
+                                        <h2 class="text-sm font-bold text-purple-600 uppercase tracking-wider mb-2">07.
+                                            Conclusión</h2>
+                                        <h3 class="text-4xl font-bold mb-6">Resultados y aprendizajes</h3>
+
+                                        <div class="space-y-6">
+                                            <div class="flex gap-4">
+                                                <div
+                                                    class="w-12 h-12 bg-green-100 rounded-2xl flex items-center justify-center shrink-0">
+                                                    <i data-lucide="trending-up" class="w-6 h-6 text-green-600"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="font-bold text-lg mb-1">Resultados Medibles</h4>
+                                                    <p class="text-slate-600">En pruebas de usuario, 85% reportó mayor motivación para mantener rutinas, 90% encontró la interfaz calmada y no presionante.</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex gap-4">
+                                                <div
+                                                    class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center shrink-0">
+                                                    <i data-lucide="lightbulb" class="w-6 h-6 text-blue-600"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="font-bold text-lg mb-1">Aprendizajes Clave</h4>
+                                                    <p class="text-slate-600">El equilibrio entre seguimiento detallado y simplicidad es crucial. Los usuarios valoran más la consistencia que la perfección.</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex gap-4">
+                                                <div
+                                                    class="w-12 h-12 bg-purple-100 rounded-2xl flex items-center justify-center shrink-0">
+                                                    <i data-lucide="rocket" class="w-6 h-6 text-purple-600"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="font-bold text-lg mb-1">Próximos Pasos</h4>
+                                                    <p class="text-slate-600">Integración con wearables, comunidad para compartir logros, y modo desafío para usuarios avanzados.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-purple-50 rounded-3xl p-8 scroll-reveal">
+                                        <h4 class="font-bold mb-6 text-center">Métricas de Diseño</h4>
+                                        <div class="space-y-6">
+                                            <div>
+                                                <div class="flex justify-between mb-2">
+                                                    <span class="text-sm font-medium">Task Completion Rate</span>
+                                                    <span class="text-sm font-bold text-green-600">96%</span>
+                                                </div>
+                                                <div class="h-3 bg-slate-200 rounded-full overflow-hidden">
+                                                    <div class="h-full bg-green-500 rounded-full" style="width: 96%">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between mb-2">
+                                                    <span class="text-sm font-medium">System Usability Scale</span>
+                                                    <span class="text-sm font-bold text-purple-600">91/100</span>
+                                                </div>
+                                                <div class="h-3 bg-slate-200 rounded-full overflow-hidden">
+                                                    <div class="h-full bg-purple-500 rounded-full" style="width: 91%">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between mb-2">
+                                                    <span class="text-sm font-medium">Satisfacción Visual</span>
+                                                    <span class="text-sm font-bold text-pink-600">94%</span>
+                                                </div>
+                                                <div class="h-3 bg-slate-200 rounded-full overflow-hidden">
+                                                    <div class="h-full bg-pink-500 rounded-full" style="width: 94%">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-8 p-4 bg-white rounded-2xl border border-slate-200">
+                                            <p class="text-sm text-slate-600 italic text-center">
+                                                "El verdadero bienestar no se mide en números perfectos, sino en la consistencia y el equilibrio diario."
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Footer -->
+                        <footer class="bg-slate-900 text-white py-12 border-t border-slate-800">
+                            <div
+                                class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+
+                                <div class="text-2xl font-bold">
+                                    Balance<span class="text-purple-400">App</span>
+                                </div>
+
+                                <div class="text-slate-400 text-sm">
+                                    UX/UI Case Study • 2026 • App de Cuidado Personal
+                                </div>
+
+                                <div class="flex gap-4">
+
+                                    <!-- LinkedIn -->
+                                    <a href="https://www.linkedin.com/in/ananunezrejon" target="_blank"
+                                        class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition">
+                                        <i class="fa-brands fa-linkedin w-5 h-5"></i>
+                                    </a>
+
+                                    <!-- Behance -->
+                                    <a href="https://www.behance.net/ananunezrejon" target="_blank"
+                                        class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition">
+                                        <i class="fa-brands fa-behance w-5 h-5"></i>
+                                    </a>
+
+                                    <!-- GitHub -->
+                                    <a href="https://github.com/AnaNunezRejon" target="_blank"
+                                        class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition">
+                                        <i class="fa-brands fa-github w-5 h-5"></i>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </footer>
+
+                        <script>
+                            // Initialize Lucide icons
+                            lucide.createIcons();
+
+                            // Scroll reveal animation
+                            const observerOptions = {
+                                root: null,
+                                rootMargin: '0px',
+                                threshold: 0.1
+                            };
+
+                            const observer = new IntersectionObserver((entries) => {
+                                entries.forEach(entry => {
+                                    if (entry.isIntersecting) {
+                                        entry.target.classList.add('active');
+                                    }
+                                });
+                            }, observerOptions);
+
+                            document.querySelectorAll('.scroll-reveal').forEach((el) => observer.observe(el));
+
+                            // Smooth scroll for navigation links
+                            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                                anchor.addEventListener('click', function (e) {
+                                    e.preventDefault();
+                                    const target = document.querySelector(this.getAttribute('href'));
+                                    if (target) {
+                                        target.scrollIntoView({
+                                            behavior: 'smooth',
+                                            block: 'start'
+                                        });
+                                    }
+                                });
+                            });
+                        </script>
+                    </section>
+                </section>
+
+                <!-- PROTOTIPO INTERACTIVO -->
+                <section style="margin-bottom:40px;">
+                    <h2>Prototipo interactivo</h2>
+                    <p>Explora el prototipo funcional de la aplicación Balance con todas sus características principales.</p>
+
+                    <!-- Aquí puedes insertar tu prototipo de Figma -->
+                    <!--<div class="mt-6 bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-8 text-center">
+                        <i data-lucide="smartphone" class="w-12 h-12 text-purple-600 mx-auto mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Prototipo en Figma</h3>
+                        <p class="text-slate-600 mb-6">Para ver el prototipo interactivo completo, visita el enlace de Figma.</p>
+                        <a href="https://www.figma.com/proto/example-balance-app" target="_blank" 
+                           class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-semibold hover:shadow-lg transition">
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                            Abrir prototipo en Figma
+                        </a>
+                    </div>-->
+
+                     <section style="margin-bottom:40px;">
+                    <h2>Prototipo interactivo</h2>
+
+                    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/proto/CWZRZ4eoM6wzy6qtDlAFdf/Aplicacion-personal?node-id=2-2&p=f&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A2&embed-host=share" allowfullscreen></iframe>
+                </section>
+                    
+                    <!-- Características destacadas del prototipo -->
+                    <div class="grid md:grid-cols-3 gap-6 mt-8">
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                            <i data-lucide="mouse-pointer-2" class="w-8 h-8 text-purple-600 mb-3"></i>
+                            <h4 class="font-bold mb-2">Completamente interactivo</h4>
+                            <p class="text-sm text-slate-600">Navega entre todas las pantallas y prueba cada funcionalidad.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                            <i data-lucide="smartphone" class="w-8 h-8 text-purple-600 mb-3"></i>
+                            <h4 class="font-bold mb-2">Mobile First</h4>
+                            <p class="text-sm text-slate-600">Diseñado específicamente para experiencia móvil óptima.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                            <i data-lucide="layers" class="w-8 h-8 text-purple-600 mb-3"></i>
+                            <h4 class="font-bold mb-2">7 pantallas completas</h4>
+                            <p class="text-sm text-slate-600">Onboarding, Dashboard, Entrenos, Nutrición, Tareas, Estadísticas y Perfil.</p>
+                        </div>
+                    </div>
+                </section>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- MODAL PROTOTIPO -->
+    <div id="prototypeModal"
+        style="display:none; position:fixed; inset:0; background:rgba(0,0,0,.6); z-index:9999; align-items:center; justify-content:center;">
+
+        <div style="width:90%; height:90%; background:white; border-radius:20px; position:relative; overflow:hidden;">
+
+            <button onclick="closePrototype()"
+                style="position:absolute; top:15px; right:20px; font-size:28px; background:none; border:none; cursor:pointer;">
+                ✕
+            </button>
+
+            <iframe id="prototypeFrame" src="" style="width:100%; height:100%; border:none;">
+            </iframe>
+
+        </div>
+    </div>
+
+</body>
+
+<script>
+    function openPrototype() {
+        document.getElementById("prototypeModal").style.display = "flex";
+        document.getElementById("prototypeFrame").src = "personalcare_prototipo.html";
+    }
+
+    function closePrototype() {
+        document.getElementById("prototypeModal").style.display = "none";
+        document.getElementById("prototypeFrame").src = "";
+    }
+</script>
+
+</html>
