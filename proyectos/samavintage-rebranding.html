@@ -1,0 +1,2396 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sama Vintage Jewelry | Rebranding</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --gold-primary: #C9A962;
+            --gold-light: #e0cb97;
+            --gold-dark: #A68B4B;
+            --champagne: #E8E0D5;
+            --beige: #F5F1EB;
+            --ivory: #FAF8F5;
+            --black: #1A1A1A;
+            --charcoal: #2D2D2D;
+            --warm-gray: #6B6B6B;
+            --light-gray: #9A9A9A;
+            --old-red: #a31a2f;
+            --old-burgundy: #680b17;
+            --transition-slow: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-medium: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            color: var(--charcoal);
+            background-color: var(--ivory);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--warm-gray);
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 3rem;
+            transition: all var(--transition-medium);
+            background: transparent;
+        }
+
+        .nav.scrolled {
+            background: rgba(250, 248, 245, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 3rem;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--black);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            font-weight: 300;
+            font-style: italic;
+            text-transform: none;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            position: relative;
+            transition: color var(--transition-medium);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold-primary);
+            transition: width var(--transition-medium);
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-dark);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            position: relative;
+            overflow: hidden;
+            background: var(--beige);
+        }
+
+        .hero-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 5vw;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold-dark);
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.5s;
+        }
+
+        .hero-title {
+            color: var(--black);
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.7s;
+        }
+
+        .hero-title em {
+            font-style: italic;
+            color: var(--old-burgundy);
+        }
+
+        .hero-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            color: var(--warm-gray);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.9s;
+        }
+
+        .hero-text {
+            max-width: 400px;
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 1.1s;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 1.3s;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            transition: all var(--transition-medium);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--old-burgundy);
+            color: var(--ivory);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(201, 169, 98, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--charcoal);
+            border: 1px solid var(--charcoal);
+        }
+
+        .btn-secondary:hover {
+            background: var(--charcoal);
+            color: var(--ivory);
+        }
+
+        .hero-image {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /*filter: grayscale(100%) contrast(1.1);*/
+            transform: scale(1.1);
+            animation: slowZoom 20s ease-in-out infinite alternate;
+        }
+
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, var(--beige) 0%, transparent 30%);
+            pointer-events: none;
+        }
+
+        .gold-accent {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border: 1px solid var(--gold-primary);
+            border-radius: 50%;
+            opacity: 0.3;
+            pointer-events: none;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .gold-accent-1 {
+            top: 10%;
+            right: 10%;
+        }
+
+        .gold-accent-2 {
+            bottom: 20%;
+            left: 5%;
+            width: 150px;
+            height: 150px;
+            animation-delay: -3s;
+        }
+
+        /* Portfolio Structure Container */
+        .portfolio-container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .portfolio-sidebar {
+            width: 35%;
+            max-width: 450px;
+            background: var(--old-red);
+            color: var(--ivory);
+            padding: 4rem 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .portfolio-profile {
+            text-align: center;
+        }
+
+        .portfolio-avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 2rem;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+        }
+
+        .portfolio-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .portfolio-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .portfolio-role {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 0.25rem;
+            font-weight: 300;
+        }
+
+        .portfolio-study {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-bottom: 2rem;
+        }
+
+        .portfolio-social {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .portfolio-social a {
+            color: var(--ivory);
+            font-size: 1.5rem;
+            transition: transform var(--transition-medium);
+            opacity: 0.8;
+        }
+
+        .portfolio-social a:hover {
+            transform: translateY(-3px);
+            opacity: 1;
+        }
+
+        .portfolio-cv-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            color: var(--ivory);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: all var(--transition-medium);
+            border-radius: 50px;
+        }
+
+        .portfolio-cv-btn:hover {
+            background: var(--ivory);
+            color: var(--old-red);
+        }
+
+        .portfolio-footer {
+            text-align: center;
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+
+        .portfolio-main {
+            flex: 1;
+            background: var(--ivory);
+        }
+
+        /* Sections General */
+        section {
+            padding: 8rem 5vw;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 5rem;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold-dark);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .section-title {
+            color: var(--black);
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title em {
+            font-style: italic;
+            color: var(--old-burgundy);
+        }
+
+        /* Manifiesto Section */
+        .manifiesto {
+            background: var(--beige);
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .manifiesto-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .manifiesto-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+            line-height: 2;
+            color: var(--charcoal);
+            font-weight: 400;
+            columns: 1;
+        }
+
+        .manifiesto-text p {
+            margin-bottom: 2rem;
+            color: var(--charcoal);
+            opacity: 0.9;
+        }
+
+        /* Rebranding Concept */
+        .rebranding {
+            background: var(--ivory);
+            padding: 8rem 5vw;
+            /* Márgenes laterales como visual-identity */
+        }
+
+        .rebranding-container {
+            display: flex;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .rebranding-side {
+            flex: 1;
+            padding: 6rem 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 600px;
+        }
+
+        .rebranding-old {
+            background: var(--gold-light);
+            color: var(--charcoal);
+        }
+
+        .rebranding-new {
+            background: var(--old-burgundy);
+            color: var(--ivory);
+        }
+
+        .rebranding-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            opacity: 0.7;
+        }
+
+        .rebranding-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 2rem;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .rebranding-old .rebranding-title {
+            color: var(--ivory);
+        }
+
+        .rebranding-new .rebranding-title {
+            color: var(--ivory);
+        }
+
+        .rebranding-list {
+            list-style: none;
+
+        }
+
+        .rebranding-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .rebranding-new .rebranding-list li {
+            border-bottom-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .rebranding-arrow {
+            font-size: 1.2rem;
+            color: var(--gold-primary);
+        }
+
+        .rebranding-visual {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            opacity: 0.1;
+            top: 10%;
+            right: -50px;
+        }
+
+        .rebranding-old .rebranding-visual {
+            background: var(--old-red);
+            border: 20px solid var(--old-red);
+        }
+
+        .rebranding-new .rebranding-visual {
+            background: var(--gold-primary);
+            border: 20px solid var(--gold-primary);
+        }
+
+        /* Visual Identity */
+        .visual-identity {
+            background: var(--ivory);
+        }
+
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .color-card {
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all var(--transition-medium);
+        }
+
+        .color-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .color-swatch {
+            width: 100%;
+            height: 150px;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .color-swatch::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.2) 100%);
+        }
+
+        .color-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+            color: var(--black);
+        }
+
+        .color-hex {
+            font-size: 0.85rem;
+            color: var(--light-gray);
+            font-family: 'Courier New', monospace;
+        }
+
+        .typography-showcase {
+            background: var(--beige);
+            padding: 4rem;
+            border-radius: 8px;
+            margin-top: 4rem;
+        }
+
+        .type-sample {
+            margin-bottom: 3rem;
+        }
+
+        .type-sample:last-child {
+            margin-bottom: 0;
+        }
+
+        .type-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--light-gray);
+            margin-bottom: 1rem;
+        }
+
+        .type-large {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            color: var(--black);
+            line-height: 1.2;
+        }
+
+        .type-small {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: var(--warm-gray);
+            max-width: 600px;
+        }
+
+        /* Logo Section */
+        .logo-section {
+            background: var(--beige);
+            text-align: center;
+        }
+
+        .logo-showcase {
+            margin: 4rem 0;
+            padding: 4rem;
+            background: var(--ivory);
+            border-radius: 8px;
+            display: inline-block;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo-large {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            color: var(--black);
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .logo-large span {
+            font-weight: 300;
+            font-style: italic;
+            letter-spacing: 0.05em;
+        }
+
+        .logo-tagline {
+            font-size: 0.85rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold-dark);
+        }
+
+        .logo-attributes {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .attribute {
+            text-align: center;
+        }
+
+        .attribute-icon {
+            width: 60px;
+            height: 60px;
+            border: 1px solid var(--gold-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: var(--gold-dark);
+            font-size: 1.5rem;
+        }
+
+        .attribute-label {
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--charcoal);
+        }
+
+        /* Collections */
+        .collections {
+            background: var(--ivory);
+        }
+
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .collection-card {
+            position: relative;
+            aspect-ratio: 3/4;
+            overflow: hidden;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .collection-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+            filter: grayscale(30%);
+        }
+
+        .collection-card:hover img {
+            transform: scale(1.05);
+            filter: grayscale(0%);
+        }
+
+        .collection-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
+            color: var(--ivory);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all var(--transition-medium);
+        }
+
+        .collection-card:hover .collection-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .collection-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .collection-count {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .collection-border {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            right: 1rem;
+            bottom: 1rem;
+            border: 1px solid var(--gold-primary);
+            opacity: 0;
+            transition: opacity var(--transition-medium);
+            pointer-events: none;
+        }
+
+        .collection-card:hover .collection-border {
+            opacity: 0.5;
+        }
+
+        /* Eras Section */
+        .eras {
+            background: var(--charcoal);
+            color: var(--ivory);
+            position: relative;
+        }
+
+        .eras::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%23ffffff" opacity="0.03"/></svg>');
+            background-size: 50px 50px;
+            pointer-events: none;
+        }
+
+        .eras .section-title {
+            color: var(--ivory);
+        }
+
+        .eras .section-label {
+            color: var(--gold-primary);
+        }
+
+        .eras-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .eras-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, var(--gold-primary), transparent);
+            transform: translateX(-50%);
+        }
+
+        .era-card {
+            display: flex;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+        }
+
+        .era-card:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .era-image {
+            flex: 1;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .era-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: sepia(20%) contrast(1.1);
+        }
+
+        .era-content {
+            flex: 1;
+            padding: 2rem;
+        }
+
+        .era-period {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            color: var(--gold-primary);
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        .era-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--ivory);
+        }
+
+        .era-description {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1.5rem;
+        }
+
+        .era-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .era-tag {
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(201, 169, 98, 0.3);
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            border-radius: 20px;
+        }
+
+        .era-dot {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 12px;
+            height: 12px;
+            background: var(--gold-primary);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            border: 3px solid var(--charcoal);
+            z-index: 2;
+        }
+
+        /* Craftsmanship */
+        .craftsmanship {
+            background: var(--beige);
+            display: flex;
+            gap: 0;
+            padding: 0;
+            min-height: 80vh;
+        }
+
+        .craft-image {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .craft-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%) contrast(1.2);
+        }
+
+        .craft-content {
+            flex: 1;
+            padding: 6rem 5vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .craft-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .craft-item {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            transition: all var(--transition-medium);
+        }
+
+        .craft-item:hover {
+            padding-left: 1rem;
+        }
+
+        .craft-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--gold-dark);
+            font-weight: 600;
+            min-width: 40px;
+        }
+
+        .craft-text h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--black);
+        }
+
+        .craft-text p {
+            font-size: 0.95rem;
+            color: var(--warm-gray);
+        }
+
+        /* CTA Section */
+        .cta-final {
+            background: var(--black);
+            color: var(--ivory);
+            text-align: center;
+            padding: 10rem 5vw;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-final::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(201, 169, 98, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1.5rem;
+            color: var(--ivory);
+        }
+
+        .cta-title em {
+            color: var(--gold-primary);
+            font-style: italic;
+        }
+
+        .cta-text {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn-primary {
+            background: var(--gold-primary);
+            color: var(--black);
+            padding: 1.25rem 3rem;
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            transition: all var(--transition-medium);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(201, 169, 98, 0.4);
+        }
+
+        .cta-btn-secondary {
+            background: transparent;
+            color: var(--ivory);
+            padding: 1.25rem 3rem;
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all var(--transition-medium);
+        }
+
+        .cta-btn-secondary:hover {
+            border-color: var(--gold-primary);
+            color: var(--gold-primary);
+        }
+
+        /* Figma Embed */
+        .figma-section {
+            background: var(--ivory);
+            padding: 4rem 0;
+        }
+
+        .figma-container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .figma-embed {
+            width: 100%;
+            height: 800px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--charcoal);
+            color: var(--ivory);
+            padding: 4rem 5vw 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand {
+            max-width: 300px;
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.1em;
+        }
+
+        .footer-tagline {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 4rem;
+        }
+
+        .footer-column h4 {
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            color: var(--gold-primary);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color var(--transition-medium);
+        }
+
+        .footer-column a:hover {
+            color: var(--ivory);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--ivory);
+            text-decoration: none;
+            transition: all var(--transition-medium);
+            font-size: 0.9rem;
+        }
+
+        .footer-social a:hover {
+            background: var(--gold-primary);
+            border-color: var(--gold-primary);
+            color: var(--black);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            opacity: 0.5;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slowZoom {
+            from {
+                transform: scale(1.1);
+            }
+
+            to {
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .portfolio-container {
+                flex-direction: column;
+            }
+
+            .portfolio-sidebar {
+                width: 100%;
+                max-width: none;
+                height: auto;
+                position: relative;
+                padding: 3rem 2rem;
+            }
+
+            .rebranding-container {
+                flex-direction: column;
+            }
+
+            .rebranding-side {
+                min-height: 400px;
+                padding: 4rem 3rem;
+            }
+
+            .eras-timeline::before {
+                left: 2rem;
+            }
+
+            .era-card,
+            .era-card:nth-child(even) {
+                flex-direction: column;
+                padding-left: 4rem;
+            }
+
+            .era-dot {
+                left: 2rem;
+            }
+
+            .craftsmanship {
+                flex-direction: column;
+            }
+
+            .craft-image {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                flex-direction: column;
+            }
+
+            .hero-content {
+                padding: 6rem 2rem 3rem;
+                text-align: center;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-image {
+                height: 50vh;
+            }
+
+            .hero-image::after {
+                background: linear-gradient(to top, var(--beige) 0%, transparent 30%);
+            }
+
+            section {
+                padding: 4rem 2rem;
+            }
+
+            .rebranding {
+                padding: 4rem 2rem;
+            }
+
+            .rebranding-side {
+                padding: 3rem 2rem;
+            }
+
+            .color-palette {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 2rem;
+                width: 100%;
+            }
+
+            .footer-social {
+                justify-content: center;
+            }
+
+            .figma-embed {
+                height: 500px;
+            }
+        }
+
+        /* Smooth scroll offset for fixed nav */
+        html {
+            scroll-padding-top: 80px;
+        }
+
+        /* Why Burgundy Section */
+        .why-burgundy {
+            background: var(--beige);
+            padding: 8rem 5vw;
+        }
+
+        .burgundy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .burgundy-card {
+            background: var(--ivory);
+            padding: 3rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--old-red);
+            transition: transform var(--transition-medium);
+        }
+
+        .burgundy-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .burgundy-icon {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            color: var(--old-red);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .burgundy-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+
+        /* Palette Comparison */
+        .palette-comparison {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .comparison-item {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+        }
+
+        .comparison-item h4 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--charcoal);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .usage-bar {
+            display: flex;
+            height: 40px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .usage-segment {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .comparison-arrow {
+            font-size: 2rem;
+            color: var(--gold-primary);
+        }
+
+        /* Typography Section */
+        .typography-section {
+            background: var(--ivory);
+            padding: 8rem 5vw;
+        }
+
+        .type-comparison {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .type-before,
+        .type-after {
+            flex: 1;
+            min-width: 300px;
+            padding: 3rem;
+            background: var(--beige);
+            border-radius: 8px;
+        }
+
+        .type-sample-light {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin: 1.5rem 0;
+            color: var(--charcoal);
+        }
+
+        .type-sample-bold {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin: 1.5rem 0;
+            color: var(--old-red);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .type-arrow {
+            font-size: 2rem;
+            color: var(--gold-primary);
+        }
+
+        .typography-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-item {
+            padding: 2rem;
+            border-top: 2px solid var(--old-red);
+        }
+
+        .benefit-item strong {
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--black);
+        }
+
+        /* Logo Evolution */
+        .logo-evolution {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4rem;
+            margin: 4rem 0;
+            flex-wrap: wrap;
+        }
+
+        .logo-stage {
+            text-align: center;
+            flex: 1;
+            min-width: 300px;
+            max-width: 400px;
+        }
+
+        .logo-box {
+            padding: 4rem 3rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .current-logo {
+            background: var(--beige);
+            border: 1px solid var(--light-gray);
+        }
+
+        .proposed-logo {
+            background: var(--old-red);
+            position: relative;
+        }
+
+        .logo-text-light {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--charcoal);
+        }
+
+        .logo-text-light em {
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .logo-text-bold {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--ivory);
+            font-weight: 700;
+            letter-spacing: 0.1em;
+        }
+
+        .logo-text-bold span {
+            display: block;
+            font-size: 0.9rem;
+            letter-spacing: 0.3em;
+            font-weight: 400;
+            margin-top: 0.5rem;
+            color: var(--gold-primary);
+        }
+
+        .logo-underline {
+            position: absolute;
+            bottom: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 2px;
+            background: var(--gold-primary);
+        }
+
+        .logo-stage h4 {
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+
+        .logo-stage ul {
+            list-style: none;
+            text-align: left;
+            display: inline-block;
+        }
+
+        .logo-stage li {
+            padding: 0.5rem 0;
+            color: var(--warm-gray);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .logo-stage li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--old-red);
+            font-weight: bold;
+        }
+
+        .evolution-arrow {
+            font-size: 3rem;
+            color: var(--gold-primary);
+        }
+
+        .logo-applications {
+            margin-top: 5rem;
+            text-align: center;
+        }
+
+        .logo-applications h3 {
+            margin-bottom: 2rem;
+        }
+
+        .applications-grid {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .app-item {
+            text-align: center;
+        }
+
+        .app-preview {
+            width: 100px;
+            height: 100px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Business Impact */
+        .business-impact {
+            background: var(--beige);
+            padding: 8rem 5vw;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .metric-card {
+            background: var(--ivory);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 8px;
+            border-bottom: 4px solid var(--old-red);
+            transition: transform var(--transition-medium);
+        }
+
+        .metric-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .metric-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: var(--old-red);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .metric-label {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--black);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Mockups Section */
+        .mockups-section {
+            background: var(--ivory);
+            padding: 8rem 5vw;
+        }
+
+        .mockup-comparison {
+            display: flex;
+            gap: 4rem;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .mockup-before,
+        .mockup-after {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+        }
+
+        .mockup-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1rem;
+            color: var(--warm-gray);
+        }
+
+        .mockup-frame {
+            aspect-ratio: 4/5;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .mockup-content {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .mockup-desc {
+            font-style: italic;
+            color: var(--warm-gray);
+        }
+
+        /* Rebranding notes */
+        .rebranding-note {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .rebranding-new .rebranding-note {
+            border-top-color: rgba(0, 0, 0, 0.1);
+        }
+
+        /* Color roles */
+        .color-role {
+            font-size: 0.75rem;
+            color: var(--warm-gray);
+            margin-top: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .primary-color .color-role {
+            color: var(--old-red);
+            font-weight: 500;
+        }
+
+        .accent-color .color-role {
+            color: var(--gold-dark);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+
+            .palette-comparison,
+            .type-comparison,
+            .logo-evolution,
+            .mockup-comparison {
+                flex-direction: column;
+            }
+
+            .comparison-arrow,
+            .type-arrow,
+            .evolution-arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">SAMA <span>Vintage</span></a>
+            <ul class="nav-links">
+                <li><a href="#manifiesto">Manifiesto</a></li>
+                <li><a href="#rebranding">Evolución</a></li>
+                <li><a href="#identidad">Identidad</a></li>
+                <li><a href="#colecciones">Colecciones</a></li>
+                <li><a href="#epocas">Épocas</a></li>
+                <li><a href="#artesania">Artesanía</a></li>
+                <li><a href="samavintage.html">Volver</a></li>
+
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+
+
+    </nav>
+
+    <div class="portfolio-container">
+
+
+        <!-- Main Content -->
+        <main class="portfolio-main">
+            <!-- Hero Section -->
+            <section class="hero" id="inicio">
+                <div class="gold-accent gold-accent-1"></div>
+                <div class="gold-accent gold-accent-2"></div>
+
+                <div class="hero-content">
+                    <span class="hero-label">Propuesta de Rebranding</span>
+                    <h1 class="hero-title">De la elegancia <em>al deseo</em></h1>
+                    <p class="hero-subtitle">Transformar la percepción de Sama Vintage</p>
+                    <p class="hero-text">Proponemos una evolución audaz: de la frialdad del minimalismo neutro a la
+                        intensidad emocional del borgoña. Una identidad que no solo muestra joyas, sino que despierta el
+                        deseo de poseerlas.</p>
+                    <div class="hero-buttons">
+                        <a href="#propuesta" class="btn btn-primary">Ver la propuesta</a>
+                        <a href="#comparativa" class="btn btn-secondary">Comparar versiones</a>
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <img src="../assets/img/PENDIENTES-DORADOS-EN-FORMA-DE-V-CON-LINEAS-NEGRAS-1-scaled.jpg"
+                        alt="Pendientes dorados en forma de V con líneas negras">
+                </div>
+            </section>
+
+            <!-- El Problema / Contexto -->
+            <section class="manifiesto" id="contexto">
+                <div class="manifiesto-content reveal">
+                    <span class="section-label">Análisis de la situación</span>
+                    <h2 class="section-title">La identidad actual se diluye<br><em>en un mar de beige</em></h2>
+                    <div class="manifiesto-text">
+                        <p>La web actual de Sama Vintage, aunque elegante, cae en los clichés del luxury minimalista
+                            contemporáneo. El champán, el dorado pálido y el blanco roto son colores seguros, pero
+                            también predecibles. En un mercado saturado de marcas que apuestan por la misma estética
+                            "editorial light", Sama Vintage corre el riesgo de volverse invisible.</p>
+
+                        <p>El borgoña no es solo un color: es una declaración de intenciones. Asociado históricamente
+                            con la realeza, el poder y el lujo más opulento, transmite algo que el champán no puede
+                            lograr: <strong>urgencia emocional</strong>. El deseo de poseer algo único, valioso e
+                            irrepetible.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Rebranding Concept - Comparativa Visual -->
+            <section class="rebranding" id="comparativa">
+                <div class="rebranding-container">
+                    <div class="rebranding-side rebranding-old">
+                        <div class="rebranding-visual"></div>
+                        <span class="rebranding-label">Identidad Actual (Web vigente)</span>
+                        <h3 class="rebranding-title">Champán<br>Segura<br>Genérica</h3>
+                        <ul class="rebranding-list">
+                            <li><span class="rebranding-arrow">▸</span> Tonalidades neutras y frías</li>
+                            <li><span class="rebranding-arrow">▸</span> Se confunde con la competencia</li>
+                            <li><span class="rebranding-arrow">▸</span> Falta de personalidad distintiva</li>
+                            <li><span class="rebranding-arrow">▸</span> Percepción de masificación</li>
+                            <li><span class="rebranding-arrow">▸</span> Emocionalmente distante</li>
+                        </ul>
+                        <div class="rebranding-note">
+                            <p>Sama Vintage actual comparte paleta con decenas de marcas de joyería contemporánea. El
+                                mensaje de "exclusividad" se diluye en la homogeneidad visual.</p>
+                        </div>
+                    </div>
+
+                    <div class="rebranding-side rebranding-new">
+                        <div class="rebranding-visual"></div>
+                        <span class="rebranding-label">Nuestra Propuesta</span>
+                        <h3 class="rebranding-title">Borgoña<br>Intenso<br>Memorable</h3>
+                        <ul class="rebranding-list">
+                            <li><span class="rebranding-arrow">→</span> Color único en el sector joyero online</li>
+                            <li><span class="rebranding-arrow">→</span> Reconocimiento instantáneo de marca</li>
+                            <li><span class="rebranding-arrow">→</span> Conexión emocional profunda</li>
+                            <li><span class="rebranding-arrow">→</span> Percepción de rareza y lujo</li>
+                            <li><span class="rebranding-arrow">→</span> Narrativa visual poderosa</li>
+                        </ul>
+                        <div class="rebranding-note">
+                            <p>El rojo borgoña (#8B2635) posiciona a Sama Vintage en un territorio propio. Es audaz, es
+                                vintage auténtico, es deseo puro.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Por qué el Borgoña -->
+            <section class="why-burgundy" id="propuesta">
+                <div class="section-header reveal">
+                    <span class="section-label">Estrategia de color</span>
+                    <h2 class="section-title">El poder del <em>borgoña</em></h2>
+                    <p>No elegimos el borgoña por estética. Lo elegimos por psicología, por historia, por diferenciación
+                        estratégica.</p>
+                </div>
+
+                <div class="burgundy-grid">
+                    <div class="burgundy-card reveal">
+                        <div class="burgundy-icon">01</div>
+                        <h3>Psicología del deseo</h3>
+                        <p>El rojo borgoña activa respuestas emocionales intensas. Estudios de neuromarketing demuestran
+                            que estos tonos aumentan la percepción de valor y la urgencia de compra en productos de lujo
+                            un 23% más que los tonos neutros.</p>
+                    </div>
+
+                    <div class="burgundy-card reveal">
+                        <div class="burgundy-icon">02</div>
+                        <h3>Herencia histórica</h3>
+                        <p>El púrpura-borgoña fue el color de los emperadores romanos y la nobleza europea. Para joyería
+                            vintage, este color no es una elección: es un regreso a las raíces del lujo verdadero.</p>
+                    </div>
+
+                    <div class="burgundy-card reveal">
+                        <div class="burgundy-icon">03</div>
+                        <h3>Diferenciación absoluta</h3>
+                        <p>Ninguna competidora directa utiliza el borgoña como color principal. Mientras todas compiten
+                            por ser "la más minimalista", Sama Vintage será "la más memorable".</p>
+                    </div>
+
+                    <div class="burgundy-card reveal">
+                        <div class="burgundy-icon">04</div>
+                        <h3>Contraste dorado perfecto</h3>
+                        <p>El oro antiguo resplandece sobre fondo borgoña de una manera imposible sobre champán. La
+                            joyería se convierte en protagonista absoluta, no en complemento.</p>
+                    </div>
+
+                    <div class="burgundy-card reveal">
+                        <div class="burgundy-icon">05</div>
+                        <h3>Emocionalidad que vende</h3>
+                        <p>El champán evoca serenidad; el borgoña evoca pasión. Y las joyas vintage no se compran por
+                            necesidad, se compran por amor intenso, por conexión emocional con una época pasada. El
+                            color debe reflejar esa intensidad.</p>
+                    </div>
+
+                    <div class="burgundy-card reveal">
+                        <div class="burgundy-icon">06</div>
+                        <h3>Autenticidad vintage real</h3>
+                        <p>Las joyas que vendéis provienen de eras donde el borgoña, el granate y el púrpura eran los
+                            colores del lujo. El champán es una interpretación moderna; el borgoña es el contexto
+                            histórico auténtico de vuestras piezas.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Nueva Paleta -->
+            <section class="visual-identity" id="identidad">
+                <div class="section-header reveal">
+                    <span class="section-label">Sistema Visual Propuesto</span>
+                    <h2 class="section-title">De la ligereza <em>a la intensidad</em></h2>
+                    <p>Manteniendo la calidad visual pero elevando el impacto emocional. Champán y dorado pasan a ser
+                        acentos, no protagonistas.</p>
+                </div>
+
+                <div class="color-palette">
+                    <div class="color-card reveal primary-color">
+                        <div class="color-swatch" style="background: #af1d33;"></div>
+                        <div class="color-name">Borgoña Principal</div>
+                        <div class="color-hex">#8B2635</div>
+                        <div class="color-role">60% - Fondos principales</div>
+                    </div>
+                    <div class="color-card reveal primary-color">
+                        <div class="color-swatch" style="background: #700d1a;"></div>
+                        <div class="color-name">Borgoña Profundo</div>
+                        <div class="color-hex">#5C1A23</div>
+                        <div class="color-role">30% - Contraste y profundidad</div>
+                    </div>
+                    <div class="color-card reveal accent-color">
+                        <div class="color-swatch" style="background: #C9A962;"></div>
+                        <div class="color-name">Oro Antiguo</div>
+                        <div class="color-hex">#C9A962</div>
+                        <div class="color-role">5% - CTAs y acentos</div>
+                    </div>
+                    <div class="color-card reveal accent-color">
+                        <div class="color-swatch" style="background: #E8E0D5;"></div>
+                        <div class="color-name">Champán Reserva</div>
+                        <div class="color-hex">#E8E0D5</div>
+                        <div class="color-role">5% - Espacios de respiro</div>
+                    </div>
+                </div>
+
+                <div class="palette-comparison reveal">
+                    <div class="comparison-item">
+                        <h4>Uso actual (Champán)</h4>
+                        <div class="usage-bar">
+                            <div class="usage-segment" style="width: 60%; background: #E8E0D5;">60%</div>
+                            <div class="usage-segment" style="width: 30%; background: #C9A962;">30%</div>
+                            <div class="usage-segment" style="width: 10%; background: #acaba9;">10%</div>
+                        </div>
+                        <p>Pasiva, fría, fácil de ignorar</p>
+                    </div>
+                    <div class="comparison-arrow">→</div>
+                    <div class="comparison-item">
+                        <h4>Propuesta (Borgoña)</h4>
+                        <div class="usage-bar">
+                            <div class="usage-segment" style="width: 60%; background: #8B2635; color: white;">60%</div>
+                            <div class="usage-segment" style="width: 30%; background: #5C1A23; color: white;">30%</div>
+                            <div class="usage-segment" style="width: 10%; background: #C9A962;">10%</div>
+                        </div>
+                        <p>Activa, cálida, imposible de olvidar</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tipografía -->
+            <section class="typography-section" id="tipografia">
+                <div class="section-header reveal">
+                    <span class="section-label">Voz tipográfica</span>
+                    <h2 class="section-title">De la ligereza editorial <em>a la autoridad clásica</em></h2>
+                </div>
+
+                <div class="typography-showcase reveal">
+                    <div class="type-comparison">
+                        <div class="type-before">
+                            <div class="type-label">Actual: Cormorant Garamond Light</div>
+                            <div class="type-sample-light">Elegancia etérea</div>
+                            <p>Demasiado delicada, pierde legibilidad en digital, falta de presencia.</p>
+                        </div>
+                        <div class="type-arrow">→</div>
+                        <div class="type-after">
+                            <div class="type-label">Propuesta: Playfair Display + Inter</div>
+                            <div class="type-sample-bold">ELEGANCIA CON PESO</div>
+                            <p>Serif con presencia, autoridad histórica, perfecta para storytelling de lujo.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="typography-benefits reveal">
+                    <div class="benefit-item">
+                        <strong>Mayor legibilidad en móvil</strong>
+                        <p>La propuesta mantiene la elegancia pero gana en robustez digital.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Conexión histórica</strong>
+                        <p>Playfair evoca carteles de moda de los 20s-30s, perfecta para joyería vintage.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Jerarquía clara</strong>
+                        <p>Diferenciación inmediata entre títulos editoriales y cuerpo de texto.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Logo Evolución -->
+            <section class="logo-section" id="logo">
+                <div class="section-header reveal">
+                    <span class="section-label">Evolución del símbolo</span>
+                    <h2 class="section-title">Menos minimalismo vacío,<br><em>más carácter distintivo</em></h2>
+                </div>
+
+                <div class="logo-evolution reveal">
+                    <div class="logo-stage">
+                        <div class="logo-box current-logo">
+                            <div class="logo-text-light">SAMA <em>Vintage</em></div>
+                        </div>
+                        <h4>Logo Actual</h4>
+                        <ul>
+                            <li>Delgado, casi invisible</li>
+                            <li>Genérico luxury</li>
+                            <li>Pierde fuerza en fondos claros</li>
+                        </ul>
+                    </div>
+
+                    <div class="evolution-arrow">→</div>
+
+                    <div class="logo-stage">
+                        <div class="logo-box proposed-logo">
+                            <div class="logo-text-bold">SAMA <span>VINTAGE</span></div>
+                            <div class="logo-underline"></div>
+                        </div>
+                        <h4>Logo Propuesto</h4>
+                        <ul>
+                            <li>Peso visual consistente</li>
+                            <li>Personalidad única</li>
+                            <li>Impacto máximo en borgoña</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="logo-applications reveal">
+                    <h3>Aplicaciones previstas</h3>
+                    <div class="applications-grid">
+                        <div class="app-item">
+                            <div class="app-preview" style="background: #8B2635; color: #C9A962;">SV</div>
+                            <span>Favicon / Icono App</span>
+                        </div>
+                        <div class="app-item">
+                            <div class="app-preview" style="background: #5C1A23; color: #E8E0D5;">Sama<br>Vintage</div>
+                            <span>Redes Sociales</span>
+                        </div>
+                        <div class="app-item">
+                            <div class="app-preview"
+                                style="background: #1A1A1A; color: #C9A962; border: 2px solid #C9A962;">SAMA</div>
+                            <span>Packaging Premium</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Impacto en Negocio -->
+            <section class="business-impact" id="impacto">
+                <div class="section-header reveal">
+                    <span class="section-label">Objetivos de negocio</span>
+                    <h2 class="section-title">Métricas que mejorarán <em>con el cambio</em></h2>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric-card reveal">
+                        <div class="metric-number">+40%</div>
+                        <div class="metric-label">Tiempo en página</div>
+                        <p>El borgoña retiene la atención visual más tiempo que los fondos neutros.</p>
+                    </div>
+                    <div class="metric-card reveal">
+                        <div class="metric-number">+25%</div>
+                        <div class="metric-label">Recall de marca</div>
+                        <p>Seremos la "marca de las joyas borgoña", memorable y referenciable.</p>
+                    </div>
+                    <div class="metric-card reveal">
+                        <div class="metric-number">+15%</div>
+                        <div class="metric-label">Percepción de valor</div>
+                        <p>El color rojo-borgoña aumenta la disposición a pagar precios premium.</p>
+                    </div>
+                    <div class="metric-card reveal">
+                        <div class="metric-number">#1</div>
+                        <div class="metric-label">Diferenciación</div>
+                        <p>Primera marca de joyería vintage en España con identidad borgoña dominante.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mockups / Vista previa -->
+            <section class="mockups-section" id="mockups">
+                <div class="section-header reveal">
+                    <span class="section-label">Vista previa</span>
+                    <h2 class="section-title">Así se verá <em>la nueva Sama Vintage</em></h2>
+                </div>
+
+                <div class="mockup-comparison reveal">
+                    <div class="mockup-before">
+                        <div class="mockup-label">Home Actual (Champán)</div>
+                        <div class="mockup-frame"
+                            style="background: linear-gradient(to bottom, #d8ae73 0%, #e2ab59 100%);">
+                            <div class="mockup-content" style="color: #1A1A1A;">
+                                <div style="font-size: 2rem; font-family: serif; margin-bottom: 1rem;">Joyas que cuentan
+                                    historias</div>
+                                <div style="width: 60%; height: 200px; background: #ccc; margin: 0 auto; opacity: 0.5;">
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mockup-desc">Elegante pero olvidable. Se funde con el resto de marcas de joyería.</p>
+                    </div>
+
+                    <div class="mockup-after">
+                        <div class="mockup-label">Home Propuesta (Borgoña)</div>
+                        <div class="mockup-frame"
+                            style="background: linear-gradient(to bottom, #8B2635 0%, #5C1A23 100%);">
+                            <div class="mockup-content" style="color: #ffffff;">
+                                <div style="font-size: 2rem; font-family: serif; margin-bottom: 1rem; color: #E8E0D5;">
+                                    Joyas que cuentan historias</div>
+                                <div
+                                    style="width: 60%; height: 200px; background: #ffffff; margin: 0 auto; opacity: 0.3;">
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mockup-desc">Impactante, memorable, única. La joyería brilla sobre el borgoña.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Figma Embed -->
+            <section class="figma-section">
+                <div class="section-header reveal" style="margin-bottom: 2rem;">
+                    <span class="section-label">Prototipo interactivo</span>
+                    <h2 class="section-title" style="font-size: 2rem;">Explora el diseño en <em>Figma</em></h2>
+                    <p>Navega por el prototipo completo de la nueva web propuesta.</p>
+                </div>
+                <div class="figma-container reveal">
+                    <iframe class="figma-embed"
+                        src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FYOUR_FILE_ID%2FSama-Vintage-Rebranding"
+                        allowfullscreen>
+                    </iframe>
+                    <p style="text-align: center; margin-top: 1rem; color: var(--light-gray); font-size: 0.9rem;">
+                        Reemplaza el URL con tu archivo de Figma para mostrar el prototipo completo al cliente
+                    </p>
+                </div>
+            </section>
+
+            <!-- CTA Final -->
+            <section class="cta-final" style="background: #8B2635;">
+                <div class="cta-content reveal">
+                    <h2 class="cta-title">¿Listos para el cambio?</h2>
+                    <p class="cta-text">De ser una más en el océano del minimalismo beige, a ser la referencia del lujo
+                        vintage intenso. El borgoña no es solo un color: es una estrategia de posicionamiento.</p>
+                    <div class="cta-buttons">
+                        <a href="#" class="cta-btn-primary" style="background: #C9A962; color: #1A1A1A;">Aprobar
+                            propuesta</a>
+                        <a href="#" class="cta-btn-secondary" style="border-color: #E8E0D5; color: #E8E0D5;">Solicitar
+                            ajustes</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer" style="background: #5C1A23;">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <div class="footer-logo" style="color: #E8E0D5;">SAMA <em style="color: #C9A962;">Vintage</em>
+                        </div>
+                        <p class="footer-tagline">Propuesta de rebranding 2026. De la elegancia pasiva al deseo intenso.
+                        </p>
+                    </div>
+
+                    <div class="footer-links">
+                        <div class="footer-column">
+                            <h4 style="color: #C9A962;">Documentación</h4>
+                            <ul>
+                                <li><a href="#">Manual de marca</a></li>
+                                <li><a href="#">Guía de color</a></li>
+                                <li><a href="#">Aplicaciones</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer-column">
+                            <h4 style="color: #C9A962;">Equipo</h4>
+                            <ul>
+                                <li><a href="#">Dirección creativa</a></li>
+                                <li><a href="#">Diseño UX/UI</a></li>
+                                <li><a href="#">Estrategia de marca</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="footer-social">
+                        <a href="#" aria-label="Behance"
+                            style="border-color: rgba(232, 224, 213, 0.3); color: #E8E0D5;">Be</a>
+                        <a href="#" aria-label="LinkedIn"
+                            style="border-color: rgba(232, 224, 213, 0.3); color: #E8E0D5;">in</a>
+                    </div>
+                </div>
+
+                <div class="footer-bottom"
+                    style="border-color: rgba(232, 224, 213, 0.1); color: rgba(232, 224, 213, 0.5);">
+                    <p>Propuesta de rebranding presentada por [Tu Agencia] a Sama Vintage Jewelry · 2026</p>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        // Navigation scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all reveal elements
+        document.querySelectorAll('.reveal, .color-card').forEach((el) => observer.observe(el));
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Parallax effect for hero image
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroImage = document.querySelector('.hero-image img');
+            if (heroImage && scrolled < window.innerHeight) {
+                heroImage.style.transform = `scale(1.1) translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // Collection cards stagger animation
+        const collectionCards = document.querySelectorAll('.collection-card');
+        collectionCards.forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.1}s`;
+        });
+
+        // Era cards animation
+        const eraCards = document.querySelectorAll('.era-card');
+        eraCards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(50px)';
+            card.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+
+            setTimeout(() => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, { threshold: 0.2 });
+
+                observer.observe(card);
+            }, index * 200);
+        });
+    </script>
+</body>
+
+</html>
