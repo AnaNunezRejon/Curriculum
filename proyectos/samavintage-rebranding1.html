@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sama Vintage | Joyas que Cuentan Historias</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --vino: #8B2635;
+            --vino-claro: #A63D4D;
+            --beige: #DABB9F;
+            --beige-claro: #E8D5C4;
+            --crema: #F5F0EC;
+            --gris-calido: #D6C3B8;
+            --oro: #C9A961;
+            --negro-suave: #2C2420;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--crema);
+            color: var(--negro-suave);
+            overflow-x: hidden;
+            cursor: none;
+        }
+
+        /* Cursor personalizado */
+        .cursor {
+            width: 20px;
+            height: 20px;
+            border: 1px solid var(--vino);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.2s, background 0.2s;
+            mix-blend-mode: difference;
+        }
+
+        .cursor.hover {
+            transform: scale(2);
+            background: rgba(139, 38, 53, 0.1);
+        }
+
+        /* Navegación */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: all 0.4s ease;
+            background: transparent;
+        }
+
+        nav.scrolled {
+            background: rgba(245, 240, 236, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            color: var(--vino);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo::after {
+            content: 'SAMA VINTAGE';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0;
+            overflow: hidden;
+            color: var(--oro);
+            transition: width 0.4s ease;
+            white-space: nowrap;
+        }
+
+        .logo:hover::after {
+            width: 100%;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--negro-suave);
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: color 0.3s;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--vino);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::before {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--vino);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--crema) 0%, var(--beige-claro) 100%);
+        }
+
+        .hero-bg {
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle at 20% 50%, rgba(139, 38, 53, 0.03) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(201, 169, 97, 0.05) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(1deg); }
+            66% { transform: translate(-20px, 20px) rotate(-1deg); }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 2rem;
+        }
+
+        .hero-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--vino);
+            letter-spacing: 0.2em;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s ease forwards 0.5s;
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 300;
+            line-height: 1.1;
+            color: var(--negro-suave);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .hero-title span {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(100%);
+            animation: revealText 1s ease forwards;
+        }
+
+        .hero-title span:nth-child(1) { animation-delay: 0.8s; }
+        .hero-title span:nth-child(2) { animation-delay: 0.9s; }
+        .hero-title span:nth-child(3) { animation-delay: 1s; }
+
+        @keyframes revealText {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--negro-suave);
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            opacity: 0;
+            animation: fadeUp 1s ease forwards 1.2s;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: transparent;
+            border: 1px solid var(--vino);
+            color: var(--vino);
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+            transition: color 0.4s;
+            opacity: 0;
+            animation: fadeUp 1s ease forwards 1.4s;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--vino);
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+
+        .cta-button:hover {
+            color: var(--crema);
+        }
+
+        .cta-button:hover::before {
+            left: 0;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            opacity: 0;
+            animation: fadeUp 1s ease forwards 2s;
+        }
+
+        .scroll-text {
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--vino);
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 60px;
+            background: linear-gradient(to bottom, var(--vino), transparent);
+            animation: scrollPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollPulse {
+            0%, 100% { transform: scaleY(1); opacity: 1; }
+            50% { transform: scaleY(0.5); opacity: 0.5; }
+        }
+
+        /* Sección Filosofía */
+        .philosophy {
+            padding: 10rem 5%;
+            background: var(--crema);
+            position: relative;
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .philosophy-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .philosophy-image img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            filter: grayscale(20%) sepia(10%);
+            transition: all 0.6s ease;
+        }
+
+        .philosophy-image:hover img {
+            filter: grayscale(0%) sepia(0%);
+            transform: scale(1.05);
+        }
+
+        .philosophy-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: 20px;
+            bottom: 20px;
+            border: 1px solid var(--vino);
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .philosophy-content {
+            padding: 2rem;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--vino);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 40px;
+            height: 1px;
+            background: var(--vino);
+        }
+
+        .philosophy h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+            color: var(--negro-suave);
+        }
+
+        .philosophy p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--negro-suave);
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight {
+            color: var(--vino);
+            font-style: italic;
+            position: relative;
+        }
+
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: rgba(139, 38, 53, 0.1);
+            z-index: -1;
+        }
+
+        /* Sección Productos */
+        .products {
+            padding: 8rem 5%;
+            background: linear-gradient(to bottom, var(--crema), var(--beige-claro));
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--negro-suave);
+            opacity: 0.7;
+            font-size: 1.1rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: white;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transform: translateY(50px);
+            opacity: 0;
+            transition: all 0.6s ease;
+        }
+
+        .product-card.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .product-image {
+            position: relative;
+            height: 450px;
+            overflow: hidden;
+            background: var(--crema);
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            background: var(--vino);
+            color: white;
+            padding: 0.5rem 1rem;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            z-index: 2;
+        }
+
+        .product-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(139, 38, 53, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+
+        .view-button {
+            color: white;
+            border: 1px solid white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+        }
+
+        .product-card:hover .view-button {
+            transform: translateY(0);
+        }
+
+        .product-info {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .product-category {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--vino);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-price {
+            font-size: 1.1rem;
+            color: var(--oro);
+            font-weight: 500;
+        }
+
+        /* Sección Exclusividad */
+        .exclusivity {
+            padding: 10rem 5%;
+            background: var(--vino);
+            color: var(--crema);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .exclusivity::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 50%;
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .exclusivity-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .exclusivity h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+
+        .exclusivity p {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            opacity: 0.9;
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 5rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 300;
+            color: var(--oro);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        /* Sección Newsletter */
+        .newsletter {
+            padding: 8rem 5%;
+            background: var(--crema);
+            text-align: center;
+        }
+
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter p {
+            color: var(--negro-suave);
+            opacity: 0.7;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            min-width: 300px;
+            padding: 1rem 1.5rem;
+            border: 1px solid var(--gris-calido);
+            background: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .newsletter-input:focus {
+            border-color: var(--vino);
+        }
+
+        .newsletter-button {
+            padding: 1rem 2.5rem;
+            background: var(--vino);
+            color: white;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .newsletter-button:hover {
+            background: var(--vino-claro);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--negro-suave);
+            color: var(--crema);
+            padding: 5rem 5% 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-brand p {
+            line-height: 1.8;
+            opacity: 0.7;
+            font-size: 0.95rem;
+        }
+
+        .footer-column h4 {
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            color: var(--oro);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-column a {
+            color: var(--crema);
+            text-decoration: none;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .footer-column a:hover {
+            opacity: 1;
+            color: var(--oro);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.85rem;
+            opacity: 0.6;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--crema);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--oro);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .philosophy-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animaciones de scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor"></div>
+
+    <nav id="navbar">
+        <a href="#" class="logo">SAMA VINTAGE</a>
+        <ul class="nav-links">
+            <li><a href="#filosofia">Filosofía</a></li>
+            <li><a href="#coleccion">Colección</a></li>
+            <li><a href="#exclusividad">Exclusividad</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <p class="hero-subtitle">Diseños Vintage, Estilos Atemporales</p>
+            <h1 class="hero-title">
+                <span>Joyas</span>
+                <span>que</span>
+                <span>Cuentan</span>
+                <span>Historias</span>
+            </h1>
+            <p class="hero-description">
+                Descubre piezas únicas de colección, cuidadosamente seleccionadas para quienes buscan 
+                marcar la diferencia. Cada joya es exclusiva: existe solo una unidad de cada modelo.
+            </p>
+            <a href="#coleccion" class="cta-button">Explorar Colección</a>
+        </div>
+        <div class="scroll-indicator">
+            <span class="scroll-text">Descubrir</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <section class="philosophy" id="filosofia">
+        <div class="philosophy-grid">
+            <div class="philosophy-image">
+                <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&h=1000&fit=crop" alt="Joyería Vintage">
+            </div>
+            <div class="philosophy-content">
+                <span class="section-label">Nuestra Esencia</span>
+                <h2>La Autenticidad como Lujo Supremo</h2>
+                <p>
+                    En un mundo saturado de producción masiva, <span class="highlight">Sama Vintage</span> 
+                    surge como un refugio para el alma. Seleccionamos cada pieza como si fuera un tesoro 
+                    personal, buscando aquellas joyas que han resistido el paso del tiempo con elegancia 
+                    intacta.
+                </p>
+                <p>
+                    Nuestra misión es conectar a amantes de la moda con objetos que trascienden las 
+                    tendencias efímeras. Cada collar, cada broche, cada anillo cuenta una historia 
+                    única que espera continuar contigo.
+                </p>
+                <p style="font-style: italic; color: var(--vino); margin-top: 2rem;">
+                    "La verdadera elegancia nunca pasa de moda, solo espera ser redescubierta."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="coleccion">
+        <div class="section-header fade-in">
+            <h2>Colección Curada</h2>
+            <p>Piezas seleccionadas para coleccionistas exigentes</p>
+        </div>
+        
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&h=750&fit=crop" alt="Collar de Perlas">
+                    <span class="product-badge">Best Seller</span>
+                    <div class="product-overlay">
+                        <a href="#" class="view-button">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Collares</p>
+                    <h3 class="product-name">Perlas Naturales Clásicas</h3>
+                    <p class="product-price">€675</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&h=750&fit=crop" alt="Broche Vintage">
+                    <span class="product-badge">Exclusivo</span>
+                    <div class="product-overlay">
+                        <a href="#" class="view-button">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Broches</p>
+                    <h3 class="product-name">Broche Floral Art Nouveau</h3>
+                    <p class="product-price">€890</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&h=750&fit=crop" alt="Anillo Vintage">
+                    <span class="product-badge">Nuevo</span>
+                    <div class="product-overlay">
+                        <a href="#" class="view-button">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Anillos</p>
+                    <h3 class="product-name">Anillo de Compromiso 1920</h3>
+                    <p class="product-price">€1,250</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&h=750&fit=crop" alt="Pendientes Vintage">
+                    <div class="product-overlay">
+                        <a href="#" class="view-button">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Pendientes</p>
+                    <h3 class="product-name">Diamantes en Oro Amarillo</h3>
+                    <p class="product-price">€920</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=600&h=750&fit=crop" alt="Pulsera Vintage">
+                    <span class="product-badge">Único</span>
+                    <div class="product-overlay">
+                        <a href="#" class="view-button">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Pulseras</p>
+                    <h3 class="product-name">Esclava de Oro Macizo</h3>
+                    <p class="product-price">€1,450</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=600&h=750&fit=crop" alt="Colgante Vintage">
+                    <div class="product-overlay">
+                        <a href="#" class="view-button">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Colgantes</p>
+                    <h3 class="product-name">Medallón con Miniatura</h3>
+                    <p class="product-price">€580</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="exclusivity" id="exclusividad">
+        <div class="exclusivity-content">
+            <span class="section-label" style="color: var(--oro); justify-content: center;">
+                <span style="background: var(--oro);"></span>
+                Nuestro Compromiso
+            </span>
+            <h2>Una Sola Pieza, Una Sola Historia</h2>
+            <p>
+                En Sama Vintage garantizamos que cada pieza de nuestra colección es 
+                <strong>absolutamente única</strong>. No fabricamos al por mayor, no repetimos diseños. 
+                Cuando adquieres una joya con nosotros, te aseguras de poseer algo que nadie más tendrá.
+            </p>
+            <a href="#contacto" class="cta-button" style="border-color: var(--crema); color: var(--crema);">
+                Solicitar Asesoría Personalizada
+            </a>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="500">0</span>
+                    <span class="stat-label">Piezas Únicas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="12">0</span>
+                    <span class="stat-label">Años de Experiencia</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="100">0</span>
+                    <span class="stat-label">Clientes Satisfechos</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter" id="contacto">
+        <div class="newsletter-content fade-in">
+            <h2>Únete al Círculo</h2>
+            <p>
+                Recibe acceso prioritario a nuevas adquisiciones, historias detrás de las piezas 
+                y consejos de estilo atemporal.
+            </p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('¡Bienvenida al círculo Sama!');">
+                <input type="email" class="newsletter-input" placeholder="Tu correo electrónico" required>
+                <button type="submit" class="newsletter-button">Suscribirse</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>SAMA VINTAGE</h3>
+                <p>
+                    Joyería boutique dedicada a la preservación y celebración de piezas 
+                    históricas. Cada objeto es seleccionado con amor y respeto por su 
+                    herencia artesanal.
+                </p>
+            </div>
+            <div class="footer-column">
+                <h4>Explorar</h4>
+                <ul>
+                    <li><a href="#">Nueva Colección</a></li>
+                    <li><a href="#">Collares</a></li>
+                    <li><a href="#">Anillos</a></li>
+                    <li><a href="#">Broches</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Atención</h4>
+                <ul>
+                    <li><a href="#">Sobre Nosotros</a></li>
+                    <li><a href="#">Autenticidad</a></li>
+                    <li><a href="#">Envíos</a></li>
+                    <li><a href="#">Devoluciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contacto</h4>
+                <ul>
+                    <li><a href="#">hola@samavintage.com</a></li>
+                    <li><a href="#">+34 600 123 456</a></li>
+                    <li><a href="#">Madrid, España</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sama Vintage. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">Pinterest</a>
+                <a href="#">Facebook</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Cursor personalizado
+        const cursor = document.querySelector('.cursor');
+        const links = document.querySelectorAll('a, button, .product-card');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        links.forEach(link => {
+            link.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+            link.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Animación de entrada para productos
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.product-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Animación para elementos fade-in
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            fadeObserver.observe(el);
+        });
+
+        // Contador animado para estadísticas
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumbers = entry.target.querySelectorAll('.stat-number');
+                    statNumbers.forEach(stat => {
+                        const target = parseInt(stat.getAttribute('data-target'));
+                        const duration = 2000;
+                        const step = target / (duration / 16);
+                        let current = 0;
+                        
+                        const updateStat = () => {
+                            current += step;
+                            if (current < target) {
+                                stat.textContent = Math.floor(current);
+                                requestAnimationFrame(updateStat);
+                            } else {
+                                stat.textContent = target + (target === 100 ? '%' : '+');
+                            }
+                        };
+                        
+                        updateStat();
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.querySelector('.stats');
+        if (statsSection) {
+            statsObserver.observe(statsSection.parentElement);
+        }
+
+        // Smooth scroll para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Parallax suave en el hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroBg = document.querySelector('.hero-bg');
+            if (heroBg) {
+                heroBg.style.transform = `translateY(${scrolled * 0.5}px) rotate(${scrolled * 0.02}deg)`;
+            }
+        });
+
+        // Efecto de máquina de escribir para el título (opcional, activado al cargar)
+        const titleSpans = document.querySelectorAll('.hero-title span');
+        titleSpans.forEach((span, index) => {
+            span.style.opacity = '0';
+            setTimeout(() => {
+                span.style.transition = 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+                span.style.opacity = '1';
+            }, 800 + (index * 100));
+        });
+    </script>
+</body>
+</html>

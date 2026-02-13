@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iMirly - Servicios Locales, Soluciones Reales</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Header / Navbar -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">iMirly</a>
+            <ul class="nav__menu">
+                <li class="nav__item">
+                    <a href="#home" class="nav__link active">Inicio</a>
+                </li>
+                <li class="nav__item">
+                    <a href="mercado-y-estrategia.html" class="nav__link">Mercado y estrategia</a>
+                </li>
+                                <li class="nav__item">
+                    <a href="diseno-ux.html" class="nav__link">Diseño & UX</a>
+                </li>
+                </li>
+                                <li class="nav__item">
+                    <a href="aplicacion.html" class="nav__link">Aplicación</a>
+                </li>
+                </li>
+                                <li class="nav__item">
+                    <a href="tecnologia.html" class="nav__link">Tecnología</a>
+                </li>
+                </li>
+                                <li class="nav__item">
+                    <a href="equipo.html" class="nav__link">Equipo</a>
+                </li>
+            </ul>
+            <button class="nav__toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero__decoration hero__decoration--1"></div>
+        <div class="hero__decoration hero__decoration--2"></div>
+        <div class="hero__decoration hero__decoration--3"></div>
+        <div class="container">
+            <div class="hero__content fade-in">
+                <h1 class="hero__title">Servicios locales,<br>soluciones reales</h1>
+                <p class="hero__subtitle">
+                    iMirly es una aplicación móvil que conecta a personas que necesitan un servicio con profesionales y
+                    particulares que lo ofrecen, de forma sencilla, cercana y organizada.
+                </p>
+                <p class="hero__text">
+                    Todos necesitamos arreglar un enchufe alguna vez. iMirly nace para hacer ese proceso más fácil,
+                    rápido y humano.
+                </p>
+                <button class="btn btn--primary">Conoce el proyecto</button>
+            </div>
+        </div>
+        <div class="hero__illustration">
+            <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero__svg">
+                <circle cx="200" cy="200" r="150" fill="#D7D1F3" opacity="0.3" />
+                <circle cx="200" cy="200" r="100" fill="#7864D7" opacity="0.2" />
+                <path d="M150 200C150 172.386 172.386 150 200 150C227.614 150 250 172.386 250 200" stroke="#321E92"
+                    stroke-width="8" stroke-linecap="round" />
+                <circle cx="200" cy="130" r="20" fill="#7864D7" />
+                <rect x="170" y="200" width="60" height="80" rx="10" fill="#321E92" opacity="0.8" />
+                <path d="M120 280C120 280 140 240 160 260C180 280 200 240 220 260C240 280 260 240 280 280"
+                    stroke="#7864D7" stroke-width="6" stroke-linecap="round" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- La Idea Section -->
+    <section class="section section--idea" id="idea">
+        <div class="container">
+            <div class="section__header fade-in">
+                <span class="section__tag">Concepto</span>
+                <h2 class="section__title">La idea</h2>
+                <p class="section__description">
+                    iMirly es una aplicación móvil pensada como un marketplace de servicios locales. Permite a los
+                    usuarios encontrar, ofrecer y contratar servicios de forma directa, sin intermediarios complejos y
+                    con una experiencia clara y accesible.
+                </p>
+            </div>
+            <div class="features">
+                <div class="feature-card fade-in">
+                    <div class="feature-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="M21 21L16.65 16.65" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-card__title">Buscar servicios</h3>
+                    <p class="feature-card__text">Encuentra exactamente lo que necesitas según tu necesidad específica
+                    </p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-card__title">Filtrar por tipo</h3>
+                    <p class="feature-card__text">Navega por categorías y subcategorías de forma organizada</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" />
+                            <line x1="9" y1="9" x2="15" y2="9" />
+                            <line x1="9" y1="13" x2="15" y2="13" />
+                            <line x1="9" y1="17" x2="11" y2="17" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-card__title">Información clara</h3>
+                    <p class="feature-card__text">Visualiza anuncios con datos claros y estructurados</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-card__title">Contacto directo</h3>
+                    <p class="feature-card__text">Comunícate directamente con el anunciante sin intermediarios</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- El Problema Section -->
+    <section class="section section--problem" id="problem">
+        <div class="container">
+            <div class="section__header fade-in">
+                <span class="section__tag">Contexto</span>
+                <h2 class="section__title">¿Por qué iMirly?</h2>
+                <p class="section__description">
+                    Existen muchas plataformas de compra-venta generalistas, pero no están pensadas específicamente para
+                    servicios. Esto provoca anuncios mal clasificados, confusión y una mala experiencia de usuario.
+                </p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card fade-in">
+                    <div class="problem-card__number">01</div>
+                    <h3 class="problem-card__title">Demanda real</h3>
+                    <p class="problem-card__text">Necesidad constante de servicios locales: reparaciones, clases,
+                        cuidado personal, diseño...</p>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="problem-card__number">02</div>
+                    <h3 class="problem-card__title">Soluciones digitales</h3>
+                    <p class="problem-card__text">Cada vez más personas buscan respuestas rápidas a través de
+                        aplicaciones</p>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="problem-card__number">03</div>
+                    <h3 class="problem-card__title">Visibilidad</h3>
+                    <p class="problem-card__text">Profesionales y autónomos necesitan darse a conocer sin grandes costes
+                    </p>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="problem-card__number">04</div>
+                    <h3 class="problem-card__title">Falta de especialización</h3>
+                    <p class="problem-card__text">No existen plataformas claras y dedicadas exclusivamente a servicios
+                    </p>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="problem-card__number">05</div>
+                    <h3 class="problem-card__title">Impacto juvenil</h3>
+                    <p class="problem-card__text">Especial relevancia para jóvenes y nuevas contrataciones de vivienda
+                    </p>
+                </div>
+
+
+                <div class="problem-card fade-in">
+                    <div class="problem-card__number">08</div>
+                    <h3 class="problem-card__title">Precios poco transparentes</h3>
+                    <p class="problem-card__text">Falta de estándares claros en cotizaciones genera desconfianza y
+                        conflictos entre clientes y profesionales</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Propuesta de Valor Section -->
+    <section class="section section--value" id="value">
+        <div class="container">
+            <div class="section__header fade-in">
+                <span class="section__tag">Diferencial</span>
+                <h2 class="section__title">¿Qué aporta iMirly?</h2>
+            </div>
+            <div class="value-grid">
+                <div class="value-item fade-in">
+                    <div class="value-item__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                        </svg>
+                    </div>
+                    <h3 class="value-item__title">Plataforma especializada</h3>
+                    <p class="value-item__text">Diseñada exclusivamente para servicios, no una adaptación generalista
+                    </p>
+                </div>
+                <div class="value-item fade-in">
+                    <div class="value-item__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                    </div>
+                    <h3 class="value-item__title">Enfoque local</h3>
+                    <p class="value-item__text">Proximidad geográfica y confianza comunitaria</p>
+                </div>
+                <div class="value-item fade-in">
+                    <div class="value-item__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" />
+                            <path d="M9 12l2 2 4-4" />
+                        </svg>
+                    </div>
+                    <h3 class="value-item__title">Diseño accesible</h3>
+                    <p class="value-item__text">Interfaz clara, intuitiva y centrada en el usuario</p>
+                </div>
+                <div class="value-item fade-in">
+                    <div class="value-item__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                    </div>
+                    <h3 class="value-item__title">Contacto directo</h3>
+                    <p class="value-item__text">Transparencia total en la comunicación entre partes</p>
+                </div>
+                <div class="value-item fade-in">
+                    <div class="value-item__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                        </svg>
+                    </div>
+                    <h3 class="value-item__title">Impacto social</h3>
+                    <p class="value-item__text">Fortalecimiento de la economía local y comunitaria</p>
+                </div>
+                <div class="value-item fade-in">
+                    <div class="value-item__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            <path d="M9 12l2 2 4-4" />
+                        </svg>
+                    </div>
+                    <h3 class="value-item__title">Confianza verificada</h3>
+                    <p class="value-item__text">Sistema de valoraciones y reputación que construye seguridad mutua entre
+                        usuarios</p>
+                </div>
+
+                <div class="value-item fade-in">
+                    <div class="value-item__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                            <line x1="9" y1="10" x2="15" y2="10" />
+                        </svg>
+                    </div>
+                    <h3 class="value-item__title">Chat integrado</h3>
+                    <p class="value-item__text">Comunicación centralizada dentro de la app para organizar todos los
+                        detalles del servicio</p>
+                </div>
+
+                <div class="value-item fade-in">
+                    <div class="value-item__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="1" x2="12" y2="23" />
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                        </svg>
+                    </div>
+                    <h3 class="value-item__title">Precios claros</h3>
+                    <p class="value-item__text">Transparencia en cotizaciones y tarifas para evitar sorpresas y
+                        malentendidos</p>
+                </div>
+            </div>
+            <div class="quote fade-in">
+                <blockquote class="quote__text">
+                    "iMirly no es solo una app de servicios, es una red de confianza local."
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Misión y Objetivos Section -->
+    <section class="section section--mission" id="mission">
+        <div class="container">
+            <div class="mission-wrapper">
+                <div class="mission-block fade-in">
+                    <span class="section__tag">Propósito</span>
+                    <h2 class="section__title">Nuestra misión</h2>
+                    <p class="mission__text">
+                        Crear una plataforma digital sencilla, accesible y eficaz que conecte personas con servicios de
+                        forma directa, segura y organizada, facilitando oportunidades tanto para clientes como para
+                        proveedores.
+                    </p>
+                </div>
+                <div class="objectives-block fade-in">
+                    <span class="section__tag">Metas</span>
+                    <h2 class="section__title">Objetivos</h2>
+                    <ul class="objectives__list">
+                        <li class="objective-item">
+                            <span class="objective-item__check">✓</span>
+                            <span class="objective-item__text">Desarrollar una app Android funcional</span>
+                        </li>
+                        <li class="objective-item">
+                            <span class="objective-item__check">✓</span>
+                            <span class="objective-item__text">Implantación inicial en Granada y área
+                                metropolitana</span>
+                        </li>
+                        <li class="objective-item">
+                            <span class="objective-item__check">✓</span>
+                            <span class="objective-item__text">Publicación y visualización de anuncios de
+                                servicios</span>
+                        </li>
+                        <li class="objective-item">
+                            <span class="objective-item__check">✓</span>
+                            <span class="objective-item__text">Experiencia de usuario clara y atractiva</span>
+                        </li>
+                        <li class="objective-item">
+                            <span class="objective-item__check">✓</span>
+                            <span class="objective-item__text">Primera base de usuarios en fase de pruebas</span>
+                        </li>
+                        <li class="objective-item">
+                            <span class="objective-item__check">✓</span>
+                            <span class="objective-item__text">Bases para futura ampliación y monetización</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipo Section -->
+    <section class="section section--team" id="team">
+        <div class="container">
+            <div class="section__header fade-in">
+                <span class="section__tag">Nosotros</span>
+                <h2 class="section__title">El equipo</h2>
+                <p class="section__description">
+                    iMirly está desarrollado por un equipo de cuatro personas, estudiantes del ciclo de Desarrollo de
+                    Aplicaciones Multiplataforma (DAM), implicados en todas las fases del proyecto.
+                </p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card fade-in">
+                    <div class="team-card__avatar"
+                        style="background: linear-gradient(135deg, #D7D1F3 0%, #7864D7 100%);">
+                        <span>EL</span>
+                    </div>
+                    <h3 class="team-card__name">Eva López López</h3>
+                    <p class="team-card__role">Diseñadora gráfica y desarrolladora en formación</p>
+                    <p class="team-card__text">UX/UI, identidad visual y diseño de interfaz</p>
+                </div>
+                <div class="team-card fade-in">
+                    <div class="team-card__avatar"
+                        style="background: linear-gradient(135deg, #7864D7 0%, #321E92 100%);">
+                        <span>AN</span>
+                    </div>
+                    <h3 class="team-card__name">Ana Núñez Rejón</h3>
+                    <p class="team-card__role">Diseñadora gráfica y desarrolladora en formación</p>
+                    <p class="team-card__text">UX/UI, diseño visual y desarrollo técnico</p>
+                </div>
+                <div class="team-card fade-in">
+                    <div class="team-card__avatar"
+                        style="background: linear-gradient(135deg, #D7D1F3 0%, #7864D7 100%);">
+                        <span>NC</span>
+                    </div>
+                    <h3 class="team-card__name">Nicolás Corbi</h3>
+                    <p class="team-card__role">Programador full-stack en formación</p>
+                    <p class="team-card__text">Backend, lógica de aplicación y estructura técnica</p>
+                </div>
+                <div class="team-card fade-in">
+                    <div class="team-card__avatar"
+                        style="background: linear-gradient(135deg, #7864D7 0%, #321E92 100%);">
+                        <span>AM</span>
+                    </div>
+                    <h3 class="team-card__name">Ángel Millán Aragón</h3>
+                    <p class="team-card__role">Desarrollador multiplataforma en formación</p>
+                    <p class="team-card__text">Coordinación del proyecto y desarrollo técnico</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <span class="footer__logo">iMirly</span>
+                    <p class="footer__text">Proyecto académico DAM</p>
+                </div>
+                <div class="footer__info">
+                    <p class="footer__location">Granada, España</p>
+                    <p class="footer__note">Presentación del proyecto</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 iMirly. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
