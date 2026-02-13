@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoLoTiro - Marketplace de regalos locales</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <div id="app">
+
+        <!-- ================= ONBOARDING ================= -->
+        <section id="onboardingScreen" class="screen active">
+            <div class="onboarding-container">
+
+                <!-- Imagen principal -->
+                <div class="onboarding-image">
+                    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80"
+                        alt="Comunidad compartiendo objetos">
+                </div>
+
+                <div class="onboarding-logo">
+                    <div class="logo-circle">
+                        <i data-lucide="gift"></i>
+                    </div>
+                    <h1>NoLoTiro</h1>
+                    <p class="tagline">
+                        Dale una segunda vida a tus cosas compartiendo con tu comunidad
+                    </p>
+                </div>
+
+                <div class="features-list">
+
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i data-lucide="leaf"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Sostenible</h3>
+                            <p>Reduce el desperdicio y ayuda al medio ambiente</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i data-lucide="users"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Comunidad</h3>
+                            <p>Conecta con personas de tu vecindario</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i data-lucide="map-pin"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Cerca de ti</h3>
+                            <p>Encuentra artículos gratis en tu zona</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="btn-primary btn-large" onclick="navigateTo('login')">
+                    Comenzar
+                </button>
+            </div>
+        </section>
+
+
+        <!-- ================= LOGIN ================= -->
+        <section id="loginScreen" class="screen">
+            <div class="auth-container">
+
+                <button class="btn-back" onclick="navigateTo('onboarding')">
+                    <i data-lucide="arrow-left"></i>
+                </button>
+
+                <!-- Imagen superior -->
+                <div class="auth-image">
+                    <img src="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?auto=format&fit=crop&w=900&q=80"
+                        alt="Personas usando móvil">
+                </div>
+
+                <div class="auth-header">
+                    <h2>¡Bienvenido de nuevo!</h2>
+                    <p>Inicia sesión para continuar compartiendo</p>
+                </div>
+
+                <form class="auth-form" onsubmit="handleLogin(event)">
+
+                    <div class="form-group">
+                        <label>Correo electrónico</label>
+                        <div class="input-wrapper">
+                            <i data-lucide="mail"></i>
+                            <input type="email" id="loginEmail" placeholder="tu@email.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Contraseña</label>
+                        <div class="input-wrapper">
+                            <i data-lucide="lock"></i>
+                            <input type="password" id="loginPassword" required>
+                            <button type="button" class="toggle-password" onclick="togglePassword('loginPassword')">
+                                <i data-lucide="eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+
+                    <button type="submit" class="btn-primary btn-large">
+                        Iniciar sesión
+                    </button>
+
+                </form>
+
+                <div class="divider">
+                    <span>O continúa con</span>
+                </div>
+
+                <div class="social-login">
+                    <button class="btn-social">
+                        <i data-lucide="chrome"></i>
+                        Google
+                    </button>
+                    <button class="btn-social">
+                        <i data-lucide="facebook"></i>
+                        Facebook
+                    </button>
+                </div>
+
+                <p class="auth-footer">
+                    ¿No tienes una cuenta?
+                    <a href="#" onclick="navigateTo('register')">Regístrate</a>
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- ================= REGISTER ================= -->
+        <section id="registerScreen" class="screen">
+            <div class="auth-container">
+
+                <button class="btn-back" onclick="navigateTo('login')">
+                    <i data-lucide="arrow-left"></i>
+                </button>
+
+                <!-- Imagen superior -->
+                <div class="auth-image">
+                    <img src="https://images.unsplash.com/photo-1532619675605-1a61a0cbe7c1?auto=format&fit=crop&w=900&q=80"
+                        alt="Persona creando cuenta">
+                </div>
+
+                <div class="auth-header">
+                    <h2>Crear cuenta</h2>
+                    <p>Únete a la comunidad de NoLoTiro</p>
+                </div>
+
+                <form class="auth-form" onsubmit="handleRegister(event)">
+
+                    <div class="form-group">
+                        <label>Nombre completo</label>
+                        <div class="input-wrapper">
+                            <i data-lucide="user"></i>
+                            <input type="text" id="registerName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Correo electrónico</label>
+                        <div class="input-wrapper">
+                            <i data-lucide="mail"></i>
+                            <input type="email" id="registerEmail" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Ubicación</label>
+                        <div class="input-wrapper">
+                            <i data-lucide="map-pin"></i>
+                            <input type="text" id="registerLocation" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Contraseña</label>
+                        <div class="input-wrapper">
+                            <i data-lucide="lock"></i>
+                            <input type="password" id="registerPassword" minlength="6" required>
+                            <button type="button" class="toggle-password" onclick="togglePassword('registerPassword')">
+                                <i data-lucide="eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Confirmar contraseña</label>
+                        <div class="input-wrapper">
+                            <i data-lucide="lock"></i>
+                            <input type="password" id="registerConfirmPassword" required>
+                            <button type="button" class="toggle-password"
+                                onclick="togglePassword('registerConfirmPassword')">
+                                <i data-lucide="eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="terms-checkbox">
+                        <input type="checkbox" id="acceptTerms" required>
+                        <label for="acceptTerms">
+                            Acepto los términos y condiciones
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-primary btn-large">
+                        Crear cuenta
+                    </button>
+
+                </form>
+
+                <div class="divider">
+                    <span>O regístrate con</span>
+                </div>
+
+                <div class="social-login">
+                    <button class="btn-social">
+                        <i data-lucide="chrome"></i>
+                        Google
+                    </button>
+                    <button class="btn-social">
+                        <i data-lucide="facebook"></i>
+                        Facebook
+                    </button>
+                </div>
+
+                <p class="auth-footer">
+                    ¿Ya tienes una cuenta?
+                    <a href="#" onclick="navigateTo('login')">Inicia sesión</a>
+                </p>
+
+            </div>
+        </section>
+        <!-- ============================================
+             PANTALLA: HOME / CATÁLOGO
+             ============================================ -->
+        <section id="homeScreen" class="screen">
+            <header class="app-header">
+                <div class="header-top">
+                    <div class="logo">
+                        <i data-lucide="leaf"></i>
+                        <h1>NoLoTiro</h1>
+                    </div>
+                    <div class="header-actions">
+                        <div class="location">
+                            <i data-lucide="map-pin"></i>
+                            <span class="location-text">Granada</span>
+                        </div>
+                        <button class="notification-btn" aria-label="Notificaciones"
+                            onclick="navigateTo('solicitudes')">
+                            <i data-lucide="bell"></i>
+                            <span class="notification-badge">2</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="search-bar">
+                    <i data-lucide="search"></i>
+                    <input type="text" id="searchInput" placeholder="Buscar artículos, categorías...">
+                </div>
+            </header>
+
+            <main class="main-content">
+                <!-- Banner Destacado -->
+                <div class="featured-banner">
+                    <div class="banner-content">
+                        <i data-lucide="zap"></i>
+                        <h3>¡Destaca tu artículo!</h3>
+                        <p>Posiciónalo arriba y consigue que se vea más rápido</p>
+                        <button class="btn-banner" onclick="showModal('infoModal')">Más información</button>
+                    </div>
+                </div>
+
+                <!-- Sección: Artículos destacados -->
+                <div class="section">
+                    <div class="section-header">
+                        <div class="section-title-with-icon">
+                            <i data-lucide="zap"></i>
+                            <h3>Artículos destacados</h3>
+                        </div>
+                        <button class="btn-text" onclick="showToast('Próximamente')">Ver todos →</button>
+                    </div>
+                    <div class="products-grid" id="featuredGrid">
+                        <!-- Cards se renderizan con JS -->
+                    </div>
+                </div>
+
+                <!-- Sección: Popular cerca de ti -->
+                <div class="section">
+                    <div class="section-header">
+                        <div class="section-title-with-icon">
+                            <i data-lucide="heart"></i>
+                            <h3>Popular cerca de ti</h3>
+                        </div>
+                        <button class="btn-text" onclick="showToast('Próximamente')">Ver todos →</button>
+                    </div>
+                    <div class="products-grid" id="popularGrid">
+                        <!-- Cards se renderizan con JS -->
+                    </div>
+                </div>
+
+                <!-- Sección: Se van rápido -->
+                <div class="section">
+                    <div class="section-header">
+                        <div class="section-title-with-icon">
+                            <i data-lucide="trending-up"></i>
+                            <h3>¡Se van rápido!</h3>
+                        </div>
+                        <button class="btn-text" onclick="showToast('Próximamente')">Ver todos →</button>
+                    </div>
+                    <div class="urgent-banner">
+                        <i data-lucide="clock"></i>
+                        <span>¡No dejes que se te escapen de las manos!</span>
+                    </div>
+                    <div class="products-grid" id="urgentGrid">
+                        <!-- Cards se renderizan con JS -->
+                    </div>
+                </div>
+
+                <!-- Sección: Añadidos recientemente -->
+                <div class="section">
+                    <div class="section-header">
+                        <div class="section-title-with-icon">
+                            <i data-lucide="history"></i>
+                            <h3>Añadidos recientemente</h3>
+                        </div>
+                        <button class="btn-text" onclick="showToast('Próximamente')">Ver todos →</button>
+                    </div>
+                    <div class="products-grid" id="recentGrid">
+                        <!-- Cards se renderizan con JS -->
+                    </div>
+                </div>
+
+                <!-- Sección: Artículos nuevos gratis -->
+                <div class="section">
+                    <div class="section-header">
+                        <h3>Artículos nuevos gratis</h3>
+                        <button class="btn-text" onclick="showToast('Próximamente')">Ver todos →</button>
+                    </div>
+                    <p class="section-subtitle">Todo completamente gratis para ti</p>
+                    <div class="products-grid" id="newGrid">
+                        <!-- Cards se renderizan con JS -->
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <footer class="app-footer">
+
+                    <div class="footer-brand">
+                        <h4>NoLoTiro</h4>
+                        <p>Únete a la comunidad de economía circular.</p>
+
+                        <div class="social-links">
+                            <a href="#"><i data-lucide="facebook"></i></a>
+                            <a href="#"><i data-lucide="instagram"></i></a>
+                            <a href="#"><i data-lucide="twitter"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-links">
+                        <div>
+                            <h5>Comunidad</h5>
+                            <a href="#">Sobre nosotros</a>
+                            <a href="#">Ayuda</a>
+                            <a href="#">Blog</a>
+                        </div>
+                        <div>
+                            <h5>Legal</h5>
+                            <a href="#">Privacidad</a>
+                            <a href="#">Términos</a>
+                            <a href="#">Cookies</a>
+                        </div>
+                    </div>
+
+                    <div class="footer-contact">
+                        <p><i data-lucide="mail"></i> hola@nolotiro.app</p>
+                        <p><i data-lucide="phone"></i> +34 912 345 678</p>
+                    </div>
+
+                </footer>
+            </main>
+
+            <!-- Bottom Navigation -->
+            <nav class="bottom-nav">
+                <button class="nav-item active" onclick="navigateTo('home')">
+                    <i data-lucide="home"></i>
+                    <span class="nav-label">Inicio</span>
+                </button>
+                <button class="nav-item" onclick="navigateTo('favorites')">
+                    <i data-lucide="heart"></i>
+                    <span class="nav-label">Favoritos</span>
+                </button>
+                <button class="nav-item nav-item-center" onclick="navigateTo('publish')">
+                    <i data-lucide="plus-circle"></i>
+                    <span class="nav-label"></span>
+                </button>
+                <button class="nav-item" onclick="showToast('Próximamente')">
+                    <i data-lucide="message-circle"></i>
+                    <span class="nav-label">Mensajes</span>
+                </button>
+                <button class="nav-item" onclick="navigateTo('account')">
+                    <i data-lucide="user"></i>
+                    <span class="nav-label">Cuenta</span>
+                </button>
+            </nav>
+        </section>
+        <!-- ============================================
+             PANTALLA: DETALLE DEL ARTÍCULO
+             ============================================ -->
+        <section id="detailScreen" class="screen">
+            <header class="detail-header">
+                <button class="btn-back" onclick="navigateTo('home')">←</button>
+                <h2>Detalles del artículo</h2>
+                <button class="btn-favorite-header" id="detailFavoriteBtn" onclick="toggleDetailFavorite()">
+                    <i data-lucide="heart"></i>
+                </button>
+            </header>
+
+            <div class="detail-image-container">
+                <img id="detailImage" src="" alt="Imagen del artículo">
+                <span class="badge badge-detail" id="detailBadge">Disponible</span>
+            </div>
+
+            <div class="detail-content">
+                <button class="btn-request-main" onclick="requestItem()">
+                    Solicitar este artículo
+                </button>
+                <p class="request-subtitle">Sin pago • Recogida gratuita</p>
+
+                <div class="detail-title-section">
+                    <h1 id="detailTitle">Título del artículo</h1>
+                    <div class="detail-tags">
+                        <span class="price-tag-detail">Gratis</span>
+                        <span class="category-tag" id="detailCategory">Categoría</span>
+                    </div>
+                </div>
+
+                <div class="detail-section-v2">
+                    <h3>Detalles del producto</h3>
+                    <div class="detail-list">
+                        <div class="detail-item">
+                            <span class="detail-icon-v2">📦</span>
+                            <div class="detail-item-content">
+                                <span class="detail-label-v2">Estado</span>
+                                <span class="detail-value-v2" id="detailCondition">-</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon-v2">✓</span>
+                            <div class="detail-item-content">
+                                <span class="detail-label-v2">Disponibilidad</span>
+                                <span class="detail-value-v2" id="detailAvailability">-</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i data-lucide="history"></i>
+                            <div class="detail-item-content">
+                                <span class="detail-label-v2">Publicado</span>
+                                <span class="detail-value-v2" id="detailPublished">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detail-section-v2">
+                    <h3>Descripción</h3>
+                    <p id="detailDescription" class="description-text">-</p>
+                </div>
+
+                <div class="detail-section-v2">
+                    <h3>Información de recogida</h3>
+                    <div class="detail-list">
+                        <div class="detail-item">
+                            <span class="detail-icon-v2">🚚</span>
+                            <div class="detail-item-content">
+                                <span class="detail-label-v2">Método de recogida</span>
+                                <span class="detail-value-v2">Solo recogida en persona</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i data-lucide="map-pin"></i>
+                            <div class="detail-item-content">
+                                <span class="detail-label-v2">Ubicación</span>
+                                <span class="detail-value-v2" id="detailLocation">-</span>
+                                <span class="detail-distance-v2" id="detailDistance">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detail-section-v2">
+                    <h3>Ofrecido por</h3>
+                    <div class="seller-card-v2">
+                        <div class="seller-avatar-v2" id="detailSellerAvatar">A</div>
+                        <div class="seller-info-v2">
+                            <span class="seller-name-v2" id="detailSellerName">-</span>
+                            <div class="seller-stats-v2">
+                                <span class="rating-v2">⭐ <span id="detailRating">-</span> valoración</span>
+                                <span class="separator">•</span>
+                                <span id="detailItemsCount">-</span> artículos compartidos
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="how-it-works-v2">
+                    <p class="how-it-title">Cómo funciona:</p>
+                    <p class="how-it-text">Envía una solicitud para este artículo. El donante la revisará y confirmará
+                        los detalles de recogida contigo.</p>
+                </div>
+            </div>
+        </section>
+        <!-- ============================================
+             PANTALLA: MI CUENTA
+             ============================================ -->
+ <section id="accountScreen" class="screen">
+            <header class="account-header">
+                <h2>Mi cuenta</h2>
+                <button class="btn-icon" onclick="navigateTo('settings')">
+                    <i data-lucide="settings"></i>
+                </button>
+            </header>
+
+            <div class="account-content">
+                <!-- Perfil -->
+                <div class="profile-card">
+                    <div class="profile-avatar">
+                        <i data-lucide="user"></i>
+                    </div>
+                    <div class="profile-info">
+                        <h3>Ana García</h3>
+                        <p class="profile-location">
+                            <i data-lucide="map-pin"></i> Granada, España
+                        </p>
+                        <p class="profile-rating">
+                            <i data-lucide="star" class="star-filled"></i> 4.9 valoración
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Resumen de actividad -->
+                <div class="activity-summary">
+                    <h4>Resumen de actividad</h4>
+                    <div class="activity-grid">
+                        <div class="activity-item">
+                            <div class="activity-icon-box">
+                                <i data-lucide="package"></i>
+                            </div>
+                            <span class="activity-number">3</span>
+                            <span class="activity-label">Publicaciones activas</span>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon-box">
+                                <i data-lucide="gift"></i>
+                            </div>
+                            <span class="activity-number">12</span>
+                            <span class="activity-label">Artículos regalados</span>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon-box">
+                                <i data-lucide="heart"></i>
+                            </div>
+                            <span class="activity-number">8</span>
+                            <span class="activity-label">Artículos recibidos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mis publicaciones -->
+                <div class="account-section">
+                    <div class="section-header">
+                        <h4>Mis publicaciones</h4>
+                        <button class="btn-text" onclick="showToast('Próximamente')">Ver todo</button>
+                    </div>
+                    <div class="account-list" id="myPublications">
+                        <!-- Se renderiza con JS -->
+                    </div>
+                </div>
+
+                <!-- Mis solicitudes -->
+                <div class="account-section">
+                    <div class="section-header">
+                        <h4>Mis solicitudes</h4>
+                        <button class="btn-text" onclick="showToast('Próximamente')">Ver todo</button>
+                    </div>
+                    <div class="account-list" id="myRequests">
+                        <!-- Se renderiza con JS -->
+                    </div>
+                </div>
+
+                <!-- Botones de cuenta -->
+                <div class="account-actions">
+                    <button class="btn-account" onclick="navigateTo('settings')">
+                        <i data-lucide="settings"></i> Configuración de cuenta
+                    </button>
+                    <button class="btn-account btn-logout" onclick="logout()">
+                        <i data-lucide="log-out"></i> Cerrar sesión
+                    </button>
+                </div>
+            </div>
+
+            <!-- Bottom Navigation -->
+             <nav class="bottom-nav">
+                <button class="nav-item" onclick="navigateTo('home')">
+                    <i data-lucide="home"></i>
+                    <span class="nav-label">Inicio</span>
+                </button>
+                <button class="nav-item" onclick="navigateTo('favorites')">
+                    <i data-lucide="heart"></i>
+                    <span class="nav-label">Favoritos</span>
+                </button>
+                <button class="nav-item nav-item-center" onclick="navigateTo('publish')">
+                    <i data-lucide="plus-circle"></i>
+                    <span class="nav-label"></span>
+                </button>
+                <button class="nav-item" onclick="showToast('Próximamente')">
+                    <i data-lucide="message-circle"></i>
+                    <span class="nav-label">Mensajes</span>
+                </button>
+                <button class="nav-item active" onclick="navigateTo('account')">
+                    <i data-lucide="user"></i>
+                    <span class="nav-label">Cuenta</span>
+                </button>
+            </nav>
+        </section>
+
+        <!-- ============================================
+             PANTALLA: SOLICITUDES RECIBIDAS
+             ============================================ -->
+        <section id="solicitudesScreen" class="screen">
+            <header class="solicitudes-header">
+                <button class="btn-back" onclick="navigateTo('home')">←</button>
+                <div class="solicitudes-title">
+                    <h2>Solicitudes recibidas</h2>
+                    <p>2 solicitudes pendientes</p>
+                </div>
+            </header>
+
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab active" onclick="switchTab('todas')">Todas (4)</button>
+                <button class="tab" onclick="switchTab('pendientes')">Pendientes (2)</button>
+                <button class="tab" onclick="switchTab('aprobadas')">Aprobadas (1)</button>
+                <button class="tab" onclick="switchTab('rechazadas')">Rechazadas (1)</button>
+            </div>
+
+            <!-- Lista de solicitudes -->
+            <div class="solicitudes-list" id="solicitudesList">
+                <!-- Se renderiza con JS -->
+            </div>
+        </section>
+
+        <!-- ============================================
+             PANTALLA: FAVORITOS
+             ============================================ -->
+        <section id="favoritesScreen" class="screen">
+            <header class="simple-header">
+                <h2>Mis favoritos</h2>
+            </header>
+
+            <div class="favorites-content">
+                <div class="products-grid" id="favoritesGrid">
+                    <!-- Se renderiza con JS -->
+                </div>
+                <div class="empty-state" id="emptyFavorites" style="display: none;">
+                    <span class="empty-icon">🤍</span>
+                    <h3>No tienes favoritos</h3>
+                    <p>Guarda los artículos que te interesen para verlos aquí</p>
+                    <button class="btn-primary" onclick="navigateTo('home')">Explorar artículos</button>
+                </div>
+            </div>
+
+            <!-- Bottom Navigation -->
+            <nav class="bottom-nav">
+                <button class="nav-item" onclick="navigateTo('home')">
+                    <i data-lucide="home"></i>
+                    <span class="nav-label">Inicio</span>
+                </button>
+                <button class="nav-item active" onclick="navigateTo('favorites')">
+                    <i data-lucide="heart"></i>
+                    <span class="nav-label">Favoritos</span>
+                </button>
+                <button class="nav-item nav-item-center" onclick="navigateTo('publish')">
+                    <i data-lucide="plus-circle"></i>
+                    <span class="nav-label"></span>
+                </button>
+                <button class="nav-item" onclick="showToast('Próximamente')">
+                    <i data-lucide="message-circle"></i>
+                    <span class="nav-label">Mensajes</span>
+                </button>
+                <button class="nav-item" onclick="navigateTo('account')">
+                    <i data-lucide="user"></i>
+                    <span class="nav-label">Cuenta</span>
+                </button>
+            </nav>
+        </section>
+
+        <!-- ============================================
+             PANTALLA: PUBLICAR ARTÍCULO
+             ============================================ -->
+        <section id="publishScreen" class="screen">
+            <header class="publish-header">
+                <button class="btn-back" onclick="navigateTo('home')">←</button>
+                <h2>Publicar artículo gratis</h2>
+            </header>
+
+            <div class="publish-content">
+                <!-- Info banner -->
+                <div class="info-banner">
+                    <span class="info-icon">ℹ️</span>
+                    <p>Publica artículos que quieras regalar gratis. Incluye fotos claras e información detallada para
+                        ayudar a otros a encontrar lo que necesitan.</p>
+                </div>
+
+                <form id="publishForm" onsubmit="handlePublish(event)">
+                    <!-- Fotos -->
+                    <div class="form-section">
+                        <label class="form-label required">Fotos</label>
+                        <p class="form-hint">Añade hasta 5 fotos. La primera será la imagen principal.</p>
+                        <div class="photo-upload-container">
+                            <button type="button" class="photo-upload-btn"
+                                onclick="showToast('Función de subir foto próximamente')">
+                                <span class="upload-icon">⬆️</span>
+                                <span>Subir</span>
+                            </button>
+                            <button type="button" class="photo-upload-btn"
+                                onclick="showToast('Función de cámara próximamente')">
+                                <span class="upload-icon">📷</span>
+                                <span>Cámara</span>
+                            </button>
+                        </div>
+                        <div class="photo-preview-grid" id="photoPreviewGrid">
+                            <!-- Las fotos seleccionadas aparecerán aquí -->
+                        </div>
+                    </div>
+
+                    <!-- Nombre del artículo -->
+                    <div class="form-section">
+                        <label class="form-label required">Nombre del artículo</label>
+                        <input type="text" id="articleName" class="form-input"
+                            placeholder="ej., Silla de madera moderna para comedor" required minlength="3"
+                            maxlength="100">
+                    </div>
+
+                    <!-- Categoría y Estado -->
+                    <div class="form-row">
+                        <div class="form-section half">
+                            <label class="form-label required">Categoría</label>
+                            <select id="articleCategory" class="form-select" required>
+                                <option value="" disabled selected>Seleccionar</option>
+                                <option value="Muebles">Muebles</option>
+                                <option value="Electrodomésticos">Electrodomésticos</option>
+                                <option value="Ropa">Ropa</option>
+                                <option value="Libros">Libros</option>
+                                <option value="Deporte">Deporte</option>
+                                <option value="Jardín">Jardín</option>
+                                <option value="Hogar">Hogar</option>
+                                <option value="Juguetes">Juguetes</option>
+                                <option value="Tecnología">Tecnología</option>
+                                <option value="Otros">Otros</option>
+                            </select>
+                        </div>
+                        <div class="form-section half">
+                            <label class="form-label required">Estado</label>
+                            <select id="articleCondition" class="form-select" required>
+                                <option value="" disabled selected>Seleccionar</option>
+                                <option value="Como nuevo">Como nuevo</option>
+                                <option value="Buen estado">Buen estado</option>
+                                <option value="Usado - buen estado">Usado - buen estado</option>
+                                <option value="Funcional">Funcional</option>
+                                <option value="Necesita reparación">Necesita reparación</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Descripción -->
+                    <div class="form-section">
+                        <label class="form-label required">Descripción</label>
+                        <textarea id="articleDescription" class="form-textarea" rows="4"
+                            placeholder="Describe el estado del artículo, características, dimensiones, etc." required
+                            minlength="20" maxlength="500"></textarea>
+                        <p class="char-count" id="charCount">Mínimo 20 caracteres</p>
+                    </div>
+
+                    <!-- Ubicación -->
+                    <div class="form-section">
+                        <label class="form-label required">Ubicación de recogida</label>
+                        <input type="text" id="articleLocation" class="form-input"
+                            placeholder="ej., Centro, cerca del Parque Central" required>
+                        <p class="form-hint privacy-hint">Solo área general. La dirección exacta se compartirá tras
+                            aprobar la solicitud.</p>
+                    </div>
+
+                    <!-- Disponibilidad -->
+                    <div class="form-section">
+                        <label class="form-label">Disponibilidad para recogida</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="availability" value="weekdays">
+                                <span class="checkmark"></span>
+                                <span class="checkbox-label">Entre semana</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="availability" value="weekends">
+                                <span class="checkmark"></span>
+                                <span class="checkbox-label">Fines de semana</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="availability" value="flexible">
+                                <span class="checkmark"></span>
+                                <span class="checkbox-label">Horario flexible</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Botón submit -->
+                    <div class="form-submit">
+                        <button type="submit" class="btn-primary btn-large">
+                            Publicar artículo gratis
+                        </button>
+                        <p class="submit-note">Al publicar, aceptas regalar este artículo de forma gratuita</p>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- ============================================
+             PANTALLA: CONFIGURACIÓN
+             ============================================ -->
+               <!-- ============================================
+             PANTALLA: CONFIGURACIÓN
+             ============================================ -->
+        <section id="settingsScreen" class="screen">
+            <header class="settings-header">
+                <button class="btn-back" onclick="navigateTo('account')">
+                    <i data-lucide="arrow-left"></i>
+                </button>
+                <h2>Configuración</h2>
+            </header>
+
+            <div class="settings-content">
+                <!-- Profile Card -->
+                <div class="profile-card-settings" onclick="showToast('Próximamente')">
+                    <div class="profile-avatar-settings">
+                        <i data-lucide="user"></i>
+                    </div>
+                    <div class="profile-info-settings">
+                        <h3>Ana García</h3>
+                        <p>ana.garcia@email.com</p>
+                    </div>
+                    <i data-lucide="chevron-right" class="profile-arrow"></i>
+                </div>
+
+                <!-- Cuenta -->
+                <div class="settings-section">
+                    <h4 class="section-label">CUENTA</h4>
+                    <div class="settings-list">
+                        <button class="settings-item" onclick="showToast('Próximamente')">
+                            <div class="settings-icon" style="background: #ecfdf5; color: #059669;">
+                                <i data-lucide="user"></i>
+                            </div>
+                            <div class="settings-item-content">
+                                <span class="settings-item-title">Editar perfil</span>
+                                <span class="settings-item-subtitle">Nombre, ubicación, foto</span>
+                            </div>
+                            <i data-lucide="chevron-right" class="settings-arrow-icon"></i>
+                        </button>
+                        <button class="settings-item" onclick="showToast('Próximamente')">
+                            <div class="settings-icon" style="background: #eff6ff; color: #3b82f6;">
+                                <i data-lucide="lock"></i>
+                            </div>
+                            <div class="settings-item-content">
+                                <span class="settings-item-title">Cambiar contraseña</span>
+                                <span class="settings-item-subtitle">Actualiza tu contraseña</span>
+                            </div>
+                            <i data-lucide="chevron-right" class="settings-arrow-icon"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Preferencias -->
+                <div class="settings-section">
+                    <h4 class="section-label">PREFERENCIAS</h4>
+                    <div class="settings-list">
+                        <button class="settings-item" onclick="showToast('Próximamente')">
+                            <div class="settings-icon" style="background: #fef3c7; color: #d97706;">
+                                <i data-lucide="bell"></i>
+                            </div>
+                            <div class="settings-item-content">
+                                <span class="settings-item-title">Notificaciones</span>
+                                <span class="settings-item-subtitle">Mensajes, solicitudes, alertas</span>
+                            </div>
+                            <i data-lucide="chevron-right" class="settings-arrow-icon"></i>
+                        </button>
+                        <button class="settings-item" onclick="showToast('Próximamente')">
+                            <div class="settings-icon" style="background: #ffedd5; color: #ea580c;">
+                                <i data-lucide="globe"></i>
+                            </div>
+                            <div class="settings-item-content">
+                                <span class="settings-item-title">Idioma</span>
+                                <span class="settings-item-subtitle">Español</span>
+                            </div>
+                            <i data-lucide="chevron-right" class="settings-arrow-icon"></i>
+                        </button>
+                        <button class="settings-item" onclick="showToast('Próximamente')">
+                            <div class="settings-icon" style="background: #f3e8ff; color: #9333ea;">
+                                <i data-lucide="shield"></i>
+                            </div>
+                            <div class="settings-item-content">
+                                <span class="settings-item-title">Privacidad</span>
+                                <span class="settings-item-subtitle">Control de datos y permisos</span>
+                            </div>
+                            <i data-lucide="chevron-right" class="settings-arrow-icon"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Soporte -->
+                <div class="settings-section">
+                    <h4 class="section-label">SOPORTE</h4>
+                    <div class="settings-list">
+                        <button class="settings-item" onclick="showToast('Próximamente')">
+                            <div class="settings-icon" style="background: #ecfdf5; color: #059669;">
+                                <i data-lucide="help-circle"></i>
+                            </div>
+                            <div class="settings-item-content">
+                                <span class="settings-item-title">Ayuda</span>
+                                <span class="settings-item-subtitle">FAQ y soporte técnico</span>
+                            </div>
+                            <i data-lucide="chevron-right" class="settings-arrow-icon"></i>
+                        </button>
+                        <button class="settings-item" onclick="showToast('Próximamente')">
+                            <div class="settings-icon" style="background: #e0f2fe; color: #0284c7;">
+                                <i data-lucide="info"></i>
+                            </div>
+                            <div class="settings-item-content">
+                                <span class="settings-item-title">Sobre la app</span>
+                                <span class="settings-item-subtitle">Versión 1.0.0</span>
+                            </div>
+                            <i data-lucide="chevron-right" class="settings-arrow-icon"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Zona de peligro -->
+                <div class="settings-section">
+                    <h4 class="section-label">ZONA DE PELIGRO</h4>
+                    <div class="settings-list">
+                        <button class="settings-item danger" onclick="showDeleteAccountModal()">
+                            <div class="settings-icon" style="background: #fee2e2; color: #dc2626;">
+                                <i data-lucide="trash-2"></i>
+                            </div>
+                            <div class="settings-item-content">
+                                <span class="settings-item-title danger-text">Eliminar cuenta</span>
+                                <span class="settings-item-subtitle">Esta acción es permanente</span>
+                            </div>
+                            <i data-lucide="chevron-right" class="settings-arrow-icon"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Cerrar sesión -->
+                <button class="btn-logout-settings" onclick="logout()">
+                    <i data-lucide="log-out"></i>
+                    Cerrar sesión
+                </button>
+
+                <!-- Footer -->
+                <div class="settings-footer">
+                    <p>NoLoTiro v1.0.0</p>
+                    <p>© 2024 Todos los derechos reservados</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal: Eliminar cuenta -->
+        <div id="deleteAccountModal" class="modal">
+            <div class="modal-content modal-small">
+                <div class="modal-header">
+                    <h3>Eliminar cuenta</h3>
+                    <button class="btn-close" onclick="hideModal('deleteAccountModal')">
+                        <i data-lucide="x"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p style="color: var(--color-text-secondary); margin-bottom: 1rem;">
+                        ¿Estás seguro de que quieres eliminar tu cuenta? Esta acción no se puede deshacer.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-secondary" onclick="hideModal('deleteAccountModal')">Cancelar</button>
+                    <button class="btn-danger" onclick="confirmDeleteAccount()">Eliminar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal: Eliminar cuenta -->
+        <div id="deleteAccountModal" class="modal">
+            <div class="modal-content modal-small">
+                <div class="modal-header">
+                    <h3>Eliminar cuenta</h3>
+                    <button class="btn-close" onclick="hideModal('deleteAccountModal')">✕</button>
+                </div>
+                <div class="modal-body">
+                    <p style="color: var(--color-text-secondary); margin-bottom: 1rem;">
+                        ¿Estás seguro de que quieres eliminar tu cuenta? Esta acción no se puede deshacer.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-secondary" onclick="hideModal('deleteAccountModal')">Cancelar</button>
+                    <button class="btn-danger" onclick="confirmDeleteAccount()">Eliminar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================
+             MODALES
+             ============================================ -->
+
+        <!-- Modal: Información Destacar -->
+        <div id="infoModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Destaca tu artículo</h3>
+                    <button class="btn-close" onclick="hideModal('infoModal')">✕</button>
+                </div>
+                <div class="modal-body">
+                    <p>Al destacar tu artículo aparecerá en las primeras posiciones del catálogo durante 7 días.</p>
+                    <ul class="feature-list">
+                        <li>✓ Mayor visibilidad</li>
+                        <li>✓ Hasta 3x más solicitudes</li>
+                        <li>✓ Destacado en la sección principal</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-secondary" onclick="hideModal('infoModal')">Cerrar</button>
+                    <button class="btn-primary" onclick="showToast('Próximamente')">Destacar ahora</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal: Solicitud Enviada -->
+        <div id="requestModal" class="modal">
+            <div class="modal-content modal-small">
+                <div class="modal-success">
+                    <div class="success-circle">✓</div>
+                    <h3>¡Solicitud enviada!</h3>
+                    <p>Hemos notificado a <span id="requestSellerName">Ana</span> sobre tu interés. Te contactará pronto
+                        para coordinar la recogida.</p>
+                    <button class="btn-primary" onclick="hideModal('requestModal')">Entendido</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- TOAST -->
+        <div id="toast" class="toast">
+            <span id="toastMessage"></span>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>
