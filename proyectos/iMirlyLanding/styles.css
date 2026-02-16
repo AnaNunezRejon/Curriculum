@@ -522,6 +522,7 @@ img {
 
 .conclusions-grid {
     grid-template-columns: repeat(2, 1fr);
+        margin-bottom: 5rem;
 }
 
 /* ============================================
@@ -1531,6 +1532,7 @@ img {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-md);
+    margin-bottom: 2rem;
 }
 
 .palette-support {
