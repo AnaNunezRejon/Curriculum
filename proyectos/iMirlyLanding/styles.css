@@ -2203,6 +2203,29 @@ img {
     border-radius: var(--radius-md);
 }
 
+.values-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px; /* Espacio entre items */
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.value-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    /* Sin width fijo - se ajusta al contenido */
+    padding: 8px 12px; /* Padding interno opcional */
+    background-color: #f8f9fa; /* Fondo gris claro opcional */
+    border-radius: 8px; /* Bordes redondeados opcional */
+}
+
+
+
 .value-item__icon {
     width: 36px;
     height: 36px;
@@ -4812,3 +4835,10 @@ img {
         transform: rotate(360deg);
     }
 }
+
+
+
+
+
+
+
