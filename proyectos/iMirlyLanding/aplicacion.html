@@ -43,10 +43,12 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero hero--secondary">
-        <div class="hero__decoration hero__decoration--1"></div>
-        <div class="hero__decoration hero__decoration--2"></div>
-        <div class="container">
+    <<section class="hero hero--secondary">
+    <div class="hero__decoration hero__decoration--1"></div>
+    <div class="hero__decoration hero__decoration--2"></div>
+    <div class="container">
+        <div class="hero__wrapper" style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+            <!-- Contenido texto -->
             <div class="hero__content fade-in">
                 <span class="section__tag">Frontend</span>
                 <h1 class="hero__title">La aplicación iMirly</h1>
@@ -57,8 +59,14 @@
                     iMirly se ha desarrollado como una aplicación móvil funcional, orientada a facilitar la búsqueda y publicación de servicios locales desde el smartphone.
                 </p>
             </div>
+
+            <!-- Imagen a la derecha - PON TU RUTA AQUÍ -->
+            <div class="hero__image fade-in" style="display: flex; justify-content: center; align-items: center;">
+                <img src="../../assets/img/maquetaimirly.jpg" alt="Aplicación móvil iMirly" style="max-width: 100%; height: auto; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Tipo de Aplicación -->
     <section class="section section--concept" id="tipo-aplicacion">

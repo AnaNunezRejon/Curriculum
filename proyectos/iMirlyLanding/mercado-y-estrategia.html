@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mercado y Estrategia - iMirly</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body>
     <!-- Header / Navbar -->
     <header class="header" id="header">
@@ -29,10 +32,10 @@
                 <li class="nav__item">
                     <a href="aplicacion.html" class="nav__link">Aplicación</a>
                 </li>
-                                <li class="nav__item">
+                <li class="nav__item">
                     <a href="tecnologia.html" class="nav__link">Tecnología</a>
                 </li>
-                                <li class="nav__item">
+                <li class="nav__item">
                     <a href="equipo.html" class="nav__link">Equipo</a>
                 </li>
             </ul>
@@ -45,22 +48,87 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero hero--secondary">
-        <div class="hero__decoration hero__decoration--1"></div>
-        <div class="hero__decoration hero__decoration--2"></div>
-        <div class="container">
+   <section class="hero hero--secondary">
+    <div class="hero__decoration hero__decoration--1"></div>
+    <div class="hero__decoration hero__decoration--2"></div>
+    <div class="container">
+        <div class="hero__wrapper" style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+            <!-- Contenido texto -->
             <div class="hero__content fade-in">
                 <span class="section__tag">Marketing</span>
                 <h1 class="hero__title">Mercado y estrategia</h1>
                 <p class="hero__subtitle">
-                    Análisis del entorno, oportunidad de mercado y posicionamiento de iMirly como plataforma de servicios locales.
+                    Análisis del entorno, oportunidad de mercado y posicionamiento de iMirly como plataforma de
+                    servicios locales.
                 </p>
                 <p class="hero__text">
-                    Esta sección analiza el contexto de mercado en el que surge iMirly, los segmentos a los que se dirige y la estrategia planteada para su desarrollo y crecimiento.
+                    Esta sección analiza el contexto de mercado en el que surge iMirly, los segmentos a los que se
+                    dirige y la estrategia planteada para su desarrollo y crecimiento.
                 </p>
             </div>
+
+            <!-- Mockup SVG de Mercado y Estrategia -->
+            <div class="hero__image fade-in" style="display: flex; justify-content: center; align-items: center;">
+                <svg viewBox="0 0 400 320" style="max-width: 100%; height: auto; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));">
+                    <!-- Fondo del mockup -->
+                    <rect x="20" y="20" width="360" height="280" rx="16" fill="#ffffff"/>
+                    
+                    <!-- Header con título -->
+                    <rect x="20" y="20" width="360" height="50" rx="16" fill="#321e92"/>
+                    <text x="200" y="52" text-anchor="middle" fill="white" font-size="14" font-weight="600" font-family="Inter, sans-serif">Análisis de Mercado iMirly</text>
+                    
+                    <!-- Gráfico de crecimiento (línea ascendente) -->
+                    <path d="M 60 200 L 120 170 L 180 180 L 240 120 L 300 90 L 340 70" 
+                          fill="none" stroke="#7864D7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    
+                    <!-- Puntos en la línea -->
+                    <circle cx="60" cy="200" r="5" fill="#7864D7"/>
+                    <circle cx="120" cy="170" r="5" fill="#7864D7"/>
+                    <circle cx="180" cy="180" r="5" fill="#7864D7"/>
+                    <circle cx="240" cy="120" r="5" fill="#7864D7"/>
+                    <circle cx="300" cy="90" r="5" fill="#7864D7"/>
+                    <circle cx="340" cy="70" r="5" fill="#90EE90"/>
+                    
+                    <!-- Área bajo la curva (gradiente) -->
+                    <path d="M 60 200 L 120 170 L 180 180 L 240 120 L 300 90 L 340 70 L 340 240 L 60 240 Z" 
+                          fill="url(#gradientArea)" opacity="0.3"/>
+                    
+                    <!-- Ejes -->
+                    <line x1="60" y1="240" x2="340" y2="240" stroke="#e0e0e0" stroke-width="2"/>
+                    <line x1="60" y1="80" x2="60" y2="240" stroke="#e0e0e0" stroke-width="2"/>
+                    
+                    <!-- Barras de segmentos (izquierda) -->
+                    <rect x="80" y="140" width="25" height="100" rx="4" fill="#E6E6FA"/>
+                    <rect x="115" y="100" width="25" height="140" rx="4" fill="#7864D7"/>
+                    <rect x="150" y="160" width="25" height="80" rx="4" fill="#E6E6FA"/>
+                    
+                    <!-- Tarjetas de estrategia (derecha) -->
+                    <rect x="260" y="100" width="100" height="35" rx="8" fill="#F0FFF0" stroke="#90EE90" stroke-width="1"/>
+                    <text x="310" y="122" text-anchor="middle" fill="#2E7D32" font-size="10" font-weight="500" font-family="Inter, sans-serif">Segmentación</text>
+                    
+                    <rect x="260" y="145" width="100" height="35" rx="8" fill="#FFF8E1" stroke="#FFB74D" stroke-width="1"/>
+                    <text x="310" y="167" text-anchor="middle" fill="#E65100" font-size="10" font-weight="500" font-family="Inter, sans-serif">Posicionamiento</text>
+                    
+                    <rect x="260" y="190" width="100" height="35" rx="8" fill="#E3F2FD" stroke="#64B5F6" stroke-width="1"/>
+                    <text x="310" y="212" text-anchor="middle" fill="#1565C0" font-size="10" font-weight="500" font-family="Inter, sans-serif">Crecimiento</text>
+                    
+                    <!-- Icono de objetivo -->
+                    <circle cx="200" cy="260" r="18" fill="#321e92" opacity="0.1"/>
+                    <circle cx="200" cy="260" r="12" fill="none" stroke="#321e92" stroke-width="2"/>
+                    <circle cx="200" cy="260" r="4" fill="#321e92"/>
+                    
+                    <!-- Definición del gradiente -->
+                    <defs>
+                        <linearGradient id="gradientArea" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#7864D7" stop-opacity="0.6"/>
+                            <stop offset="100%" stop-color="#7864D7" stop-opacity="0.1"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- 2. PRODUCTO Y MERCADO -->
     <section class="section section--product" id="producto">
@@ -71,54 +139,59 @@
             </div>
 
             <!-- 2a. Visión General -->
-<div class="subsection fade-in">
-    <h3 class="subsection__title">Visión general del producto</h3>
-    <div class="product-overview">
-        <div class="product-overview__content">
-            <p class="product-overview__text">
-                iMirly es una aplicación móvil de tipo <strong>marketplace de servicios</strong>, diseñada para facilitar la conexión entre personas que necesitan un servicio y quienes lo ofrecen.
-            </p>
-            <div class="product-features">
-                <h4>La aplicación permite:</h4>
-                <ul class="feature-list">
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"/>
-                        </svg>
-                        Navegar por categorías y subcategorías de servicios
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"/>
-                        </svg>
-                        Visualizar anuncios con información clara y estructurada
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"/>
-                        </svg>
-                        Publicar anuncios de servicios de forma sencilla
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"/>
-                        </svg>
-                        Facilitar la comunicación entre cliente y proveedor
-                    </li>
-                </ul>
+            <div class="subsection fade-in">
+                <h3 class="subsection__title">Visión general del producto</h3>
+                <div class="product-overview">
+                    <div class="product-overview__content">
+                        <p class="product-overview__text">
+                            iMirly es una aplicación móvil de tipo <strong>marketplace de servicios</strong>, diseñada
+                            para facilitar la conexión entre personas que necesitan un servicio y quienes lo ofrecen.
+                        </p>
+                        <div class="product-features">
+                            <h4>La aplicación permite:</h4>
+                            <ul class="feature-list">
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg>
+                                    Navegar por categorías y subcategorías de servicios
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg>
+                                    Visualizar anuncios con información clara y estructurada
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg>
+                                    Publicar anuncios de servicios de forma sencilla
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg>
+                                    Facilitar la comunicación entre cliente y proveedor
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="product-core">
+                            <p>El <strong>core business</strong> de iMirly es la intermediación digital de servicios,
+                                ofreciendo una plataforma organizada, intuitiva y adaptable a diferentes tipos de
+                                profesionales y necesidades.</p>
+                            <p>El producto se concibe inicialmente como una <strong>aplicación Android</strong>, con
+                                posibilidad de ampliación futura a otras plataformas.</p>
+                        </div>
+                    </div>
+                    <div class="product-overview__visual">
+                        <div class="app-mockup">
+                            <img src="../../assets/img/Inicioimirly.jpg" alt="Vista previa de la aplicación iMirly"
+                                class="app-mockup__image">
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="product-core">
-                <p>El <strong>core business</strong> de iMirly es la intermediación digital de servicios, ofreciendo una plataforma organizada, intuitiva y adaptable a diferentes tipos de profesionales y necesidades.</p>
-                <p>El producto se concibe inicialmente como una <strong>aplicación Android</strong>, con posibilidad de ampliación futura a otras plataformas.</p>
-            </div>
-        </div>
-        <div class="product-overview__visual">
-            <div class="app-mockup">
-                <img src="img/tu-imagen.jpg" alt="Vista previa de la aplicación iMirly" class="app-mockup__image">
-            </div>
-        </div>
-    </div>
-</div>
 
             <!-- 2b. Puntos Fuertes -->
             <div class="subsection fade-in">
@@ -127,7 +200,7 @@
                     <div class="advantage-card">
                         <div class="advantage-card__icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                             </svg>
                         </div>
                         <h4>Especialización en servicios</h4>
@@ -136,10 +209,10 @@
                     <div class="advantage-card">
                         <div class="advantage-card__icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="3" y="3" width="18" height="18" rx="2"/>
-                                <line x1="9" y1="9" x2="15" y2="9"/>
-                                <line x1="9" y1="13" x2="15" y2="13"/>
-                                <line x1="9" y1="17" x2="11" y2="17"/>
+                                <rect x="3" y="3" width="18" height="18" rx="2" />
+                                <line x1="9" y1="9" x2="15" y2="9" />
+                                <line x1="9" y1="13" x2="15" y2="13" />
+                                <line x1="9" y1="17" x2="11" y2="17" />
                             </svg>
                         </div>
                         <h4>Estructura clara</h4>
@@ -148,7 +221,8 @@
                     <div class="advantage-card">
                         <div class="advantage-card__icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/>
+                                <path
+                                    d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
                             </svg>
                         </div>
                         <h4>Facilidad de uso</h4>
@@ -157,9 +231,9 @@
                     <div class="advantage-card">
                         <div class="advantage-card__icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/>
-                                <path d="M16 8h-6a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h6"/>
-                                <line x1="12" y1="12" x2="12" y2="12"/>
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M16 8h-6a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h6" />
+                                <line x1="12" y1="12" x2="12" y2="12" />
                             </svg>
                         </div>
                         <h4>Bajo coste de entrada</h4>
@@ -168,9 +242,10 @@
                     <div class="advantage-card">
                         <div class="advantage-card__icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                                <line x1="12" y1="22.08" x2="12" y2="12"/>
+                                <path
+                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                                <line x1="12" y1="22.08" x2="12" y2="12" />
                             </svg>
                         </div>
                         <h4>Escalabilidad</h4>
@@ -179,34 +254,35 @@
                     <div class="advantage-card">
                         <div class="advantage-card__icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                             </svg>
                         </div>
                         <h4>Diseño centrado en el usuario</h4>
                         <p>Claridad, accesibilidad y rapidez</p>
                     </div>
                     <div class="advantage-card">
-    <div class="advantage-card__icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-        </svg>
-    </div>
-    <h4>Confianza y seguridad</h4>
-    <p>Verificación de usuarios y sistema de valoraciones</p>
-</div>
+                        <div class="advantage-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            </svg>
+                        </div>
+                        <h4>Confianza y seguridad</h4>
+                        <p>Verificación de usuarios y sistema de valoraciones</p>
+                    </div>
 
-<div class="advantage-card">
-    <div class="advantage-card__icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
-            <line x1="9" y1="9" x2="9.01" y2="9"/>
-            <line x1="15" y1="9" x2="15.01" y2="9"/>
-        </svg>
-    </div>
-    <h4>Comunidad local</h4>
-    <p>Conexión directa entre vecinos y profesionales cercanos</p>
-</div>
+                    <div class="advantage-card">
+                        <div class="advantage-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                                <line x1="9" y1="9" x2="9.01" y2="9" />
+                                <line x1="15" y1="9" x2="15.01" y2="9" />
+                            </svg>
+                        </div>
+                        <h4>Comunidad local</h4>
+                        <p>Conexión directa entre vecinos y profesionales cercanos</p>
+                    </div>
                 </div>
             </div>
 
@@ -216,7 +292,9 @@
                 <div class="client-profile">
                     <div class="client-profile__main">
                         <p class="client-profile__intro">
-                            El cliente principal de iMirly es cualquier persona que necesite <strong>contratar un servicio</strong> de forma rápida y sencilla, así como profesionales, autónomos o particulares que deseen <strong>ofrecer sus servicios</strong> y ganar visibilidad.
+                            El cliente principal de iMirly es cualquier persona que necesite <strong>contratar un
+                                servicio</strong> de forma rápida y sencilla, así como profesionales, autónomos o
+                            particulares que deseen <strong>ofrecer sus servicios</strong> y ganar visibilidad.
                         </p>
                         <div class="client-profile__type">
                             <span class="client-tag">Usuario digital</span>
@@ -230,8 +308,8 @@
                             <div class="value-item">
                                 <div class="value-item__icon">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <circle cx="12" cy="12" r="10"/>
-                                        <polyline points="12 6 12 12 16 14"/>
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
                                     </svg>
                                 </div>
                                 <span>La rapidez</span>
@@ -239,8 +317,8 @@
                             <div class="value-item">
                                 <div class="value-item__icon">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                                        <circle cx="12" cy="12" r="3"/>
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                        <circle cx="12" cy="12" r="3" />
                                     </svg>
                                 </div>
                                 <span>Claridad de información</span>
@@ -248,7 +326,8 @@
                             <div class="value-item">
                                 <div class="value-item__icon">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                                        <path
+                                            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
                                     </svg>
                                 </div>
                                 <span>Facilidad de contacto</span>
@@ -256,7 +335,7 @@
                             <div class="value-item">
                                 <div class="value-item__icon">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                                     </svg>
                                 </div>
                                 <span>Confianza en la plataforma</span>
@@ -316,8 +395,8 @@
                             <div class="growth-factor">
                                 <div class="growth-factor__icon">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
-                                        <line x1="12" y1="18" x2="12.01" y2="18"/>
+                                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                                        <line x1="12" y1="18" x2="12.01" y2="18" />
                                     </svg>
                                 </div>
                                 <span>Aumento del uso de aplicaciones móviles</span>
@@ -325,9 +404,9 @@
                             <div class="growth-factor">
                                 <div class="growth-factor__icon">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                                        <line x1="8" y1="21" x2="16" y2="21"/>
-                                        <line x1="12" y1="17" x2="12" y2="21"/>
+                                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                                        <line x1="8" y1="21" x2="16" y2="21" />
+                                        <line x1="12" y1="17" x2="12" y2="21" />
                                     </svg>
                                 </div>
                                 <span>Digitalización de profesionales y pequeños negocios</span>
@@ -335,10 +414,10 @@
                             <div class="growth-factor">
                                 <div class="growth-factor__icon">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <circle cx="12" cy="12" r="10"/>
-                                        <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
-                                        <line x1="9" y1="9" x2="9.01" y2="9"/>
-                                        <line x1="15" y1="9" x2="15.01" y2="9"/>
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                                        <line x1="9" y1="9" x2="9.01" y2="9" />
+                                        <line x1="15" y1="9" x2="15.01" y2="9" />
                                     </svg>
                                 </div>
                                 <span>Demanda de servicios rápidos y personalizados</span>
@@ -346,45 +425,48 @@
                         </div>
                     </div>
                     <div class="market-potential__scope">
-                        <p>iMirly se dirige a un <strong>mercado amplio y escalable</strong>, con un elevado número de potenciales usuarios tanto en el lado de la demanda como de la oferta.</p>
+                        <p>iMirly se dirige a un <strong>mercado amplio y escalable</strong>, con un elevado número de
+                            potenciales usuarios tanto en el lado de la demanda como de la oferta.</p>
                         <div class="expansion-note">
                             <span class="expansion-note__icon">🚀</span>
-                            <p>A medio plazo, el proyecto puede ampliarse a <strong>nuevas ciudades, regiones y tipos de servicios</strong>.</p>
+                            <p>A medio plazo, el proyecto puede ampliarse a <strong>nuevas ciudades, regiones y tipos de
+                                    servicios</strong>.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- 2f. Claves de Futuro -->
-<div class="subsection fade-in">
-    <h3 class="subsection__title">Claves de futuro</h3>
-    <div class="future-keys">
-        <div class="future-key">
-            <span class="future-key__number">01</span>
-            <p>Crecimiento de la economía de servicios</p>
-        </div>
-        <div class="future-key">
-            <span class="future-key__number">02</span>
-            <p>Mayor digitalización de profesionales y autónomos</p>
-        </div>
-        <div class="future-key">
-            <span class="future-key__number">03</span>
-            <p>Aumento de la confianza en plataformas online</p>
-        </div>
-        <div class="future-key">
-            <span class="future-key__number">04</span>
-            <p>Tendencia hacia soluciones rápidas, locales y personalizadas</p>
-        </div>
-        <div class="future-key">
-            <span class="future-key__number">05</span>
-            <p>Posibilidad de incorporar valor añadido (valoraciones, suscripciones, funcionalidades premium)</p>
-        </div>
-        <div class="future-key">
-            <span class="future-key__number">06</span>
-            <p>Expansión a nuevos mercados y sectores emergentes</p>
-        </div>
-    </div>
-</div>
+            <div class="subsection fade-in">
+                <h3 class="subsection__title">Claves de futuro</h3>
+                <div class="future-keys">
+                    <div class="future-key">
+                        <span class="future-key__number">01</span>
+                        <p>Crecimiento de la economía de servicios</p>
+                    </div>
+                    <div class="future-key">
+                        <span class="future-key__number">02</span>
+                        <p>Mayor digitalización de profesionales y autónomos</p>
+                    </div>
+                    <div class="future-key">
+                        <span class="future-key__number">03</span>
+                        <p>Aumento de la confianza en plataformas online</p>
+                    </div>
+                    <div class="future-key">
+                        <span class="future-key__number">04</span>
+                        <p>Tendencia hacia soluciones rápidas, locales y personalizadas</p>
+                    </div>
+                    <div class="future-key">
+                        <span class="future-key__number">05</span>
+                        <p>Posibilidad de incorporar valor añadido (valoraciones, suscripciones, funcionalidades
+                            premium)</p>
+                    </div>
+                    <div class="future-key">
+                        <span class="future-key__number">06</span>
+                        <p>Expansión a nuevos mercados y sectores emergentes</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -401,7 +483,8 @@
                 <h3 class="subsection__title">Análisis de la competencia</h3>
                 <div class="competition-context">
                     <p class="competition-context__text">
-                        El mercado de plataformas digitales de servicios presenta una <strong>alta competencia</strong>, principalmente dominada por aplicaciones generalistas y algunos servicios especializados.
+                        El mercado de plataformas digitales de servicios presenta una <strong>alta competencia</strong>,
+                        principalmente dominada por aplicaciones generalistas y algunos servicios especializados.
                     </p>
                     <div class="competition-problems">
                         <h4>Problemas de las plataformas existentes:</h4>
@@ -412,7 +495,9 @@
                         </div>
                     </div>
                     <div class="imirly-position">
-                        <p>iMirly se posiciona como una <strong>alternativa especializada y organizada</strong>, centrada exclusivamente en servicios, lo que mejora la experiencia tanto del cliente como del proveedor.</p>
+                        <p>iMirly se posiciona como una <strong>alternativa especializada y organizada</strong>,
+                            centrada exclusivamente en servicios, lo que mejora la experiencia tanto del cliente como
+                            del proveedor.</p>
                     </div>
                 </div>
             </div>
@@ -424,9 +509,9 @@
                     <div class="competitor-card">
                         <div class="competitor-card__icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                                <line x1="3" y1="9" x2="21" y2="9"/>
-                                <line x1="9" y1="21" x2="9" y2="9"/>
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                                <line x1="3" y1="9" x2="21" y2="9" />
+                                <line x1="9" y1="21" x2="9" y2="9" />
                             </svg>
                         </div>
                         <h4>Plataformas generalistas</h4>
@@ -436,7 +521,8 @@
                     <div class="competitor-card">
                         <div class="competitor-card__icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                                <path
+                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
                             </svg>
                         </div>
                         <h4>Portales profesionales</h4>
@@ -446,10 +532,10 @@
                     <div class="competitor-card">
                         <div class="competitor-card__icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                <circle cx="9" cy="7" r="4"/>
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                             </svg>
                         </div>
                         <h4>Redes sociales y grupos</h4>
@@ -512,7 +598,8 @@
                         </tbody>
                     </table>
                 </div>
-                <p class="comparison-conclusion">Este análisis muestra que iMirly destaca principalmente en <strong>especialización, organización y experiencia de usuario</strong>.</p>
+                <p class="comparison-conclusion">Este análisis muestra que iMirly destaca principalmente en
+                    <strong>especialización, organización y experiencia de usuario</strong>.</p>
             </div>
 
             <!-- 3d. Análisis de Competitividad -->
@@ -522,7 +609,7 @@
                     <div class="analysis-column analysis-column--strengths">
                         <h4>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
+                                <polyline points="20 6 9 17 4 12" />
                             </svg>
                             Puntos fuertes de iMirly
                         </h4>
@@ -537,8 +624,8 @@
                     <div class="analysis-column analysis-column--weaknesses">
                         <h4>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <line x1="18" y1="6" x2="6" y2="18"/>
-                                <line x1="6" y1="6" x2="18" y2="18"/>
+                                <line x1="18" y1="6" x2="6" y2="18" />
+                                <line x1="6" y1="6" x2="18" y2="18" />
                             </svg>
                             Puntos débiles de iMirly
                         </h4>
@@ -551,9 +638,10 @@
                     <div class="analysis-column analysis-column--competitor-weaknesses">
                         <h4>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-                                <line x1="12" y1="9" x2="12" y2="13"/>
-                                <line x1="12" y1="17" x2="12.01" y2="17"/>
+                                <path
+                                    d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                                <line x1="12" y1="9" x2="12" y2="13" />
+                                <line x1="12" y1="17" x2="12.01" y2="17" />
                             </svg>
                             Puntos débiles de la competencia
                         </h4>
@@ -566,7 +654,10 @@
                     </div>
                 </div>
                 <div class="competitive-conclusion">
-                    <p>El análisis competitivo indica que iMirly tiene una <strong>posición favorable</strong> dentro de su segmento, ya que cubre una necesidad real del mercado con una propuesta clara y diferenciada. Con una estrategia adecuada de crecimiento y visibilidad, el proyecto tiene <strong>altas posibilidades de éxito y evolución</strong>.</p>
+                    <p>El análisis competitivo indica que iMirly tiene una <strong>posición favorable</strong> dentro de
+                        su segmento, ya que cubre una necesidad real del mercado con una propuesta clara y diferenciada.
+                        Con una estrategia adecuada de crecimiento y visibilidad, el proyecto tiene <strong>altas
+                            posibilidades de éxito y evolución</strong>.</p>
                 </div>
             </div>
         </div>
@@ -643,93 +734,96 @@
             </div>
 
             <!-- 4b-h. Políticas de Marketing -->
-<div class="subsection fade-in">
-    <h3 class="subsection__title">Estrategias de marketing</h3>
-    <div class="strategy-accordion">
-        <!-- Primera fila: Producto y Servicio -->
-        <div class="strategy-row">
-            <div class="strategy-item">
-                <div class="strategy-item__header">
-                    <span class="strategy-item__icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                        </svg>
-                    </span>
-                    <h4>Política de Producto</h4>
-                </div>
-                <div class="strategy-item__content">
-                    <ul>
-                        <li>Aplicación estable y fácil de usar</li>
-                        <li>Diseño limpio orientado a UX</li>
-                        <li>Actualizaciones progresivas según feedback</li>
-                        <li>Mejora continua de funcionalidades</li>
-                    </ul>
+            <div class="subsection fade-in">
+                <h3 class="subsection__title">Estrategias de marketing</h3>
+                <div class="strategy-accordion">
+                    <!-- Primera fila: Producto y Servicio -->
+                    <div class="strategy-row">
+                        <div class="strategy-item">
+                            <div class="strategy-item__header">
+                                <span class="strategy-item__icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                                    </svg>
+                                </span>
+                                <h4>Política de Producto</h4>
+                            </div>
+                            <div class="strategy-item__content">
+                                <ul>
+                                    <li>Aplicación estable y fácil de usar</li>
+                                    <li>Diseño limpio orientado a UX</li>
+                                    <li>Actualizaciones progresivas según feedback</li>
+                                    <li>Mejora continua de funcionalidades</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="strategy-item">
+                            <div class="strategy-item__header">
+                                <span class="strategy-item__icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path
+                                            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                                    </svg>
+                                </span>
+                                <h4>Política de Servicio y Atención</h4>
+                            </div>
+                            <div class="strategy-item__content">
+                                <ul>
+                                    <li>Soporte mediante la propia aplicación</li>
+                                    <li>Resolución de incidencias básicas</li>
+                                    <li>Canal de contacto para sugerencias</li>
+                                    <li>Gestión de incidencias técnicas</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Segunda fila: Precios y Promociones -->
+                    <div class="strategy-row">
+                        <div class="strategy-item">
+                            <div class="strategy-item__header">
+                                <span class="strategy-item__icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="12" y1="1" x2="12" y2="23" />
+                                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                                    </svg>
+                                </span>
+                                <h4>Política de Precios</h4>
+                            </div>
+                            <div class="strategy-item__content">
+                                <p><strong>Fase inicial:</strong> Gratuita para atraer usuarios y generar masa crítica.
+                                </p>
+                                <p><strong>A medio plazo:</strong></p>
+                                <ul>
+                                    <li>Servicios premium para anunciantes</li>
+                                    <li>Destacar anuncios</li>
+                                    <li>Planes de suscripción para profesionales</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="strategy-item">
+                            <div class="strategy-item__header">
+                                <span class="strategy-item__icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                                        <polyline points="17 6 23 6 23 12" />
+                                    </svg>
+                                </span>
+                                <h4>Política de Promociones</h4>
+                            </div>
+                            <div class="strategy-item__content">
+                                <p>Orientadas a:</p>
+                                <ul>
+                                    <li>Incentivar la publicación de anuncios</li>
+                                    <li>Captar nuevos usuarios</li>
+                                    <li>Fidelizar a los primeros proveedores</li>
+                                </ul>
+                                <p><strong>Ejemplos:</strong> Destacados gratuitos temporales, beneficios para primeros
+                                    usuarios, promociones de lanzamiento.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="strategy-item">
-                <div class="strategy-item__header">
-                    <span class="strategy-item__icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-                        </svg>
-                    </span>
-                    <h4>Política de Servicio y Atención</h4>
-                </div>
-                <div class="strategy-item__content">
-                    <ul>
-                        <li>Soporte mediante la propia aplicación</li>
-                        <li>Resolución de incidencias básicas</li>
-                        <li>Canal de contacto para sugerencias</li>
-                        <li>Gestión de incidencias técnicas</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- Segunda fila: Precios y Promociones -->
-        <div class="strategy-row">
-            <div class="strategy-item">
-                <div class="strategy-item__header">
-                    <span class="strategy-item__icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="12" y1="1" x2="12" y2="23"/>
-                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                        </svg>
-                    </span>
-                    <h4>Política de Precios</h4>
-                </div>
-                <div class="strategy-item__content">
-                    <p><strong>Fase inicial:</strong> Gratuita para atraer usuarios y generar masa crítica.</p>
-                    <p><strong>A medio plazo:</strong></p>
-                    <ul>
-                        <li>Servicios premium para anunciantes</li>
-                        <li>Destacar anuncios</li>
-                        <li>Planes de suscripción para profesionales</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="strategy-item">
-                <div class="strategy-item__header">
-                    <span class="strategy-item__icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
-                            <polyline points="17 6 23 6 23 12"/>
-                        </svg>
-                    </span>
-                    <h4>Política de Promociones</h4>
-                </div>
-                <div class="strategy-item__content">
-                    <p>Orientadas a:</p>
-                    <ul>
-                        <li>Incentivar la publicación de anuncios</li>
-                        <li>Captar nuevos usuarios</li>
-                        <li>Fidelizar a los primeros proveedores</li>
-                    </ul>
-                    <p><strong>Ejemplos:</strong> Destacados gratuitos temporales, beneficios para primeros usuarios, promociones de lanzamiento.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
             <!-- 4h. Plan de Acciones -->
             <div class="subsection fade-in">
@@ -777,7 +871,9 @@
             <div class="sales-content">
                 <div class="sales-strategy fade-in">
                     <h3 class="subsection__title">Estrategia de ventas</h3>
-                    <p>La estrategia de ventas de iMirly se basa en un <strong>modelo digital</strong>, donde la captación de usuarios y anunciantes se realiza principalmente a través de la propia aplicación y canales online.</p>
+                    <p>La estrategia de ventas de iMirly se basa en un <strong>modelo digital</strong>, donde la
+                        captación de usuarios y anunciantes se realiza principalmente a través de la propia aplicación y
+                        canales online.</p>
                     <div class="sales-focus">
                         <span class="sales-focus__label">Fase 1 - Prioridad:</span>
                         <span class="sales-focus__value">Captación de usuarios y proveedores</span>
@@ -785,27 +881,27 @@
                     <div class="sales-pillars">
                         <div class="sales-pillar">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                <circle cx="8.5" cy="7" r="4"/>
-                                <line x1="20" y1="8" x2="20" y2="14"/>
-                                <line x1="23" y1="11" x2="17" y2="11"/>
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                <circle cx="8.5" cy="7" r="4" />
+                                <line x1="20" y1="8" x2="20" y2="14" />
+                                <line x1="23" y1="11" x2="17" y2="11" />
                             </svg>
                             <span>Facilidad de registro</span>
                         </div>
                         <div class="sales-pillar">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/>
-                                <line x1="15" y1="9" x2="9" y2="15"/>
-                                <line x1="9" y1="9" x2="15" y2="15"/>
+                                <circle cx="12" cy="12" r="10" />
+                                <line x1="15" y1="9" x2="9" y2="15" />
+                                <line x1="9" y1="9" x2="15" y2="15" />
                             </svg>
                             <span>Eliminación de barreras económicas</span>
                         </div>
                         <div class="sales-pillar">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                <circle cx="9" cy="7" r="4"/>
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                             </svg>
                             <span>Crecimiento progresivo</span>
                         </div>
@@ -817,7 +913,8 @@
                     <div class="team-status">
                         <div class="team-status__current">
                             <h4>Fase inicial</h4>
-                            <p>No existe equipo de ventas comercial tradicional. Las funciones de captación y promoción son asumidas por los <strong>propios promotores</strong> del proyecto.</p>
+                            <p>No existe equipo de ventas comercial tradicional. Las funciones de captación y promoción
+                                son asumidas por los <strong>propios promotores</strong> del proyecto.</p>
                             <ul>
                                 <li>Difusión del proyecto</li>
                                 <li>Contacto con profesionales locales</li>
@@ -826,7 +923,8 @@
                         </div>
                         <div class="team-status__future">
                             <h4>Futuro</h4>
-                            <p>A medida que el proyecto crezca, se valorará la incorporación de un <strong>perfil comercial</strong>.</p>
+                            <p>A medida que el proyecto crezca, se valorará la incorporación de un <strong>perfil
+                                    comercial</strong>.</p>
                         </div>
                     </div>
                 </div>
@@ -851,13 +949,13 @@
                             <span>Condiciones claras y accesibles desde la aplicación</span>
                         </div>
                         <div class="condition-item">
-        <span class="condition-item__check">✓</span>
-        <span>Soporte técnico disponible para resolver incidencias</span>
-    </div>
-    <div class="condition-item">
-        <span class="condition-item__check">✓</span>
-        <span>Actualizaciones regulares con mejoras continuas</span>
-    </div>
+                            <span class="condition-item__check">✓</span>
+                            <span>Soporte técnico disponible para resolver incidencias</span>
+                        </div>
+                        <div class="condition-item">
+                            <span class="condition-item__check">✓</span>
+                            <span>Actualizaciones regulares con mejoras continuas</span>
+                        </div>
                     </div>
                 </div>
 
@@ -873,7 +971,8 @@
                                 <li>Testear modelos de monetización</li>
                             </ul>
                             <div class="forecast-note">
-                                <span>La generación de ingresos será secundaria, priorizando el crecimiento y la visibilidad.</span>
+                                <span>La generación de ingresos será secundaria, priorizando el crecimiento y la
+                                    visibilidad.</span>
                             </div>
                         </div>
                         <div class="forecast-period forecast-period--future">
@@ -905,43 +1004,44 @@
             <div class="hr-content">
                 <div class="org-structure fade-in">
                     <h3 class="subsection__title">Organización funcional</h3>
-                    <p>La organización de iMirly se basa en una <strong>estructura reducida y funcional</strong>, acorde a un proyecto digital en fase inicial.</p>
+                    <p>La organización de iMirly se basa en una <strong>estructura reducida y funcional</strong>, acorde
+                        a un proyecto digital en fase inicial.</p>
                     <div class="org-chart">
                         <div class="org-chart__center">
                             <span>Equipo promotor</span>
                             <small>4 personas</small>
                         </div>
-                        <div class="org-chart__roles">
-                            <div class="org-role">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M12 20h9"/>
-                                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
-                                </svg>
-                                <span>Dirección y coordinación</span>
-                            </div>
-                            <div class="org-role">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="16 18 22 12 16 6"/>
-                                    <polyline points="8 6 2 12 8 18"/>
-                                </svg>
-                                <span>Desarrollo técnico</span>
-                            </div>
-                            <div class="org-role">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                                </svg>
-                                <span>Diseño y UX</span>
-                            </div>
-                            <div class="org-role">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                                    <line x1="16" y1="2" x2="16" y2="6"/>
-                                    <line x1="8" y1="2" x2="8" y2="6"/>
-                                    <line x1="3" y1="10" x2="21" y2="10"/>
-                                </svg>
-                                <span>Gestión y planificación</span>
-                            </div>
-                        </div>
+               <div class="org-chart__roles" style="display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: center; align-items: center; gap: 16px; width: 100%;">
+    <div class="org-role" style="display: flex; flex-direction: row; align-items: center; gap: 12px; padding: 16px 24px; background: #d4d0f0; border-radius: 12px; white-space: nowrap; flex-shrink: 0;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px; flex-shrink: 0;">
+            <path d="M12 20h9"/>
+            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+        </svg>
+        <span style="font-size: 0.9rem; color: #321e92;">Dirección y coordinación</span>
+    </div>
+    <div class="org-role" style="display: flex; flex-direction: row; align-items: center; gap: 12px; padding: 16px 24px; background: #d4d0f0; border-radius: 12px; white-space: nowrap; flex-shrink: 0;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px; flex-shrink: 0;">
+            <polyline points="16 18 22 12 16 6"/>
+            <polyline points="8 6 2 12 8 18"/>
+        </svg>
+        <span style="font-size: 0.9rem; color: #321e92;">Desarrollo técnico</span>
+    </div>
+    <div class="org-role" style="display: flex; flex-direction: row; align-items: center; gap: 12px; padding: 16px 24px; background: #d4d0f0; border-radius: 12px; white-space: nowrap; flex-shrink: 0;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px; flex-shrink: 0;">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+        <span style="font-size: 0.9rem; color: #321e92;">Diseño y UX</span>
+    </div>
+    <div class="org-role" style="display: flex; flex-direction: row; align-items: center; gap: 12px; padding: 16px 24px; background: #d4d0f0; border-radius: 12px; white-space: nowrap; flex-shrink: 0;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px; flex-shrink: 0;">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+        <span style="font-size: 0.9rem; color: #321e92;">Gestión y planificación</span>
+    </div>
+</div>
                     </div>
                     <div class="org-benefits">
                         <p>Esta organización permite:</p>
@@ -953,24 +1053,28 @@
                     </div>
                 </div>
 
-                <div class="hr-conditions fade-in">
-                    <h3 class="subsection__title">Condiciones de trabajo</h3>
-                    <div class="conditions-cards">
-                        <div class="condition-card condition-card--current">
-                            <h4>Fase inicial</h4>
-                            <ul>
-                                <li>Sin remuneración económica fija</li>
-                                <li>Trabajo como proyecto académico</li>
-                                <li>Implicación basada en participación activa</li>
-                                <li>Reparto equitativo de tareas</li>
-                            </ul>
-                        </div>
-                        <div class="condition-card condition-card--future">
-                            <h4>Fases posteriores</h4>
-                            <p>En caso de viabilidad económica, se planteará una <strong>remuneración acorde a resultados y responsabilidades</strong>.</p>
-                        </div>
-                    </div>
+<div class="hr-conditions fade-in">
+    <h3 class="subsection__title">Condiciones de trabajo</h3>
+    <div class="hr-plan__content">
+        <div class="hr-plan__current">
+            <h4>Fase inicial</h4>
+            <ul>
+                <li>Sin remuneración económica fija</li>
+                <li>Trabajo como proyecto académico</li>
+                <li>Implicación basada en participación activa</li>
+                <li>Reparto equitativo de tareas</li>
+            </ul>
+        </div>
+        <div class="hr-plan__expansion">
+            <h4>Fases posteriores</h4>
+            <div class="expansion-timeline">
+                <div class="expansion-phase">
+                    <p>En caso de viabilidad económica, se planteará una <strong>remuneración acorde a resultados y responsabilidades</strong>.</p>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
 
                 <div class="hr-plan fade-in">
                     <h3 class="subsection__title">Plan de recursos humanos</h3>
@@ -1019,15 +1123,17 @@
                 <div class="legal-item fade-in">
                     <div class="legal-item__icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                            <polyline points="9 22 9 12 15 12 15 22"/>
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                            <polyline points="9 22 9 12 15 12 15 22" />
                         </svg>
                     </div>
                     <div class="legal-item__content">
                         <h3>La sociedad</h3>
-                        <p><strong>Fase inicial:</strong> Proyecto en desarrollo vinculado a trabajo académico, sin constitución formal de empresa.</p>
+                        <p><strong>Fase inicial:</strong> Proyecto en desarrollo vinculado a trabajo académico, sin
+                            constitución formal de empresa.</p>
                         <div class="legal-recommendation">
-                            <strong>Forma jurídica futura recomendada:</strong> Sociedad de Responsabilidad Limitada (S.L.)
+                            <strong>Forma jurídica futura recomendada:</strong> Sociedad de Responsabilidad Limitada
+                            (S.L.)
                             <ul>
                                 <li>Proyecto con varios socios</li>
                                 <li>Actividad digital</li>
@@ -1040,11 +1146,11 @@
                 <div class="legal-item fade-in">
                     <div class="legal-item__icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                            <polyline points="14 2 14 8 20 8"/>
-                            <line x1="16" y1="13" x2="8" y2="13"/>
-                            <line x1="16" y1="17" x2="8" y2="17"/>
-                            <polyline points="10 9 9 9 8 9"/>
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                            <line x1="16" y1="13" x2="8" y2="13" />
+                            <line x1="16" y1="17" x2="8" y2="17" />
+                            <polyline points="10 9 9 9 8 9" />
                         </svg>
                     </div>
                     <div class="legal-item__content">
@@ -1056,17 +1162,18 @@
                             <span class="asset-tag">Código fuente</span>
                             <span class="asset-tag">Diseño de la aplicación</span>
                         </div>
-                        <p class="legal-future"><strong>Fase posterior:</strong> Registro en OEPM y propiedad intelectual del software.</p>
+                        <p class="legal-future"><strong>Fase posterior:</strong> Registro en OEPM y propiedad
+                            intelectual del software.</p>
                     </div>
                 </div>
 
                 <div class="legal-item fade-in">
                     <div class="legal-item__icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                            <line x1="16" y1="2" x2="16" y2="6"/>
-                            <line x1="8" y1="2" x2="8" y2="6"/>
-                            <line x1="3" y1="10" x2="21" y2="10"/>
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                            <line x1="16" y1="2" x2="16" y2="6" />
+                            <line x1="8" y1="2" x2="8" y2="6" />
+                            <line x1="3" y1="10" x2="21" y2="10" />
                         </svg>
                     </div>
                     <div class="legal-item__content">
@@ -1084,9 +1191,9 @@
                 <div class="legal-item fade-in">
                     <div class="legal-item__icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <line x1="12" y1="16" x2="12" y2="12"/>
-                            <line x1="12" y1="8" x2="12.01" y2="8"/>
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="12" y1="16" x2="12" y2="12" />
+                            <line x1="12" y1="8" x2="12.01" y2="8" />
                         </svg>
                     </div>
                     <div class="legal-item__content">
@@ -1126,7 +1233,8 @@
             <div class="operational-content">
                 <div class="establishment-plan fade-in">
                     <h3 class="subsection__title">Plan de establecimiento</h3>
-                    <p class="establishment-intro">El establecimiento de iMirly <strong>no requiere infraestructura física</strong>, ya que se trata de una plataforma digital.</p>
+                    <p class="establishment-intro">El establecimiento de iMirly <strong>no requiere infraestructura
+                            física</strong>, ya que se trata de una plataforma digital.</p>
                     <div class="establishment-actions">
                         <h4>Principales acciones:</h4>
                         <div class="actions-timeline">
@@ -1153,51 +1261,53 @@
                         </div>
                     </div>
                     <div class="establishment-tools">
-                        <p>Trabajo coordinado por los promotores utilizando <strong>herramientas de desarrollo colaborativo y control de versiones</strong>.</p>
+                        <p>Trabajo coordinado por los promotores utilizando <strong>herramientas de desarrollo
+                                colaborativo y control de versiones</strong>.</p>
                     </div>
                 </div>
 
-<div class="launch-plan fade-in">
-    <h3 class="subsection__title">Plan de lanzamiento</h3>
-    <div class="launch-phases">
-        <div class="launch-phase">
-            <div class="launch-phase__header">
-                <span class="launch-phase__badge">Fase 1</span>
-                <h4>Desarrollo y pruebas</h4>
-            </div>
-            <ul>
-                <li>Desarrollo completo de la aplicación</li>
-                <li>Pruebas internas</li>
-                <li>Ajustes técnicos y de diseño</li>
-            </ul>
-        </div>
-        <div class="launch-phase">
-            <div class="launch-phase__header">
-                <span class="launch-phase__badge">Fase 2</span>
-                <h4>Lanzamiento <br> inicial</h4>
-            </div>
-            <ul>
-                <li>Publicación en entorno de pruebas</li>
-                <li>Captación de primeros usuarios</li>
-                <li>Publicación de anuncios iniciales</li>
-            </ul>
-        </div>
-        <div class="launch-phase">
-            <div class="launch-phase__header">
-                <span class="launch-phase__badge">Fase 3</span>
-                <h4>Mejora y crecimiento</h4>
-            </div>
-            <ul>
-                <li>Recogida de feedback de usuarios</li>
-                <li>Implementación de mejoras</li>
-                <li>Ampliación progresiva de funcionalidades</li>
-            </ul>
-        </div>
-    </div>
-    <div class="launch-approach">
-        <p>Este enfoque progresivo permite <strong>reducir riesgos y mejorar el producto de forma continua</strong>.</p>
-    </div>
-</div>
+                <div class="launch-plan fade-in">
+                    <h3 class="subsection__title">Plan de lanzamiento</h3>
+                    <div class="launch-phases">
+                        <div class="launch-phase">
+                            <div class="launch-phase__header">
+                                <span class="launch-phase__badge">Fase 1</span>
+                                <h4>Desarrollo y pruebas</h4>
+                            </div>
+                            <ul>
+                                <li>Desarrollo completo de la aplicación</li>
+                                <li>Pruebas internas</li>
+                                <li>Ajustes técnicos y de diseño</li>
+                            </ul>
+                        </div>
+                        <div class="launch-phase">
+                            <div class="launch-phase__header">
+                                <span class="launch-phase__badge">Fase 2</span>
+                                <h4>Lanzamiento <br> inicial</h4>
+                            </div>
+                            <ul>
+                                <li>Publicación en entorno de pruebas</li>
+                                <li>Captación de primeros usuarios</li>
+                                <li>Publicación de anuncios iniciales</li>
+                            </ul>
+                        </div>
+                        <div class="launch-phase">
+                            <div class="launch-phase__header">
+                                <span class="launch-phase__badge">Fase 3</span>
+                                <h4>Mejora y crecimiento</h4>
+                            </div>
+                            <ul>
+                                <li>Recogida de feedback de usuarios</li>
+                                <li>Implementación de mejoras</li>
+                                <li>Ampliación progresiva de funcionalidades</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="launch-approach">
+                        <p>Este enfoque progresivo permite <strong>reducir riesgos y mejorar el producto de forma
+                                continua</strong>.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1210,129 +1320,136 @@
                 <h2 class="section__title">Resultados Previstos</h2>
             </div>
 
-           <div class="results-content">
-    <div class="results-premises fade-in">
-        <h3 class="subsection__title">Premisas importantes</h3>
-        <div class="premises-list">
-            <div class="premise-item">
-                <i data-lucide="bar-chart-3" class="premise-item__icon"></i>
-                <span>Proyecto en fase inicial y de validación</span>
+            <div class="results-content">
+                <div class="results-premises fade-in">
+                    <h3 class="subsection__title">Premisas importantes</h3>
+                    <div class="premises-list">
+                        <div class="premise-item">
+                            <i data-lucide="bar-chart-3" class="premise-item__icon"></i>
+                            <span>Proyecto en fase inicial y de validación</span>
+                        </div>
+                        <div class="premise-item">
+                            <i data-lucide="rocket" class="premise-item__icon"></i>
+                            <span>Lanzamiento progresivo de la aplicación</span>
+                        </div>
+                        <div class="premise-item">
+                            <i data-lucide="users" class="premise-item__icon"></i>
+                            <span>Prioridad en crecimiento de usuarios frente a beneficios</span>
+                        </div>
+                        <div class="premise-item">
+                            <i data-lucide="wallet" class="premise-item__icon"></i>
+                            <span>Costes operativos reducidos</span>
+                        </div>
+                        <div class="premise-item">
+                            <i data-lucide="code-2" class="premise-item__icon"></i>
+                            <span>Desarrollo asumido por los promotores</span>
+                        </div>
+                        <div class="premise-item">
+                            <i data-lucide="trending-up" class="premise-item__icon"></i>
+                            <span>Escalabilidad asegurada</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="premise-item">
-                <i data-lucide="rocket" class="premise-item__icon"></i>
-                <span>Lanzamiento progresivo de la aplicación</span>
+
+
+            <div class="results-indicators fade-in">
+                <h3 class="subsection__title">Indicadores clave</h3>
+                <div class="indicators-grid">
+                    <div class="indicator-card">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                        </svg>
+                        <span>Usuarios registrados</span>
+                    </div>
+                    <div class="indicator-card">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                            <line x1="9" y1="9" x2="15" y2="9" />
+                            <line x1="9" y1="13" x2="15" y2="13" />
+                            <line x1="9" y1="17" x2="11" y2="17" />
+                        </svg>
+                        <span>Anuncios publicados</span>
+                    </div>
+                    <div class="indicator-card">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                        </svg>
+                        <span>Nivel de actividad</span>
+                    </div>
+                    <div class="indicator-card">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                        </svg>
+                        <span>Retención de usuarios</span>
+                    </div>
+                    <div class="indicator-card">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
+                        </svg>
+                        <span>Feedback y satisfacción</span>
+                    </div>
+                    <div class="indicator-card">
+                        <i data-lucide="trending-up" class="indicator-card__icon"></i>
+                        <span>Tasa de conversión</span>
+                    </div>
+
+                    <div class="indicator-card">
+                        <i data-lucide="message-square" class="indicator-card__icon"></i>
+                        <span>Interacciones entre usuarios</span>
+                    </div>
+
+                    <div class="indicator-card">
+                        <i data-lucide="star" class="indicator-card__icon"></i>
+                        <span>Valoraciones promedio</span>
+                    </div>
+                </div>
             </div>
-            <div class="premise-item">
-                <i data-lucide="users" class="premise-item__icon"></i>
-                <span>Prioridad en crecimiento de usuarios frente a beneficios</span>
+
+            <div class="results-timeline fade-in">
+                <h3 class="subsection__title">Resultados esperados</h3>
+                <div class="timeline-comparison">
+                    <div class="timeline-period">
+                        <h4>Primer año</h4>
+                        <div class="result-item">
+                            <strong>Umbral de rentabilidad:</strong> No se espera alcanzarlo debido a la fase de
+                            lanzamiento.
+                        </div>
+                        <div class="result-item">
+                            <strong>Cuenta de resultados:</strong> Ingresos progresivos, gastos mínimos, resultado
+                            equilibrado o con ligeras pérdidas asumibles.
+                        </div>
+                        <div class="result-item">
+                            <strong>Tesorería:</strong> Estable gracias a bajos costes operativos.
+                        </div>
+                        <div class="result-item">
+                            <strong>Balance:</strong> Activos intangibles (software), pasivo reducido, estructura
+                            financiera sencilla.
+                        </div>
+                    </div>
+                    <div class="timeline-period timeline-period--future">
+                        <h4>A 3 años</h4>
+                        <div class="result-item result-item--positive">
+                            <strong>Resultados:</strong> Incremento progresivo de usuarios e ingresos mediante servicios
+                            premium.
+                        </div>
+                        <div class="result-item result-item--positive">
+                            <strong>Balance:</strong> Aumento del valor del fondo de comercio, mejor equilibrio
+                            financiero.
+                        </div>
+                        <div class="result-item result-item--positive">
+                            <strong>Tesorería:</strong> Estabilidad financiera, capacidad de reinversión.
+                        </div>
+                        <div class="result-item result-item--positive">
+                            <strong>Rentabilidad:</strong> Inversión inicial reducida, potencial favorable a medio
+                            plazo.
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="premise-item">
-                <i data-lucide="wallet" class="premise-item__icon"></i>
-                <span>Costes operativos reducidos</span>
-            </div>
-            <div class="premise-item">
-                <i data-lucide="code-2" class="premise-item__icon"></i>
-                <span>Desarrollo asumido por los promotores</span>
-            </div>
-            <div class="premise-item">
-    <i data-lucide="trending-up" class="premise-item__icon"></i>
-    <span>Escalabilidad asegurada</span>
-</div>
         </div>
-    </div>
-</div>
-
-
-                <div class="results-indicators fade-in">
-                    <h3 class="subsection__title">Indicadores clave</h3>
-                    <div class="indicators-grid">
-                        <div class="indicator-card">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                <circle cx="9" cy="7" r="4"/>
-                            </svg>
-                            <span>Usuarios registrados</span>
-                        </div>
-                        <div class="indicator-card">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                                <line x1="9" y1="9" x2="15" y2="9"/>
-                                <line x1="9" y1="13" x2="15" y2="13"/>
-                                <line x1="9" y1="17" x2="11" y2="17"/>
-                            </svg>
-                            <span>Anuncios publicados</span>
-                        </div>
-                        <div class="indicator-card">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-                            </svg>
-                            <span>Nivel de actividad</span>
-                        </div>
-                        <div class="indicator-card">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                            </svg>
-                            <span>Retención de usuarios</span>
-                        </div>
-                        <div class="indicator-card">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/>
-                            </svg>
-                            <span>Feedback y satisfacción</span>
-                        </div>
-                        <div class="indicator-card">
-    <i data-lucide="trending-up" class="indicator-card__icon"></i>
-    <span>Tasa de conversión</span>
-</div>
-
-<div class="indicator-card">
-    <i data-lucide="message-square" class="indicator-card__icon"></i>
-    <span>Interacciones entre usuarios</span>
-</div>
-
-<div class="indicator-card">
-    <i data-lucide="star" class="indicator-card__icon"></i>
-    <span>Valoraciones promedio</span>
-</div>
-                    </div>
-                </div>
-
-                <div class="results-timeline fade-in">
-                    <h3 class="subsection__title">Resultados esperados</h3>
-                    <div class="timeline-comparison">
-                        <div class="timeline-period">
-                            <h4>Primer año</h4>
-                            <div class="result-item">
-                                <strong>Umbral de rentabilidad:</strong> No se espera alcanzarlo debido a la fase de lanzamiento.
-                            </div>
-                            <div class="result-item">
-                                <strong>Cuenta de resultados:</strong> Ingresos progresivos, gastos mínimos, resultado equilibrado o con ligeras pérdidas asumibles.
-                            </div>
-                            <div class="result-item">
-                                <strong>Tesorería:</strong> Estable gracias a bajos costes operativos.
-                            </div>
-                            <div class="result-item">
-                                <strong>Balance:</strong> Activos intangibles (software), pasivo reducido, estructura financiera sencilla.
-                            </div>
-                        </div>
-                        <div class="timeline-period timeline-period--future">
-                            <h4>A 3 años</h4>
-                            <div class="result-item result-item--positive">
-                                <strong>Resultados:</strong> Incremento progresivo de usuarios e ingresos mediante servicios premium.
-                            </div>
-                            <div class="result-item result-item--positive">
-                                <strong>Balance:</strong> Aumento del valor del fondo de comercio, mejor equilibrio financiero.
-                            </div>
-                            <div class="result-item result-item--positive">
-                                <strong>Tesorería:</strong> Estabilidad financiera, capacidad de reinversión.
-                            </div>
-                            <div class="result-item result-item--positive">
-                                <strong>Rentabilidad:</strong> Inversión inicial reducida, potencial favorable a medio plazo.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -1347,49 +1464,52 @@
             <div class="investment-content">
                 <div class="investment-plan fade-in">
                     <h3 class="subsection__title">Plan de inversión y establecimiento</h3>
-                    <p class="investment-intro">Al tratarse de un <strong>proyecto digital</strong>, la inversión inicial necesaria para iMirly es <strong>reducida</strong> y se centra principalmente en activos intangibles.</p>
-                    
-<div class="investments-list">
-    <div class="investment-item">
-        <i data-lucide="monitor" class="investment-item__icon"></i>
-        <div class="investment-item__content">
-            <strong>Equipos informáticos:</strong> Ya disponibles por los promotores
-        </div>
-    </div>
-    <div class="investment-item">
-        <i data-lucide="wrench" class="investment-item__icon"></i>
-        <div class="investment-item__content">
-            <strong>Software de desarrollo:</strong> Herramientas gratuitas o licencias educativas
-        </div>
-    </div>
-    <div class="investment-item">
-        <i data-lucide="cloud" class="investment-item__icon"></i>
-        <div class="investment-item__content">
-            <strong>Hosting y servicios en la nube:</strong> Coste bajo (fase futura)
-        </div>
-    </div>
-    <div class="investment-item">
-        <i data-lucide="globe" class="investment-item__icon"></i>
-        <div class="investment-item__content">
-            <strong>Registro de dominio y marca:</strong> Fase futura
-        </div>
-    </div>
-    <div class="investment-item">
-        <i data-lucide="smartphone" class="investment-item__icon"></i>
-        <div class="investment-item__content">
-            <strong>Publicación y mantenimiento:</strong> Gastos de publicación de la aplicación
-        </div>
-    </div>
-</div>
+                    <p class="investment-intro">Al tratarse de un <strong>proyecto digital</strong>, la inversión
+                        inicial necesaria para iMirly es <strong>reducida</strong> y se centra principalmente en activos
+                        intangibles.</p>
+
+                    <div class="investments-list">
+                        <div class="investment-item">
+                            <i data-lucide="monitor" class="investment-item__icon"></i>
+                            <div class="investment-item__content">
+                                <strong>Equipos informáticos:</strong> Ya disponibles por los promotores
+                            </div>
+                        </div>
+                        <div class="investment-item">
+                            <i data-lucide="wrench" class="investment-item__icon"></i>
+                            <div class="investment-item__content">
+                                <strong>Software de desarrollo:</strong> Herramientas gratuitas o licencias educativas
+                            </div>
+                        </div>
+                        <div class="investment-item">
+                            <i data-lucide="cloud" class="investment-item__icon"></i>
+                            <div class="investment-item__content">
+                                <strong>Hosting y servicios en la nube:</strong> Coste bajo (fase futura)
+                            </div>
+                        </div>
+                        <div class="investment-item">
+                            <i data-lucide="globe" class="investment-item__icon"></i>
+                            <div class="investment-item__content">
+                                <strong>Registro de dominio y marca:</strong> Fase futura
+                            </div>
+                        </div>
+                        <div class="investment-item">
+                            <i data-lucide="smartphone" class="investment-item__icon"></i>
+                            <div class="investment-item__content">
+                                <strong>Publicación y mantenimiento:</strong> Gastos de publicación de la aplicación
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="investment-highlight">
-                        <p>La mayor inversión del proyecto corresponde al <strong>tiempo y conocimiento</strong> aportado por los promotores.</p>
+                        <p>La mayor inversión del proyecto corresponde al <strong>tiempo y conocimiento</strong>
+                            aportado por los promotores.</p>
                     </div>
                 </div>
 
                 <div class="financing-plan fade-in">
                     <h3 class="subsection__title">Necesidades financieras y plan de financiación</h3>
-                    
+
                     <div class="financing-needs">
                         <h4>Necesidades iniciales (limitadas):</h4>
                         <ul>
@@ -1441,8 +1561,10 @@
                 <div class="conclusion-card conclusion-card--opportunity fade-in">
                     <div class="conclusion-card__icon">🎯</div>
                     <h3>Oportunidad</h3>
-                    <p>iMirly surge como respuesta a una <strong>necesidad real del mercado</strong>: la dificultad de encontrar y ofrecer servicios de forma clara, rápida y organizada.</p>
-                    <p>La creciente digitalización y el aumento de la economía de servicios hacen que el proyecto se sitúe en un <strong>entorno favorable</strong> para su desarrollo.</p>
+                    <p>iMirly surge como respuesta a una <strong>necesidad real del mercado</strong>: la dificultad de
+                        encontrar y ofrecer servicios de forma clara, rápida y organizada.</p>
+                    <p>La creciente digitalización y el aumento de la economía de servicios hacen que el proyecto se
+                        sitúe en un <strong>entorno favorable</strong> para su desarrollo.</p>
                 </div>
 
                 <div class="conclusion-card conclusion-card--risk fade-in">
@@ -1454,7 +1576,8 @@
                         <li>Necesidad de captar usuarios en primeras fases</li>
                         <li>Falta de reconocimiento de marca</li>
                     </ul>
-                    <p class="mitigation"><strong>Mitigados por:</strong> bajos costes de inversión, flexibilidad del modelo y posibilidad de adaptación continua.</p>
+                    <p class="mitigation"><strong>Mitigados por:</strong> bajos costes de inversión, flexibilidad del
+                        modelo y posibilidad de adaptación continua.</p>
                 </div>
 
                 <div class="conclusion-card conclusion-card--strengths fade-in">
@@ -1472,8 +1595,10 @@
                 <div class="conclusion-card conclusion-card--profitability fade-in">
                     <div class="conclusion-card__icon">📈</div>
                     <h3>Rentabilidad</h3>
-                    <p>La rentabilidad se plantea a <strong>medio y largo plazo</strong>, una vez consolidada la base de usuarios y activados los modelos de monetización.</p>
-                    <p>La baja inversión inicial y el carácter digital permiten una <strong>relación favorable entre coste y beneficio</strong>, con alto potencial de crecimiento.</p>
+                    <p>La rentabilidad se plantea a <strong>medio y largo plazo</strong>, una vez consolidada la base de
+                        usuarios y activados los modelos de monetización.</p>
+                    <p>La baja inversión inicial y el carácter digital permiten una <strong>relación favorable entre
+                            coste y beneficio</strong>, con alto potencial de crecimiento.</p>
                 </div>
             </div>
 
@@ -1481,8 +1606,11 @@
                 <div class="final-conclusion__content">
                     <div class="final-conclusion__icon">✨</div>
                     <h3>Conclusión Final</h3>
-                    <p>iMirly es un proyecto <strong>viable, realista y alineado</strong> con las tendencias actuales del mercado digital.</p>
-                    <p>Cuenta con una <strong>base sólida</strong>, un <strong>equipo comprometido</strong> y un <strong>enfoque progresivo</strong> que permite minimizar riesgos y maximizar oportunidades de crecimiento.</p>
+                    <p>iMirly es un proyecto <strong>viable, realista y alineado</strong> con las tendencias actuales
+                        del mercado digital.</p>
+                    <p>Cuenta con una <strong>base sólida</strong>, un <strong>equipo comprometido</strong> y un
+                        <strong>enfoque progresivo</strong> que permite minimizar riesgos y maximizar oportunidades de
+                        crecimiento.</p>
                 </div>
             </div>
         </div>
@@ -1494,19 +1622,21 @@
             <div class="closing-block fade-in">
                 <div class="closing-block__icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                        <polyline points="22 4 12 14.01 9 11.01"/>
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                        <polyline points="22 4 12 14.01 9 11.01" />
                     </svg>
                 </div>
                 <h2 class="closing-block__title">Análisis completo</h2>
                 <p class="closing-block__text">
-                    El análisis de mercado y la estrategia planteada confirman que iMirly responde a una necesidad real, con un modelo viable, escalable y alineado con las tendencias actuales del mercado digital.
+                    El análisis de mercado y la estrategia planteada confirman que iMirly responde a una necesidad real,
+                    con un modelo viable, escalable y alineado con las tendencias actuales del mercado digital.
                 </p>
                 <a href="diseno-ux.html" class="btn btn--secondary">
                     Siguiente sección: Diseño & UX
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px; margin-left: 8px;">
-                        <line x1="5" y1="12" x2="19" y2="12"/>
-                        <polyline points="12 5 19 12 12 19"/>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        style="width: 20px; height: 20px; margin-left: 8px;">
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                        <polyline points="12 5 19 12 12 19" />
                     </svg>
                 </a>
             </div>
@@ -1531,9 +1661,10 @@
             </div>
         </div>
     </footer>
-<script>
-    lucide.createIcons();
-</script>
+    <script>
+        lucide.createIcons();
+    </script>
     <script src="main.js"></script>
 </body>
+
 </html>
