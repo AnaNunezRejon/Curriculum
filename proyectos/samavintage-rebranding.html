@@ -1127,6 +1127,22 @@
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
         }
 
+.figma-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.figma-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
         /* Footer */
         .footer {
             background: var(--charcoal);
@@ -2240,13 +2256,12 @@
                     <p>Navega por el prototipo completo de la nueva web propuesta.</p>
                 </div>
                 <div class="figma-container reveal">
-                    <iframe class="figma-embed"
-                        src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FYOUR_FILE_ID%2FSama-Vintage-Rebranding"
-                        allowfullscreen>
-                    </iframe>
-                    <p style="text-align: center; margin-top: 1rem; color: var(--light-gray); font-size: 0.9rem;">
-                        Reemplaza el URL con tu archivo de Figma para mostrar el prototipo completo al cliente
-                    </p>
+<div class="figma-container reveal">
+  <iframe 
+    src="https://embed.figma.com/proto/XYDM1Xszkjs689jMrLRPzt/SamaVintage?node-id=19-950&p=f&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&embed-host=share" 
+    allowfullscreen>
+  </iframe>
+</div>
                 </div>
             </section>
 
