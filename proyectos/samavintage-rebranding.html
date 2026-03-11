@@ -1127,22 +1127,24 @@
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
         }
 
-.figma-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* 16:9 ratio */
-  height: 0;
-  overflow: hidden;
-}
+        .figma-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            /* 16:9 ratio */
+            height: 0;
+            overflow: hidden;
+        }
 
-.figma-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
+        .figma-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
         /* Footer */
         .footer {
             background: var(--charcoal);
@@ -1859,12 +1861,12 @@
         <div class="nav-container">
             <a href="#" class="logo">SAMA <span>Vintage</span></a>
             <ul class="nav-links">
-                <li><a href="#manifiesto">Manifiesto</a></li>
-                <li><a href="#rebranding">Evolución</a></li>
-                <li><a href="#identidad">Identidad</a></li>
-                <li><a href="#colecciones">Colecciones</a></li>
-                <li><a href="#epocas">Épocas</a></li>
-                <li><a href="#artesania">Artesanía</a></li>
+                <li><a href="#analisisI">Análisis</a></li>
+                <li><a href="#estrategiaI">Estrategia</a></li>
+                <li><a href="#sistemavisualI">Sistema Visual</a></li>
+                <li><a href="#objetivosI">Objetivos</a></li>
+                <li><a href="#vistapreviaI">Vista Previa</a></li>
+                <li><a href="#prototipofigmaI">Prototipo</a></li>
                 <li><a href="samavintage.html">Volver</a></li>
 
             </ul>
@@ -1886,7 +1888,7 @@
         <!-- Main Content -->
         <main class="portfolio-main">
             <!-- Hero Section -->
-            <section class="hero" id="inicio">
+            <section class="hero" id="analisisI">
                 <div class="gold-accent gold-accent-1"></div>
                 <div class="gold-accent gold-accent-2"></div>
 
@@ -1910,7 +1912,7 @@
             </section>
 
             <!-- El Problema / Contexto -->
-            <section class="manifiesto" id="contexto">
+            <section class="manifiesto" id="evolucionI">
                 <div class="manifiesto-content reveal">
                     <span class="section-label">Análisis de la situación</span>
                     <h2 class="section-title">La identidad actual se diluye<br><em>en un mar de beige</em></h2>
@@ -1929,7 +1931,7 @@
             </section>
 
             <!-- Rebranding Concept - Comparativa Visual -->
-            <section class="rebranding" id="comparativa">
+            <section class="rebranding">
                 <div class="rebranding-container">
                     <div class="rebranding-side rebranding-old">
                         <div class="rebranding-visual"></div>
@@ -1968,7 +1970,7 @@
             </section>
 
             <!-- Por qué el Borgoña -->
-            <section class="why-burgundy" id="propuesta">
+            <section class="why-burgundy" id="estrategiaI">
                 <div class="section-header reveal">
                     <span class="section-label">Estrategia de color</span>
                     <h2 class="section-title">El poder del <em>borgoña</em></h2>
@@ -2025,7 +2027,7 @@
             </section>
 
             <!-- Nueva Paleta -->
-            <section class="visual-identity" id="identidad">
+            <section class="visual-identity" id="sistemavisualI">
                 <div class="section-header reveal">
                     <span class="section-label">Sistema Visual Propuesto</span>
                     <h2 class="section-title">De la ligereza <em>a la intensidad</em></h2>
@@ -2179,7 +2181,7 @@
             </section>
 
             <!-- Impacto en Negocio -->
-            <section class="business-impact" id="impacto">
+            <section class="business-impact" id="objetivosI">
                 <div class="section-header reveal">
                     <span class="section-label">Objetivos de negocio</span>
                     <h2 class="section-title">Métricas que mejorarán <em>con el cambio</em></h2>
@@ -2210,7 +2212,7 @@
             </section>
 
             <!-- Mockups / Vista previa -->
-            <section class="mockups-section" id="mockups">
+            <section class="mockups-section" id="vistapreviaI">
                 <div class="section-header reveal">
                     <span class="section-label">Vista previa</span>
                     <h2 class="section-title">Así se verá <em>la nueva Sama Vintage</em></h2>
@@ -2249,80 +2251,84 @@
             </section>
 
             <!-- Figma Embed -->
-            <section class="figma-section">
-                <div class="section-header reveal" style="margin-bottom: 2rem;">
-                    <span class="section-label">Prototipo interactivo</span>
-                    <h2 class="section-title" style="font-size: 2rem;">Explora el diseño en <em>Figma</em></h2>
-                    <p>Navega por el prototipo completo de la nueva web propuesta.</p>
-                </div>
-                <div class="figma-container reveal">
-<div class="figma-container reveal">
-  <iframe 
-    src="https://embed.figma.com/proto/XYDM1Xszkjs689jMrLRPzt/SamaVintage?node-id=19-950&p=f&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&embed-host=share" 
-    allowfullscreen>
-  </iframe>
-</div>
-                </div>
-            </section>
-
-            <!-- CTA Final -->
-            <section class="cta-final" style="background: #8B2635;">
-                <div class="cta-content reveal">
-                    <h2 class="cta-title">¿Listos para el cambio?</h2>
-                    <p class="cta-text">De ser una más en el océano del minimalismo beige, a ser la referencia del lujo
-                        vintage intenso. El borgoña no es solo un color: es una estrategia de posicionamiento.</p>
-                    <div class="cta-buttons">
-                        <a href="#" class="cta-btn-primary" style="background: #C9A962; color: #1A1A1A;">Aprobar
-                            propuesta</a>
-                        <a href="#" class="cta-btn-secondary" style="border-color: #E8E0D5; color: #E8E0D5;">Solicitar
-                            ajustes</a>
+                <section class="figma-section" id="prototipofigmaI">
+                    <div class="section-header reveal" style="margin-bottom: 2rem;">
+                        <span class="section-label">Prototipo interactivo</span>
+                        <h2 class="section-title" style="font-size: 2rem;">Explora el diseño en <em>Figma</em></h2>
+                        <p>Navega por el prototipo completo de la nueva web propuesta.</p>
                     </div>
-                </div>
-            </section>
-
-            <!-- Footer -->
-            <footer class="footer" style="background: #5C1A23;">
-                <div class="footer-content">
-                    <div class="footer-brand">
-                        <div class="footer-logo" style="color: #E8E0D5;">SAMA <em style="color: #C9A962;">Vintage</em>
-                        </div>
-                        <p class="footer-tagline">Propuesta de rebranding 2026. De la elegancia pasiva al deseo intenso.
-                        </p>
-                    </div>
-
-                    <div class="footer-links">
-                        <div class="footer-column">
-                            <h4 style="color: #C9A962;">Documentación</h4>
-                            <ul>
-                                <li><a href="#">Manual de marca</a></li>
-                                <li><a href="#">Guía de color</a></li>
-                                <li><a href="#">Aplicaciones</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="footer-column">
-                            <h4 style="color: #C9A962;">Equipo</h4>
-                            <ul>
-                                <li><a href="#">Dirección creativa</a></li>
-                                <li><a href="#">Diseño UX/UI</a></li>
-                                <li><a href="#">Estrategia de marca</a></li>
-                            </ul>
+                    <div class="figma-container reveal">
+                        <div class="figma-container reveal">
+                            <iframe
+                                src="https://embed.figma.com/proto/XYDM1Xszkjs689jMrLRPzt/SamaVintage?node-id=19-950&p=f&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&embed-host=share"
+                                allowfullscreen>
+                            </iframe>
                         </div>
                     </div>
+                </section>
 
-                    <div class="footer-social">
-                        <a href="#" aria-label="Behance"
-                            style="border-color: rgba(232, 224, 213, 0.3); color: #E8E0D5;">Be</a>
-                        <a href="#" aria-label="LinkedIn"
-                            style="border-color: rgba(232, 224, 213, 0.3); color: #E8E0D5;">in</a>
+                <!-- CTA Final -->
+                <section class="cta-final" style="background: #8B2635;">
+                    <div class="cta-content reveal">
+                        <h2 class="cta-title">¿Listos para el cambio?</h2>
+                        <p class="cta-text">De ser una más en el océano del minimalismo beige, a ser la referencia del
+                            lujo
+                            vintage intenso. El borgoña no es solo un color: es una estrategia de posicionamiento.</p>
+                        <div class="cta-buttons">
+                            <a href="#" class="cta-btn-primary" style="background: #C9A962; color: #1A1A1A;">Aprobar
+                                propuesta</a>
+                            <a href="#" class="cta-btn-secondary"
+                                style="border-color: #E8E0D5; color: #E8E0D5;">Solicitar
+                                ajustes</a>
+                        </div>
                     </div>
-                </div>
+                </section>
 
-                <div class="footer-bottom"
-                    style="border-color: rgba(232, 224, 213, 0.1); color: rgba(232, 224, 213, 0.5);">
-                    <p>Propuesta de rebranding presentada por [Tu Agencia] a Sama Vintage Jewelry · 2026</p>
-                </div>
-            </footer>
+                <!-- Footer -->
+                <footer class="footer" style="background: #5C1A23;">
+                    <div class="footer-content">
+                        <div class="footer-brand">
+                            <div class="footer-logo" style="color: #E8E0D5;">SAMA <em
+                                    style="color: #C9A962;">Vintage</em>
+                            </div>
+                            <p class="footer-tagline">Propuesta de rebranding 2026. De la elegancia pasiva al deseo
+                                intenso.
+                            </p>
+                        </div>
+
+                        <div class="footer-links">
+                            <div class="footer-column">
+                                <h4 style="color: #C9A962;">Documentación</h4>
+                                <ul>
+                                    <li><a href="#">Manual de marca</a></li>
+                                    <li><a href="#">Guía de color</a></li>
+                                    <li><a href="#">Aplicaciones</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="footer-column">
+                                <h4 style="color: #C9A962;">Equipo</h4>
+                                <ul>
+                                    <li><a href="#">Dirección creativa</a></li>
+                                    <li><a href="#">Diseño UX/UI</a></li>
+                                    <li><a href="#">Estrategia de marca</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="footer-social">
+                            <a href="#" aria-label="Behance"
+                                style="border-color: rgba(232, 224, 213, 0.3); color: #E8E0D5;">Be</a>
+                            <a href="#" aria-label="LinkedIn"
+                                style="border-color: rgba(232, 224, 213, 0.3); color: #E8E0D5;">in</a>
+                        </div>
+                    </div>
+
+                    <div class="footer-bottom"
+                        style="border-color: rgba(232, 224, 213, 0.1); color: rgba(232, 224, 213, 0.5);">
+                        <p>Propuesta de rebranding presentada por [Tu Agencia] a Sama Vintage Jewelry · 2026</p>
+                    </div>
+                </footer>
         </main>
     </div>
 
